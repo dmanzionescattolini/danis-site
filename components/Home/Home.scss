@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+.navbar-nav{
+    font-family: 'Roboto'!important; 
+    font-size:48px!important;
+    color:white;
+}
+.navbar-nav {
+    font-family: 'Roboto'!important; 
+    font-size:48px!important;
+    color:white;
+    line-height: 1;
+    margin: 0!important;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+}
+.offcanvas{
+    background:rgba(0, 0, 0, 0.5)!important;
+}
+
+body {
+    background:url("/src/assets/desert.png");
+    background-size:cover;
+    height:100vh;
+}
+
+video {
+    margin:auto;
+}

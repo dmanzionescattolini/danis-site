@@ -1,0 +1,85 @@
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+  }
+  header {
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width:100%;
+    justify-content: center!important;
+    align-items:center!important;
+    padding:0;
+
+    position:fixed;
+    
+    padding:0!important;
+    background-image:url('/src/assets/desert.png');
+  }
+  
+  
+  
+  @keyframes walkanimation {
+  
+  
+    
+    0% {
+      margin-left: 10%;
+    }
+  
+    50% {
+      margin-right: 10%;
+      margin-left:0;
+    }
+    100% {
+      margin-left: 10%;
+    }
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  #banner{
+    position:absolute;
+    width:100%!important;
+    top:30%!Important;
+  }
+  
+  #dinosaur {
+    position: absolute;
+    width: 60% !important;
+    left: 15%;
+    right: 15%;
+    top: 50vh;
+    bottom: auto;
+    animation: walkanimation 6s infinite 0s;
+
+  }
+
+  @media screen and (max-width: 768px) {
+    #dinosaur {
+      top: 40vh;
+      width: 60%!important;
+      left: 20%;
+      right: 20%;
+
+    }
+    header {
+      padding:0!important;
+    }
+
+    #banner {
+      top: 20vh!important;
+      width: 100%!important;
+      left: 0!important;
+      right: 0!important;
+
+    }
+
+  }
