@@ -50,8 +50,8 @@ export function Home() {
           
         </div>
       </div>
-     <div className="embed-responsive embed-responsive-16by9">
-      <iframe allow="autoplay;fullscreen;" className="embed-responsive-item" src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Jingle+%26+Mingle.mp4?autoplay=1"/>
+     <div className="embed-responsive embed-responsive-16by9" id="embed">
+      <iframe allow="autoplay;fullscreen;" className="embed-responsive-item" src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Jingle+%26+Mingle.mp4?autoplay=1&controls=0&loop=1"/>
       </div>
 
       </MDBContainer>    
