@@ -3,7 +3,11 @@
 .navbar-nav{
     font-family: 'Roboto'!important; 
     font-size:48px!important;
-    color:white;
+    color:#ffffff;
+}
+#homeroot{
+    background-color:white!important;
+    
 }
 .navbar-nav {
     font-family: 'Roboto'!important; 
@@ -19,12 +23,47 @@
     background:rgba(0, 0, 0, 0.5)!important;
 }
 
-body {
-    background:url("/src/assets/desert.png");
-    background-size:cover;
-    height:100vh;
-}
 
-video {
-    margin:auto;
+
+iframe {
+    position:fixed;
+    display:flex;
+    flex-direction:  row;
+    justify-content: center;
+    align-items: middle;
+    
+    position:absolute;
+    width:50vw;
+    margin-left:25vw;
+    margin-right:25vw;
+    height:80vh;
+    align-self:center;
+    bottom:auto;
+    top:10vh;
+}
+body,html{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+    align-items: center;
+    background:white!Important;
+    
+}
+#homemain {
+    display: flex;
+    flex-direction: row;
+    align-items: middle;
+    width: 100vw;
+    margin-left: 13vw;
+    /* margin-right: 0vw; */
+    /* height: 80vh; */
+    align-self: center;
+    bottom: auto;
+    margin-top: 9vh;
+}
+#menutoggle {
+    cursor:pointer;
+    position:absolute;
+    top:10px;
+
 }
