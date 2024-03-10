@@ -1,59 +1,35 @@
-import { MDBContainer, MDBIcon,MDBNavbarNav, MDBNavbarLink} from "mdb-react-ui-kit";
-import 'mdb-react-ui-kit/dist/css/mdb.min.css'
-import "./Home.scss"
-import 'bootstrap-icons/font/bootstrap-icons.css';
-import "bootstrap/dist/js/bootstrap.bundle.min";
+// import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+import "@material-icons/font/css/all.css"
+import '../../node_modules/bootstrap';
+import {Outlet} from "react-router-dom";
+import NavigationDani from "./NavigationDani.jsx";
+
 export function Home() {
-  return (
-    <MDBContainer fluid id="homeroot">
-      {" "}
-      <div id="homemain">
-      <a
-      id="menutoggle"
-      className="btn btn-md btn-secondary mt-0"
-        type="button"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasScrolling"
-        aria-controls="offcanvasScrolling"
-      >
-       <MDBIcon fas icon="bars"  />
-        Menu
-     </a>
-     </div>
-      <div
-        className="offcanvas offcanvas-start"
-        data-bs-scroll="true"
-        data-bs-backdrop="false"
-        tabIndex="-1"
-        id="offcanvasScrolling"
-        aria-labelledby="menubutton"
-      >
-        <div className="offcanvas-header">
-         
-          <button
-            type="button"
-            className="btn-close text-reset"
-            data-bs-dismiss="offcanvas"
-            aria-label="Close"
-            
-          ></button>
-        </div>
-        <div className="offcanvas-body">
-          <MDBNavbarNav>
-              <MDBNavbarLink>Films</MDBNavbarLink>
-           
-              <MDBNavbarLink>Videography</MDBNavbarLink>
+    let width = 50;
+    let goingUp=true;
+    window.setInterval(()=>{
+            if(goingUp){
+                if(width>=50){
+                    goingUp=false;
+                }
 
-            
-              <MDBNavbarLink>About/Contact</MDBNavbarLink>
-          </MDBNavbarNav>
-          
-        </div>
-      </div>
-     <div className="embed-responsive embed-responsive-16by9" id="embed">
-      <iframe allow="autoplay;fullscreen;" className="embed-responsive-item" src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Jingle+%26+Mingle.mp4?autoplay=1&controls=0&loop=1"/>
-      </div>
+                // document.querySelector('#video-home').style.height=`${width+=.0006}%`;
+                document.querySelector('#video-home').style.width=`${width+=.0006}%`;
+            }else {
+                // document.querySelector('#video-home').style.height=`${width-=.0006}%`;
+                document.querySelector('#video-home').style.width=`${width-=.0006}%`;
+                if(width<=10){
+                    goingUp=true;
+                }
+            }
+        }
+        ,.001);
+    return (
+        <>
+            <NavigationDani/>
 
-      </MDBContainer>    
-  );
+
+            <Outlet/>
+            </>
+    );
 }
