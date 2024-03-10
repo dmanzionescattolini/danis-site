@@ -85,16 +85,16 @@ export default function VideoGallery() {
         <MDBNavbar id={"films-menu"} fluid className="position-fixed bottom-0" dir='vertical'>
             <ul id="menu-films" className="list-unstyled ">
 
-                <MDBNavbarLink active={rackets} href="rackets" onHover={(e) => makeActive(e)}>
+                <MDBNavbarLink active={rackets} href="rackets-all-the-way-down" onHover={(e) => makeActive(e)}>
                     Rackets All the Way Down
                 </MDBNavbarLink>
-                <MDBNavbarLink active={wrench} onHover={(e) => makeActive(e)} href="wrench">
+                <MDBNavbarLink active={wrench} onHover={(e) => makeActive(e)} href="the-wrench">
                     The Wrench
                 </MDBNavbarLink>
-                <MDBNavbarLink active={pandemonic} onHover={(e) => makeActive(e)} href="/pandemonic-serenade"> A Pandemonic Serenade
+                <MDBNavbarLink active={pandemonic} onHover={(e) => makeActive(e)} href="/a-pandemonic-serenade"> A Pandemonic Serenade
 
                 </MDBNavbarLink>
-                <MDBNavbarLink href="three-bullets">
+                <MDBNavbarLink href="three-bullets-for-bombay">
                     Three Bullets to Bombay Beach
                 </MDBNavbarLink>
 
