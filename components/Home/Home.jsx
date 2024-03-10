@@ -1,6 +1,5 @@
 // import 'mdb-react-ui-kit/dist/css/mdb.min.css'
-import "@material-icons/font/css/all.css"
-import '../../node_modules/bootstrap';
+import '/node_modules/bootstrap';
 import {Outlet} from "react-router-dom";
 import NavigationDani from "./NavigationDani.jsx";
 
