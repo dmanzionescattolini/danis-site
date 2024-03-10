@@ -9,6 +9,7 @@ import { FilmTemplate } from '../components/Templates/FilmTemplate.jsx';
 import {RacketsAllTheWayDown} from "../components/Video Gallery/Rackets All the Way Down/RacketsAllTheWayDown.jsx";
 import {ThreeBulletsForBombay} from "../components/Video Gallery/Three Bullets for Bombay/ThreeBulletsForBombay.jsx";
 import {TheWrench} from "../components/Video Gallery/The Wrench/TheWrench.jsx";
+
 export default function App() {
     return <BrowserRouter className={"w-100 h-100 p-0 m-0 "}>
             <Routes>
