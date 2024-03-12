@@ -60,7 +60,8 @@ export default function VideoGallery() {
         }
         <MDBNavbar id={"films-menu"} fluid className={`position-fixed z-0 ${listGroup}`} dir='vertical'>
             {/* {listGroup  &&
-                <MDBListGroup className="text-justify " light={false} onMouseEnter={(e)=>e.target.style.background="none"}>
+                <MDBLis
+                tGroup className="text-justify " light={false} onMouseEnter={(e)=>e.target.style.background="none"}>
                     <MDBListGroupItem>
                         <a href="three-bullets-for-bombay" onHover={makeActive("three")}>Three Bullets for Bombay</a>
                     </MDBListGroupItem>

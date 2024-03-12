@@ -24,6 +24,11 @@ body {
     background-color: $desert-gray-purple;
 }
 
+#films-menu {
+    border: 0;
+    box-shadow: none;
+}
+
 main {
     font-family: "Roboto Condensed";
     font-weight: normal;
@@ -424,5 +429,13 @@ a {
     }
     #banner-film>div {
         background-position: left;
+    }
+    #films-menu {
+        padding: 0;
+    }
+    #films-menu a {
+        font-size: 30px!important;
+        text-wrap: nowrap!important;
+        text-indent: 10px;
     }
 }
