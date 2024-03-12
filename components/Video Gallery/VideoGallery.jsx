@@ -54,7 +54,7 @@ export default function VideoGallery() {
         </video> */}
 
 
-        <iframe allowFullScreen allowTransparency id={"video-films"}  className="h-100 w-100 p-0 m-0" src={video+"?autoplay=1&controls=0"} loop autoPlay muted controls={false} ></iframe>
+        <iframe autoPlay allowFullScreen allowTransparency id={"video-films"}  className="h-100 w-100 p-0 m-0" src={video+"?autoplay=1&controls=0"} loop autoPlay muted controls={false} ></iframe>
         <MDBNavbar id={"films-menu"} fluid className={`position-fixed bottom-0 ${listGroup}`} dir='vertical'>
             {listGroup  &&
                 <MDBListGroup className="text-justify " light={false} onMouseEnter={(e)=>e.target.style.background="none"}>
