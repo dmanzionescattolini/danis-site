@@ -19,7 +19,7 @@ export default function Home() {
 
   useEffect(() => {
     document.getElementById("toggler").style.display = "none";
-  });
+  },[]);
   window.onbeforeunload = closingCode;
   function closingCode() {
     document.getElementById("toggler").style.display = "block";
