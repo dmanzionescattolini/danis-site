@@ -4,6 +4,7 @@
 import { MDBListGroup, MDBListGroupItem, MDBNavbar } from "mdb-react-ui-kit";
 import { useCallback, useEffect, useState } from "react";
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
+import 'mdb-react-ui-kit/dist/mdb-react-ui-kit.cjs'
 import 'bootstrap/dist/css/bootstrap.css'
 export default function VideoGallery() {
     const [rackets, setRackets] = useState(true);
@@ -12,7 +13,7 @@ export default function VideoGallery() {
     const [three, setThree] = useState(false);
     const [hovering, setHovering] = useState(false);
     const [ele, setEle] = useState(0);
-    const allClips = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips+Slower.mp4";
+    const allClips = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4";
     const pandemonicClip = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/APS+Clip.mp4";
     const racketsClip = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Rackets+Clip.mp4";
     const wrenchClip = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/The+wrench+clip.mp4";
@@ -53,10 +54,7 @@ export default function VideoGallery() {
         </video> */}
 
 
-        <video loop controls={false} autoPlay muted 
-            className="floating-effect overflow-visible position-fixed vw-100 vh-100 m-0 p-0 opacity-50 ">
-            <source type="video/mp4" src={video}></source>
-        </video>
+        <iframe allowFullScreen allowTransparency id={"video-home"}  className="h-100 w-100 p-0 m-0" src={video+"?autoplay=1&controls=0"} loop autoPlay muted controls={false} ></iframe>
         <MDBNavbar id={"films-menu"} fluid className={`position-fixed bottom-0 ${listGroup}`} dir='vertical'>
             {listGroup  &&
                 <MDBListGroup className="text-justify " light={false} onMouseEnter={(e)=>e.target.style.background="none"}>
@@ -64,13 +62,13 @@ export default function VideoGallery() {
                         <a href="three-bullets-for-bombay" onHover={makeActive("three")}>Three Bullets for Bombay</a>
                     </MDBListGroupItem>
                     <MDBListGroupItem>
-                        <a href="a-pandemonic-serenade">A Pandemonic Serenade</a>
+                        <a href="a-pandemonic-serenade"  onHover={makeActive("pandemonic")}>A Pandemonic Serenade</a>
                     </MDBListGroupItem>
                     <MDBListGroupItem>
-                        <a href="the-wrench">The Wrench</a>
+                        <a href="the-wrench" onHover={makeActive("wrench")}>The Wrench</a>
                     </MDBListGroupItem>
                     <MDBListGroupItem>
-                        <a href="rackets-all-the-way-down">Rackets All the Way Down</a>
+                        <a href="rackets-all-the-way-down"  onHover={makeActive("rackets")}>Rackets All the Way Down</a>
                     </MDBListGroupItem>
                 </MDBListGroup>
 

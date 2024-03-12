@@ -330,7 +330,16 @@ a.nav-link:hover {
   right: 45px;
   font-size: 60px;
 }
-
+#video-home {
+  min-width: 100%;
+  width: auto!important;
+  min-height: 100vh;
+  height: auto!important;
+  margin: 0;
+  left: 0;
+  top: 0;
+  aspect-ratio: 16/9;
+}
 @media screen and (max-width: 600px) {
  
  .overlaw-x a:hover {
