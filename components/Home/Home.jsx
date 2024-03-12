@@ -27,15 +27,10 @@ export default function Home() {
         muted
         loop
         id="video-home"
-        className="  well embed-responsive-item z-9"
+        className="  well embed-responsive-item "
         allowFullScreen
-      >
-        <source
-          aria-controls={"fullscreen"}
-          type="video/mp4"
-          src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4"
+    src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4"
         />
-      </video>
     </div>
   );
 }

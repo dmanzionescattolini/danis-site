@@ -26,7 +26,7 @@ export default function App() {
       <BrowserRouter className={"w-100 h-100 p-0 m-0 "}>
         <Routes>
           <Route element={<LandingPage />} path="" />
-          <Route element={<Home />} path="/"/>
+          <Route element={<Home />} path="/home"/>
             <Route element={<VideoGallery />} path="/films" />
 
             <Route
