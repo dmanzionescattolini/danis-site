@@ -1,17 +1,14 @@
-import {  MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
+import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
+import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
 
-  
+
   return (
-    <MDBContainer fluid className=" center m-0 p-0">
-    <MDBRow className="d-flex flex-row justify-content-center align-items-center h-100 w-100 m-0 p-0" >
-      <a href="/home" id={"link-landing-page"} className="w-100 m-auto p-0 h-100 row">
-        <MDBCol md={3}></MDBCol>
-        <img id="dinosaur" className={"img-fluid"} src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png" alt="Dinosaur" />
-        {/*<h1 className="display-1" id="enter-sign">ENTER</h1> */}
+
+      <a id="dinosaur-container" href="/home" className="d-flex flex-row justify-content-center align-items-center w-100 ">
+          <img id="dinosaur" className={"img-fluid w-50 "} src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png" alt="Dinosaur" />
       </a>
-    </MDBRow>
-    </MDBContainer>
+
   );
 }
