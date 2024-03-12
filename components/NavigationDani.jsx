@@ -28,12 +28,8 @@ export default function NavigationDani() {
   //     setOverlayDisplay("none");
   // }
   return (
-    <header
-      className=" w-100
-    "
-    id="top-navbar z-10"
-    >
-      <MDBNavbar  className={"bg-transparent"}>
+    <>
+      <MDBNavbar id="top-navbar"  className={"border-0 position-fixed z-10"}>
         <a
           id={"toggler"}
           href="#"
@@ -49,7 +45,7 @@ export default function NavigationDani() {
           />
         </a>
       </MDBNavbar>
-      <div id="myNav" className="overlay-x" style={{ display: overlayDisplay }}>
+      <div id="myNav" className="overlay-x lh-sm text-left" style={{ display: overlayDisplay }}>
         
 
         <div className="overlay-x-content">
@@ -59,6 +55,6 @@ export default function NavigationDani() {
           <a href="#">Contact</a>
         </div>
       </div>
-    </header>
+    </>
   );
 }

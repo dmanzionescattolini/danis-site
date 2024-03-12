@@ -27,7 +27,7 @@ export default function Home() {
         muted
         loop
         id="video-home"
-        className="  well embed-responsive-item "
+        className="  well embed-responsive-item z-9"
         allowFullScreen
       >
         <source

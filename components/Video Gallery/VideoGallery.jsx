@@ -77,7 +77,7 @@ export default function VideoGallery() {
 
                 || */}
 
-                <ul id="" className="list-unstyled list-group" height={listHeight}>
+                <ul id="" className="list-unstyled " height={listHeight}>
 
                     <a className={`${listgroupitem}`} active={rackets} href="rackets-all-the-way-down" onHover={() => makeActive("rackets")}>
                         Rackets All the Way Down
