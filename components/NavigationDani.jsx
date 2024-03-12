@@ -4,14 +4,24 @@ import { MDBBtn, MDBNavbar } from "mdb-react-ui-kit";
 // eslint-disable-next-line react/prop-types
 export default function NavigationDani() {
   const [overlayDisplay, setOverlayDisplay] = useState("none");
+  const [videoFilms, setVideoFilms] = useState(true);
   function openCloseNav() {
+    
     setOverlayDisplay(() => {
       if (overlayDisplay === "block") {
         return "none";
+
       } else {
         return "block";
       }
     });
+    if(overlayDisplay==="block"){
+      document.getElementById("toggler").style.transform="none";
+
+    }else {
+      document.getElementById("toggler").style.transform="rotate(40deg)";
+    }
+    setVideoFilms(!videoFilms);
   }
 
   // function closeNav() {

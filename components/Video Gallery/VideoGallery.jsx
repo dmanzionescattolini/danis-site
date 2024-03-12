@@ -54,12 +54,12 @@ export default function VideoGallery() {
         </video> */}
 
         {window.innerWidth <650 && 
-            <img id="still-video-home"src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Screen+Shot+2024-02-11+at+6.32.27+PM.png" alt="Three Bullets for Bombay"></img>
+            <img id="still-video-home"src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Screen+Shot+2024-02-11+at+6.32.27+PM.png" className="img-fluid bg-body position-fixed z-0" alt="Three Bullets for Bombay"></img>
         ||
         <video autoPlay allowFullScreen allowTransparency id={"video-films"}  className="h-100 w-100 p-0 m-0" src={video+"?autoplay=1&controls=0"} loop muted controls={false} ></video>
         }
-        <MDBNavbar id={"films-menu"} fluid className={`position-fixed bottom-0 ${listGroup}`} dir='vertical'>
-            {listGroup  &&
+        <MDBNavbar id={"films-menu"} fluid className={`position-fixed z-0 ${listGroup}`} dir='vertical'>
+            {/* {listGroup  &&
                 <MDBListGroup className="text-justify " light={false} onMouseEnter={(e)=>e.target.style.background="none"}>
                     <MDBListGroupItem>
                         <a href="three-bullets-for-bombay" onHover={makeActive("three")}>Three Bullets for Bombay</a>
@@ -75,9 +75,9 @@ export default function VideoGallery() {
                     </MDBListGroupItem>
                 </MDBListGroup>
 
-                ||
+                || */}
 
-                <ul id=" bg-transparent" className="list-unstyled list-group" height={listHeight}>
+                <ul id="" className="list-unstyled list-group" height={listHeight}>
 
                     <a className={`${listgroupitem}`} active={rackets} href="rackets-all-the-way-down" onHover={() => makeActive("rackets")}>
                         Rackets All the Way Down
@@ -93,7 +93,7 @@ export default function VideoGallery() {
                     </a>
 
                 </ul>
-            }
+            {/* } */}
         </MDBNavbar>
 
     </section>;

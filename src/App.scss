@@ -214,17 +214,39 @@ section {
     max-width: fit-content !Important;
 }
 
-#films-menu {
-    justify-content: flex-end;
-}
+#films-menu {}
 
 #films-menu {
+    --header-padding-horiz: 42px;
+    --header-padding-top: calc(3vw * 1.5);
+    --header-padding-bottom: 24px;
+    --header-logo-height: calc(var(--header-logo-width) * 0.4153);
+    --header-search-width: 22px;
+    --header-approx-height: calc(var(--header-padding-top) + var(--header-padding-bottom) + var(--header-logo-height));
+    --header-default-clearance: 196px;
+    --header-logo-width: 72.6px;
+    --mobile-menu-width: 500px;
+    --burger-width: 1.8vw;
+    --burger-height: 10px;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    letter-spacing: -0.005em;
+    box-sizing: border-box;
     margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    text-align: justify;
-    overflow: hidden;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    position: absolute;
+    padding: 0 24px 0 42px;
+    z-index: 1;
+    transition: opacity 120ms ease-out;
+    bottom: 52px;
+    width: 90%;
+    opacity: 1;
+}
+
+#top-navbar\ z-10>nav {
+    box-shadow: none;
 }
 
 a.nav-link:hover {
@@ -369,5 +391,9 @@ a {
         min-height: 112vh;
         object-fit: cover;
         object-position: 8%;
+        z-index: 0;
+    }
+    #banner-film>div {
+        background-position: left;
     }
 }
