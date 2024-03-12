@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Nobile:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
-
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
-
-
 $desert-purple: #5E3E67;
 $desert-red: #9E6365;
 $desert-mauve: #774865;
@@ -15,69 +12,60 @@ $dinosaur-brown: #5A441B;
 $dinosaur-mustard: #EDA803;
 $first-dinosaur-width: $first-dinosaur-height*228/160;
 $one-twenty-fifth-of-dinosaur-width: $first-dinosaur-width/25;
-
 html,
 body {
-  width: 100%;
-  height: 100vh;
-  background-image: url('https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png');
-  overflow: hidden;
-  background-repeat: repeat-x;
-  background-size: cover;
-  font-family: 'Roboto Condensed', sans-serif;
-  background-color: $desert-gray-purple;
-  
+    width: 100%;
+    height: 100vh;
+    background-image: url('https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png');
+    overflow: hidden;
+    background-repeat: repeat-x;
+    background-size: cover;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: $desert-gray-purple;
 }
 
 main {
-  font-family: "Roboto Condensed";
-  font-weight: normal;
-  font-weight: normal;
-  max-height: 100vh;
-  padding: 0;
-  margin: 0;
-  max-width: 100%;
-
-  background-size: cover;
-  overflow: hidden !important;
+    font-family: "Roboto Condensed";
+    font-weight: normal;
+    font-weight: normal;
+    max-height: 100vh;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    background-size: cover;
+    overflow: hidden !important;
 }
 
 // body>div.offcanvas.offcanvas-start.show>div.offcanvas-header {
 //   display: flow-root;
 // }
-
-
 @keyframes wiggle {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  80% {
-    transform: rotate(0deg);
-  }
-
-  85% {
-    transform: rotate(5deg);
-  }
-
-  95% {
-    transform: rotate(-5deg);
-  }
-
-  100% {
-    transform: rotate(0deg);
-  }
+    0% {
+        transform: rotate(0deg);
+    }
+    80% {
+        transform: rotate(0deg);
+    }
+    85% {
+        transform: rotate(5deg);
+    }
+    95% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 #dinosaur:hover {
-  animation: wiggle 1.5s 2 alternate;
+    animation: wiggle 1.5s 2 alternate;
 }
 
 section {
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 // video,
@@ -87,7 +75,6 @@ section {
 //   width: 70%;
 //   margin: 15%;
 // }
-
 // .floating-effect {
 //   // box-shadow: 0 10px 20px $dinosaur-mustard, 0 6px 6px $dinosaur-mustard !important;
 //   transition: all 0.3s ease-in-out !important;
@@ -95,152 +82,121 @@ section {
 //   //border-width: -20px;
 //   //border-collapse: collapse;a
 // }
-
 // .floating-effect:hover {
 //   transform: translatey(-10px);
 // }
-
-
-
 #video-container,
-#video-container-home{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100% !important;
-  position: fixed !important;
-  top: 0;
-  left: 0;
-  right: 0;
-
+#video-container-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100% !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    right: 0;
 }
+
 #background00-video-film {
-width:100%;
-
-  height:100vh;
-  background-repeat:repeat-x;
+    width: 100%;
+    height: 100vh;
+    background-repeat: repeat-x;
 }
+
 #video-container {
-  opacity: 70%;
+    opacity: 70%;
 }
-
 
 #video-home {
-  position:fixed;
-
-  
-
-  $width:50vw;
-  width:$width;
- 
-  box-shadow: $dinosaur-yellow .2rem 0rem 2rem;
-  border-radius: 5px;
-  $height:50vw *250/440;
-  height:$height;
-  align-content: center;
-  left:$width/2;
-  right:$width/2;
-  margin:0;
-  padding:0;
+    $width: 50vw;
+    width: $width;
+    box-shadow: $dinosaur-yellow .2rem 0rem 2rem;
+    border-radius: 5px;
+    $height: 50vw *250/440;
+    height: $height;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+    z-index: 9;
 }
-#films-video{
-  min-width:100vw!important;
-  min-height:100vh!important;
-  height:auto;
-  width:auto;
-  
+
+#films-video {
+    min-width: 100vw !important;
+    min-height: 100vh !important;
+    height: auto;
+    width: auto;
 }
+
 #toggler:hover,
 #toggler:active {
-  transform: rotate(40deg);
-
+    transform: rotate(40deg);
 }
 
 #toggler {
-  position: fixed;
-  top: 0.5rem;
-  left: 0;
-  padding: 0;
-  width: 8rem;
-
+    position: fixed;
+    z-index: 50;
+    top: 0.5rem;
+    left: 0;
+    padding: 0;
+    width: 8rem;
 }
-
-
-
-
-
-
 
 #dinosaur-container {
-  height: 100vh;
-  // max-width:50vw;
-  // width:auto;
-  // justify-self: center;
-  // position: fixed;
-  // //left: 27%;
-  // $dinosaur-freq-third:100%/3;
-  // margin: 0;
-  // padding: 0;
-  // top: $first-dinosaur-height/2;
-  // width:$first-dinosaur-width;
-  // height:$first-dinosaur-height;
-  // left:$dinosaur-freq-third;
-
-
+    height: 100vh;
+    // max-width:50vw;
+    // width:auto;
+    // justify-self: center;
+    // position: fixed;
+    // //left: 27%;
+    // $dinosaur-freq-third:100%/3;
+    // margin: 0;
+    // padding: 0;
+    // top: $first-dinosaur-height/2;
+    // width:$first-dinosaur-width;
+    // height:$first-dinosaur-height;
+    // left:$dinosaur-freq-third;
 }
-
 
 .floating-effect {
-  box-shadow: $dinosaur-yellow 2px 10px 30px -8px;
-  max-width: fit-content !Important;
-  margin: auto;
-  //background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
-
-
+    box-shadow: $dinosaur-yellow 2px 10px 30px -8px;
+    max-width: fit-content !Important;
+    margin: auto;
+    //background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
 }
-
-
 
 #banner-film {
+    width: 100%;
+    margin: 0;
+    height: auto;
+}
 
-  width: 100%;
-  margin: 0;
-  height:auto;
-}
-#movie-info {
- 
-}
 .mask {
-  background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 //noinspection SpellCheckingInspection
 .nav-link {
-  line-height: 1.3;
-  $twentieth: 1/20;
-  letter-spacing: .005rem;
-  text-decoration: none;
-  color: white;
-
-  font-weight: normal;
-  text-align: left;
-  //filter:brightness(120%);
-  //text-shadow:  0 0 1px $desert-gray-purple;
-  //text-shadow: white 2px 10px 30px -8px;
-  max-width: fit-content !Important;
-  //margin:auto;
-
-
-
+    line-height: 1.3;
+    $twentieth: 1/20;
+    letter-spacing: .005rem;
+    text-decoration: none;
+    color: white;
+    font-weight: normal;
+    text-align: left;
+    //filter:brightness(120%);
+    //text-shadow:  0 0 1px $desert-gray-purple;
+    //text-shadow: white 2px 10px 30px -8px;
+    max-width: fit-content !Important;
+    //margin:auto;
 }
+
 // @media screen and (min-width: 601px) {
 //   .nav-link,
 // #navmenu a  {
 //     font-size: 47px;
 //   }
 // }
-
 // /* If the screen size is 600px wide or less, set the font-size of <div> to 30px */
 // @media screen and (max-width: 600px) {
 //   .nav-link,
@@ -248,127 +204,133 @@ width:100%;
 //     font-size: 30px;
 //   }
 // }
-
-
-
 // #banner-film {
 //   height: 60vh;
 // }
-
-// #navmenu {
-//   align-items: flex-start;
-//   justify-content: flex-start;
-//   width:25vw!important;
-//   max-width:fit-content!Important;
-// }
-
-
-#films-menu {
-  justify-content: flex-end;
-
+#navmenu {
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 25vw !important;
+    max-width: fit-content !Important;
 }
 
+#films-menu {
+    justify-content: flex-end;
+}
 
 #films-menu {
-  margin: 0;
-  padding: 0;
-
-  display: flex;
-  flex-direction: column;
-
-  text-align: justify;
-  overflow: hidden;
-  
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    overflow: hidden;
 }
 
 a.nav-link:hover {
-  color: lightgray;
+    color: lightgray;
 }
-.overlay-x {
-  height: 100%;
-  width:100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0, 0.9);
 
-  overflow-x: hidden;
-  transition: 0.5s;
+.overlay-x {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    overflow-x: hidden;
+    transition: 0.5s;
+    z-index: 10;
 }
 
 .overlay-x-content {
-  position: relative;
-  top: 25px;
-  width: 100%;
-  text-align: center;
-  margin-top: 30px;
-
+    position: relative;
+    top: 25vh;
+    height: 50vh;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
 }
 
- a {
-  padding: 8px;
-  text-decoration: none;
-  font-size: 48px;
-  display: block;
-  transition: 0.3s;
-  text-align:left;
- 
-  color:white;
+a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 48px;
+    display: block;
+    transition: 0.3s;
+    text-align: left;
+    color: white;
 }
+
 .overlay-x a {
-  text-indent: 1rem;
+    text-indent: 1rem;
 }
-.overlay-x a:hover, .overlay a:focus {
-  color: #f1f1f1;
+
+.overlay-x a:hover,
+.overlay a:focus {
+    color: #f1f1f1;
 }
 
 .overlay-x .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
 }
+
 #video-films {
-  min-width: 100%;
-  width: auto!important;
-  min-height: 100vh;
-  height: auto!important;
-  margin: 0;
-  left: 0;
-  top: 0;
-  aspect-ratio: 16/9;
+    min-width: 100%;
+    width: auto !important;
+    min-height: 100vh;
+    height: auto !important;
+    margin: 0;
+    left: 0;
+    top: 0;
+    aspect-ratio: 16/9;
 }
+
+#top-nav,
+#root>header {
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
 @media screen and (max-width: 600px) {
- 
- .overlaw-x a:hover {
-  background:transparent;
-  text-align:center;
-  }
-
-  .overlay-x a {font-size: 20px!important;text-indent: 10px; }
-  .list-group-item a{font-size: 20px!important}
-  .overlay-x .closebtn {
-  font-size: 40px;
-  top: 15px;
-  left: 0px;
-
-  }
-  #video-gallery{
-   
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      width: 100%!important;
-      height: 100vh!important;
-  
-  }
-
+    .overlaw-x a:hover {
+        background: transparent;
+        text-align: center;
+    }
+    .overlay-x a {
+        text-indent: 10px;
+    }
+    a {
+        font-size: 40px!important;
+    }
+    .list-group {
+        display: none;
+    }
+    .overlay-x .closebtn {
+        font-size: 40px;
+        top: 0;
+        left: 0px;
+    }
+    #video-gallery {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100% !important;
+        height: 100vh !important;
+    }
     #video-home {
-      position: fixed;
-      width:80%!important;
-      left:10%!important;
-      height:auto;
-  }
-  
+        position: fixed;
+        width: 80% !important;
+        left: 10% !important;
+        height: auto;
+    }
+    #still-video-home {
+        min-height: 112vh;
+        object-fit: cover;
+        object-position: 8%;
+    }
 }
