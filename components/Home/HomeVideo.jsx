@@ -21,7 +21,7 @@ export default function HomeVideo() {
     //     ,100);
 
         return (
-            <div className='object-fit d-flex justify-content-center embed-responsive embed-responsive-16by9 object-fit'>
+            <div className="m-0 p-0 d-flex justify-content-center embed-responsive embed-responsive-16by9 align-items-center vw-100 w-100 h-100 vh-100">
             <video controls controlsList="nodownload noplayback"   autoPlay muted loop id="video-home" className="  well embed-responsive-item " allowFullScreen>
                 <source aria-controls={"fullscreen"} type="video/mp4" src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4" />
 

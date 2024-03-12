@@ -18,7 +18,8 @@ export default function NavigationDani() {
     function closeNav() {
         setOverlayDisplay("none");
     }
-    return (<header>
+    return (<header className="position-fixed w-100
+    ">
         <MDBNavbar id="top-navbar" className={"bg-transparent"}>
             <MDBBtn id={"toggler"} onClick={() => openNav()} className={"bg-transparent border-0 shadow-0 z-0"}style={{ display: !overlayDisplay }}>
                 <img src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png" width={200} className={" img-fluid well p-3 ms-2"}
