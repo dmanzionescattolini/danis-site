@@ -40,14 +40,7 @@ export default function NavigationDani() {
         </a>
       </MDBNavbar>
       <div id="myNav" className="overlay-x" style={{ display: overlayDisplay }}>
-        {/* <a
-                    href=""
-                    className="closebtn"
-                    onClick={() => closeNav()}
-                    style={{ display: overlayDisplay }}
-                >
-                    &times;
-                </a> */}
+        
 
         <div className="overlay-x-content">
           <a href="/home">Home</a>
