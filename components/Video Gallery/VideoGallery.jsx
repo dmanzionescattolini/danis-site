@@ -54,7 +54,7 @@ export default function VideoGallery() {
 
 
         <video loop controls={false} autoPlay muted 
-            className="floating-effect overflow-visible position-fixed vw-100 vh-100 m-0 p-0 opacity-50 z-5">
+            className="floating-effect overflow-visible position-fixed vw-100 vh-100 m-0 p-0 opacity-50 ">
             <source type="video/mp4" src={video}></source>
         </video>
         <MDBNavbar id={"films-menu"} fluid className={`position-fixed bottom-0 ${listGroup}`} dir='vertical'>

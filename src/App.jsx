@@ -16,28 +16,30 @@ export default function App() {
     let backgroundPos = document.body.style.backgroundPositionX;
     useEffect(() => {
         window.setInterval(function () {
-       
-           document.body.style.backgroundPositionX=`${x+=0.05}%`;
-            if(x===100)
-                x=0;
+
+            document.body.style.backgroundPositionX = `${x += 0.05}%`;
+            if (x === 100)
+                x = 0;
 
         }, 50);
     }, [document.body]);
-    return <BrowserRouter className={"w-100 h-100 p-0 m-0 "}>
-        <Routes>
-            <Route element={<LandingPage />} path="" />
-            <Route element={<Home />} path="/">
-                <Route element={<HomeVideo />} path="home" />
-                <Route element={<VideoGallery />} path="films" />
+    return (
+        <BrowserRouter className={"w-100 h-100 p-0 m-0 "}>
+            <Routes>
+                <Route element={<LandingPage />} path="" />
+                <Route element={<Home />} path="/">
+                    <Route element={<HomeVideo />} path="home" />
+                    <Route element={<VideoGallery />} path="films" />
 
-                <Route element={<APandemonicSerenade />} path="/a-pandemonic-serenade" />
-                <Route element={<RacketsAllTheWayDown />} path="/rackets-all-the-way-down" />
-                <Route element={<TheWrench />} path="/the-wrench" />
-                <Route element={<ThreeBulletsForBombay />} path="/three-bullets-for-bombay" />
+                    <Route element={<APandemonicSerenade />} path="/a-pandemonic-serenade" />
+                    <Route element={<RacketsAllTheWayDown />} path="/rackets-all-the-way-down" />
+                    <Route element={<TheWrench />} path="/the-wrench" />
+                    <Route element={<ThreeBulletsForBombay />} path="/three-bullets-for-bombay" />
 
-            </Route>
-        </Routes>
-    </BrowserRouter>;
+                </Route>
+            </Routes>
+        </BrowserRouter>
+    );
 
 }
 

@@ -25,7 +25,7 @@ export default function HomeVideo() {
             <video controls controlsList="nodownload noplayback"   autoPlay muted loop id="video-home" className="  well embed-responsive-item " allowFullScreen>
                 <source aria-controls={"fullscreen"} type="video/mp4" src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4" />
 
-                <i className="bi bi-fullscreen z-3"></i></video>
+                <i className="bi bi-fullscreen "></i></video>
 
             </div>
 
