@@ -53,15 +53,15 @@ export default function VideoGallery() {
         </video> */}
 
 
-        <video loop controls={false} autoPlay muted id="films-video"
+        <video loop controls={false} autoPlay muted 
             className="floating-effect overflow-visible position-fixed vw-100 vh-100 m-0 p-0 opacity-50 z-5">
-            <source type="video/mp4" src={'url(`${video}`)'}></source>
+            <source type="video/mp4" src={video}></source>
         </video>
         <MDBNavbar id={"films-menu"} fluid className={`position-fixed bottom-0 ${listGroup}`} dir='vertical'>
             {listGroup  &&
                 <MDBListGroup className="text-justify " light={false} onMouseEnter={(e)=>e.target.style.background="none"}>
                     <MDBListGroupItem>
-                        <a href="three-bullets-for-bombay">Three Bullets for Bombay</a>
+                        <a href="three-bullets-for-bombay" onHover={makeActive("three")}>Three Bullets for Bombay</a>
                     </MDBListGroupItem>
                     <MDBListGroupItem>
                         <a href="a-pandemonic-serenade">A Pandemonic Serenade</a>

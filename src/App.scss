@@ -128,10 +128,22 @@ width:100%;
 
 #video,
 #video-home {
-
+  position:fixed;
+  max-height:30vh;
+  
+  $max-width:80vw;
+  max-width:$max-width;
+  width:400px;
+  $height:auto;
+  height:$height;
+  $width:500px;
+  width:$width;
   margin-inline: 0;
   box-shadow: $dinosaur-yellow .2rem 0rem 2rem;
   border-radius: 5px;
+  $top:$width *160/228;
+  top:$top;
+  bottom:$top;
 }
 #films-video{
   min-width:100vw!important;
@@ -345,6 +357,21 @@ a.nav-link:hover {
       flex-direction: column;
       width: 100%!important;
       height: 100vh!important;
+  
+  }
+
+    #video, #video-home {
+      position: fixed;
+      max-height: 30vh;
+      max-width: 80vw;
+      /* width: 400px; */
+      height: auto;
+      width: 500px;
+      margin-inline: 0;
+      box-shadow: #facf17 0.2rem 0rem 2rem;
+      border-radius: 5px;
+      top: 350.8771929825px;
+      bottom: 350.8771929825px;
   
   }
   
