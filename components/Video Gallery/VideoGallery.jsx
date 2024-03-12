@@ -56,7 +56,7 @@ export default function VideoGallery() {
         {window.innerWidth <650 && 
             <img id="still-video-home"src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Screen+Shot+2024-02-11+at+6.32.27+PM.png" className="img-fluid bg-body position-fixed z-0" alt="Three Bullets for Bombay"></img>
         ||
-        <video autoPlay allowFullScreen allowTransparency id={"video-films"}  className="h-100 w-100 p-0 m-0" src={video+"?autoplay=1&controls=0"} loop muted controls={false} ></video>
+        <iframe autoPlay allowFullScreen allowTransparency id={"video-films"}  className="h-100 w-100 p-0 m-0" src={video+"?autoplay=1&controls=0"} loop muted controls={false} ></iframe>
         }
         <MDBNavbar id={"films-menu"} fluid className={`position-fixed z-0 ${listGroup}`} dir='vertical'>
             {/* {listGroup  &&
