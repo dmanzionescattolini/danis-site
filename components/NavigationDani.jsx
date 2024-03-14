@@ -15,12 +15,12 @@ export default function NavigationDani() {
         return "block";
       }
     });
-    if(overlayDisplay==="block"){
-      document.getElementById("toggler").style.transform="none";
+    // if(overlayDisplay==="block"){
+    //   document.getElementById("toggler").style.transform="none";
 
-    }else {
-      document.getElementById("toggler").style.transform="rotate(40deg)";
-    }
+    // }else {
+    //   document.getElementById("toggler").style.transform="rotate(40deg)";
+    // }
     setVideoFilms(!videoFilms);
   }
 
@@ -30,6 +30,7 @@ export default function NavigationDani() {
   return (
     <>
       <MDBNavbar id="top-navbar"  className={"border-0 position-fixed z-10"}>
+        {window.location.pathname.trim() !== "/" && window.location.pathname.trim() !== "" &&
         <a
           id={"toggler"}
           href="#"
@@ -44,6 +45,7 @@ export default function NavigationDani() {
             alt={"dinosaur toggle"}
           />
         </a>
+}
       </MDBNavbar>
       <div id="myNav" className="overlay-x lh-sm text-left" style={{ display: overlayDisplay }}>
         

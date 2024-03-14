@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+
 export default function Home() {
   // let width = 50;
   // let goingUp=true;
@@ -18,7 +20,7 @@ export default function Home() {
   //     ,100);
 
   useEffect(() => {
-    document.getElementById("toggler").style.display = "none";
+    document.getElementById("toggler").style.transform="rotate3ds(640sdeg)";
   },[]);
   window.onbeforeunload = closingCode;
   function closingCode() {
@@ -28,7 +30,7 @@ export default function Home() {
   return (
     <div className="m-0 p-0 d-flex justify-content-center embed-responsive embed-responsive-16by9 align-items-center vw-100 w-100 h-100 vh-100">
       <video
-        controls
+        controls={false}
         controlsList="nodownload noplayback"
         autoPlay
         muted
