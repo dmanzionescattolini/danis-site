@@ -118,6 +118,7 @@ section {
   $width: 50vw;
   width: $width;
   box-shadow: $dinosaur-yellow 0.2rem 0rem 2rem;
+  filter: drop-shadow(0rem 0rem 0.75rem $dinosaur-yellow 50);
   border-radius: 5px;
   $height: 50vw * 250/440;
   height: $height;
