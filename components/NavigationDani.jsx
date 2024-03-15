@@ -41,7 +41,7 @@ export default function NavigationDani() {
             style={{ display: !overlayDisplay }}
             src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
             width={200}
-            className={" img-fluid well p-3 ms-2"}
+            className={"shadow-1 img-fluid well p-3 ms-2"}
             alt={"dinosaur toggle"}
           />
         </a>
@@ -51,7 +51,7 @@ export default function NavigationDani() {
         
 
         <div className="overlay-x-content">
-          <a href="/home">Home</a>
+          <a className="shadow-1 object-fit-fill" href="/home">Home</a>
           <a href="/films">Films</a>
           <a href="/about">About</a>
           <a href="#">Contact</a>
