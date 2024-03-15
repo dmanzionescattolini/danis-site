@@ -363,7 +363,9 @@ a.nav-link:hover {
   right: 0;
   width: var(--mobile-menu-width);
   height: 100vh;
-  background-color: black;
+  background-color: rgba(0,0,0,0.8);
+  mix-blend-mode:darken;
+  transition:1s all ease-in-out;
   z-index: 3;
   scrollbar-color: black #444444;
   scrollbar-width: thin;
