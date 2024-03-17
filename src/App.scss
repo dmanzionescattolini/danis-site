@@ -161,7 +161,7 @@ section {
   left: 0;
   padding: 0;
   width: 8rem;
-  transition: 1s ease-in-out transform;
+  transition: 500ms ease-in-out transform;
 }
 
 #dinosaur-container {
@@ -267,7 +267,7 @@ section {
   font: inherit;
   vertical-align: baseline;
   z-index: 1;
-  transition: opacity 120ms ease-out;
+  transition: opacity 500ms ease-out;
   bottom: 10px;
   left:10px;
   width: 100%;
@@ -293,7 +293,9 @@ section {
 }
 
 a.nav-link:hover {
-  color: lightgray;
+ opacity:80%;
+ mix-blend-mode: difference!important;
+
 }
 
 .overlay-x {
@@ -303,7 +305,7 @@ a.nav-link:hover {
   left: 0;
 
   overflow-x: hidden;
-  transition: 0.5s;
+  transition: 500ms all ease-in-out;
   z-index: 10;
   --header-padding-horiz: 42px;
   --header-padding-top: calc(3vw * 1.5);
@@ -335,13 +337,13 @@ a.nav-link:hover {
   width: var(--mobile-menu-width);
   height: 100vh;
   background-image: url(https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png);
-  transition:1s all ease-in-out;
+  transition:500ms all ease-in-out;
   z-index: 3;
   box-shadow: 2.1px 0px 2.2px rgba(0, 0, 0, 0.025),
     5.1px 0px 5.3px rgba(0, 0, 0, 0.036), 9.5px 0px 9.9px rgba(0, 0, 0, 0.045),
     17px 0px 17.6px rgba(0, 0, 0, 0.054), 31.8px 0px 33px rgba(0, 0, 0, 0.065),
     76px 0px 79px rgba(0, 0, 0, 0.09);
-  transition: opacity 250ms ease, left 0ms 0ms ease;
+  transition: opacity 500ms ease, left 0ms 0ms ease;
   left: 0;
   opacity: 1;
   overflow-y: scroll;
@@ -356,6 +358,10 @@ a.nav-link:hover {
   width: 100%;
   text-align: center;
 }
+a.nav-link {
+  transition:all 500ms ease-in-out;
+
+}
 
 
 .overlay-x a {
@@ -365,15 +371,15 @@ a.nav-link:hover {
   
 }
 a {
-    padding: 8px;
+    padding: 8px!important;
     text-decoration: none;
     text-shadow: black 0px 0px 5px !Important;
     display: block;
     transition: 0.3s;
     text-align: left;
     color: white;
-    font-weight: 900;
-    letter-spacing: 0px;
+    font-weight: 900!important;
+    letter-spacing: 0px!important;
 }
 
 .overlay-x a:hover,
@@ -437,9 +443,10 @@ a {
     height: auto;
   }
   #still-video-home {
-    min-height: 112vh;
-    object-fit: cover;
-    object-position: 8%;
+    min-width:100vw!important;
+    min-height:100vh!important;
+    width:auto!important;
+    height:auto!important;
   }
   #banner-film > div {
     background-position: left;
@@ -464,5 +471,6 @@ a {
     color: white;
     font-weight: 900;
     letter-spacing: 0px;
-    font-size:60px;
+    font-size:60px!important;
+
 }
