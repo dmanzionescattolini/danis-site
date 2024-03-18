@@ -3,12 +3,13 @@ import Home from "../components/Home/Home";
 import LandingPage from "../components/LandingPage/LandingPage";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import VideoGallery from "../components/Video Gallery/VideoGallery";
-import APandemonicSerenade from "../components/Video Gallery/Pandemonic Serenade/APandemonicSerenade.jsx";
 import { RacketsAllTheWayDown } from "../components/Video Gallery/Rackets All the Way Down/RacketsAllTheWayDown.jsx";
 import { ThreeBulletsForBombay } from "../components/Video Gallery/Three Bullets for Bombay/ThreeBulletsForBombay.jsx";
 import { TheWrench } from "../components/Video Gallery/The Wrench/TheWrench.jsx";
 import { useEffect, useState } from "react";
 import NavigationDani from "../components/NavigationDani.jsx";
+import FilmTemplate from "../components/Templates/FilmTemplate.jsx";
+import APandemonicSerenade from "../components/Video Gallery/Pandemonic Serenade/APandemonicSerenade.jsx";
 
 export default function App() {
   const [goingUp, setGoingUp] = useState(true);
@@ -46,17 +47,17 @@ export default function App() {
           <Route element={<VideoGallery />} path="/films" />
 
           <Route
-            element={<APandemonicSerenade />}
-            path="/a-pandemonic-serenade"
+            element={<APandemonicSerenade
+            />}path={"/films/a-pandemonic-serenade"}
           />
           <Route
             element={<RacketsAllTheWayDown />}
-            path="/rackets-all-the-way-down"
+            path="/films/rackets-all-the-way-down"
           />
-          <Route element={<TheWrench />} path="/the-wrench" />
+          <Route element={<TheWrench />} path="/films/the-wrench" />
           <Route
             element={<ThreeBulletsForBombay />}
-            path="/three-bullets-for-bombay"
+            path="/films/three-bullets-for-bombay"
           />
         </Routes>
       </BrowserRouter>
