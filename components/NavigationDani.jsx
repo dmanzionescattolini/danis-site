@@ -54,7 +54,6 @@ export default function NavigationDani() {
           <a className="shadow-1 object-fit-fill" href="/home">Home</a>
           <a href="/films">Films</a>
           <a href="/about">About</a>
-          <a href="#">Contact</a>
         </div>
       </div>
     </>

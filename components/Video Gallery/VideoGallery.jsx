@@ -11,13 +11,13 @@ export default function VideoGallery() {
     const racketsStill = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Still.png";
     const wrenchStill = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/Still.png";
     const [imageSrc, setImageSrc] = useState("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Still.png");
-    return <section id="video-gallery" className="w-100 h-100 m-0 p-0">
-
-        <img id={"still-video-home"} src={imageSrc} className="img-fluid  position-fixed min-vh-100 min-vw-100  vh-auto vw-auto "
+    return <div id="video-gallery" className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
+        <div className="mask ng-dark-subtle opacity-25" ></div>
+        <img id={"still-video-home"} src={imageSrc} className="img-fluid embed-responsive-item position-fixed min-vh-100 min-vw-100 mx-auto my-auto  h-auto w-auto bg-image "
              alt="Three Bullets for Bombay"/>;
         <MDBNavbar fluid className={`position-fixed `} dir='vertical'>
             <MDBListGroup id="films-menu"
-                          className="list-group-light text-white border-0 bg-transparent vh-100 justify-content-center">
+                          className="list-group-light text-white border-0 bg-transparent vh-100 justify-content-center text-indent">
                 <MDBListGroupItem className={"list-group-item text-white border-0 bg-transparent"}>
                     <MDBNavbarLink href="/films/rackets-all-the-way-down" onMouseEnter={() =>
                         setImageSrc(racketsStill)}>
@@ -42,5 +42,5 @@ export default function VideoGallery() {
                 </MDBListGroupItem>
             </MDBListGroup>
         </MDBNavbar>
-    </section>;
+    </div>;
 }
