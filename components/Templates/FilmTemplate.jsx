@@ -50,9 +50,23 @@ export default function FilmTemplate(params) {
     return (
         <MDBContainer fluid
             className={"vh-100 h-100 d-flex flex-column justify-content-stretch align-items-stretch align-items-stretch p-0 m-0"}>
-                
-            <div id={"banner-film"} className={"bg-image jumbotron jumbotron-fluid h-100 min-vh-75"} style={{ backgroundImage: `url(${image})`,maxHeight:"100%",maxWidth:"100%",width:"auto",height:"auto" }}>
+         
+            <div id={"banner-film"} className={"bg-image jumbotron jumbotron-fluid  ratio ratio-16x9"} style={{ background:(basicModal) ? "rgba(0,0,0)" : `url(${image})`,maxHeight:"70vh",maxWidth:"100%",width:"auto",height:"auto" }}>
+                <div style={{ display: (basicModal) ? "block" : "none" }} className="ratio ratio-16x9" width="100%" height="100%">
+                    <video
+                        playsInline
+                        autoPlay
+                        controls
+                        src={clip}
+                        autoFocus
+                        onEnded={() => setPlay(false)}
+                        title="YouTube video"
+                        allowfullscreen
+                    ></video>
+                </div> 
+                {/* <video autoPlay loop style={{display:(basicModal)?"block":"none"}} src={clip} width="100%" height="100%" alt={title}/> */}
                 <div className="mask bg-dark bg-opacity-25 "></div>
+                {basicModal===false &&
                 <MDBBtn onClick={toggleOpen} id="playbutton" className="play-btn hover-overlay shadow-1 hover bg-image hover-overlay ripple shadow-1-strong rounded" >
                     <svg enableBackground="new 0 0 141.73 141.73"
                         height="141.73px"
@@ -76,8 +90,10 @@ export default function FilmTemplate(params) {
                                 fill="#ffffff" />
                         </g>
                     </svg>
+                
                 </MDBBtn>
-                <MDBModal open={basicModal} setOpen={setBasicModal} >
+}
+                {/* <MDBModal open={basicModal} setOpen={setBasicModal} >
                     <MDBModalDialog>
                         
                         <div className="ratio ratio-16x9">
@@ -94,10 +110,10 @@ export default function FilmTemplate(params) {
 
                       
                     </MDBModalDialog>
-                </MDBModal>
+                </MDBModal> */}
             </div>
             <MDBTable
-                className="h-stretch m-0"
+                className="h-100 w-100 m-0"
                 border={0}
             >
                 <MDBTableBody>
