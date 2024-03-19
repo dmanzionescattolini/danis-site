@@ -13,7 +13,7 @@ export default function VideoGallery() {
     const [imageSrc, setImageSrc] = useState("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Still.png");
     return <div id="video-gallery" className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
         <div className="mask ng-dark-subtle opacity-25" ></div>
-        <img id={"still-video-home"} src={imageSrc} className="img-fluid embed-responsive-item position-fixed min-vh-100 min-vw-100 mx-auto my-auto  h-auto w-auto bg-image "
+        <img id={"w-auto h-100"} src={imageSrc} className="img-fluid embed-responsive-item position-fixed min-vh-100 min-vw-100 mx-auto my-auto  h-auto w-auto bg-image "
              alt="Three Bullets for Bombay"/>;
         <MDBNavbar fluid className={`position-fixed `} dir='vertical'>
             <MDBListGroup id="films-menu"

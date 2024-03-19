@@ -55,11 +55,11 @@ export default function FilmTemplate(params) {
                 <div style={{ display: (basicModal) ? "block" : "none" }} className="ratio ratio-16x9" width="100%" height="100%">
                     <video
                         playsInline
-                        autoPlay
+                        
                         controls
                         src={clip}
                         autoFocus
-                        onEnded={() => setPlay(false)}
+                        onEnded={() => setBasicModal(false)}
                         title="YouTube video"
                         allowfullscreen
                     ></video>
