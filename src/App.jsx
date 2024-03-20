@@ -2,14 +2,14 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "../components/Home/Home";
 import LandingPage from "../components/LandingPage/LandingPage";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import VideoGallery from "../components/Video Gallery/VideoGallery";
 import { RacketsAllTheWayDown } from "../components/Video Gallery/Rackets All the Way Down/RacketsAllTheWayDown.jsx";
 import { ThreeBulletsForBombay } from "../components/Video Gallery/Three Bullets for Bombay/ThreeBulletsForBombay.jsx";
 import { TheWrench } from "../components/Video Gallery/The Wrench/TheWrench.jsx";
 import { useEffect, useState } from "react";
 import NavigationDani from "../components/NavigationDani.jsx";
-import FilmTemplate from "../components/Templates/FilmTemplate.jsx";
 import APandemonicSerenade from "../components/Video Gallery/Pandemonic Serenade/APandemonicSerenade.jsx";
+import VideoGallery2 from "../components/Video Gallery/VideoGallery2.jsx";
+import VideoGallery from "../components/Video Gallery/VideoGallery.jsx";
 
 export default function App() {
   const [goingUp, setGoingUp] = useState(true);
@@ -45,6 +45,7 @@ export default function App() {
           <Route element={<LandingPage />} path="" />
           <Route element={<Home />} path="/home" />
           <Route element={<VideoGallery />} path="/films" />
+          <Route element={<VideoGallery2 />} path="/films2" />
 
           <Route
             element={<APandemonicSerenade

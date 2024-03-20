@@ -270,7 +270,8 @@ section {
   font: inherit;
   vertical-align: baseline;
   z-index: 1;
-  transition: opacity 500ms ease-out;
+  // transition: opacity 120ms ease-in-out;
+  position:fixed;
   bottom: 10px;
   left:10px;
   width: 100%;
@@ -381,7 +382,7 @@ a {
     text-decoration: none;
     text-shadow: black 0px 0px 5px !Important;
     display: block;
-    transition: 0.3s;
+    transition: 0.3;
     text-align: left;
     color: white;
     font-weight: 900!important;
