@@ -83,7 +83,6 @@ section {
 // }
 // .floating-effect {
 //   // box-shadow: 0 10px 20px $dinosaur-mustard, 0 6px 6px $dinosaur-mustard !important;
-//   transition: all 0.3s ease-in-out !important;
 //   //border-style: ridge;
 //   //border-width: -20px;
 //   //border-collapse: collapse;a
@@ -161,7 +160,7 @@ section {
   left: 0;
   padding: 0;
   width: 8rem;
-  transition: 500ms ease-in-out transform;
+  // transition: 500ms ease-in-out transform;
 }
 
 #dinosaur-container {
@@ -270,7 +269,6 @@ section {
   font: inherit;
   vertical-align: baseline;
   z-index: 1;
-  // transition: opacity 120ms ease-in-out;
   position:fixed;
   bottom: 10px;
   left:10px;
@@ -309,7 +307,7 @@ a.nav-link:hover {
   left: 0;
 
   overflow-x: hidden;
-  transition: 500ms all ease-in-out;
+  // transition: 120ms all ease-in-out;
   z-index: 10;
   --header-padding-horiz: 42px;
   --header-padding-top: calc(3vw * 1.5);
@@ -345,13 +343,11 @@ a.nav-link:hover {
     background-color:rgba(0,0,0,0.5);
     overflow:hidden;
     height:100vh;
-  transition:500ms all ease-in-out;
   z-index: 3;
   box-shadow: 2.1px 0px 2.2px rgba(0, 0, 0, 0.025),
     5.1px 0px 5.3px rgba(0, 0, 0, 0.036), 9.5px 0px 9.9px rgba(0, 0, 0, 0.045),
     17px 0px 17.6px rgba(0, 0, 0, 0.054), 31.8px 0px 33px rgba(0, 0, 0, 0.065),
     76px 0px 79px rgba(0, 0, 0, 0.09);
-  transition: opacity 500ms ease, left 0ms 0ms ease;
   left: 0;
   opacity: 1;
   pointer-events: auto;
@@ -366,7 +362,6 @@ a.nav-link:hover {
   text-align: center;
 }
 a.nav-link {
-  transition:all 500ms ease-in-out;
 
 }
 
@@ -382,7 +377,6 @@ a {
     text-decoration: none;
     text-shadow: black 0px 0px 5px !Important;
     display: block;
-    transition: 0.3;
     text-align: left;
     color: white;
     font-weight: 900!important;
@@ -475,7 +469,6 @@ a {
     text-decoration: none;
     text-shadow: black 0px 0px 5px !important;
     display: block;
-    transition: 0.3s;
     text-align: left;
     color: white;
     font-weight: 900;
@@ -503,7 +496,6 @@ a {
   border:0;
   box-shadow:none!important;
   background:none;
-    transition:all 500ms ease;
 
 }
 
