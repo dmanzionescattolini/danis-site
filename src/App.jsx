@@ -44,8 +44,8 @@ export default function App() {
         <Routes>
           <Route element={<LandingPage />} path="" />
           <Route element={<Home />} path="/home" />
-          <Route element={<VideoGallery />} path="/films" />
-          <Route element={<VideoGallery2 />} path="/films2" />
+          <Route element={<VideoGallery />} path="/films2" />
+          <Route element={<VideoGallery2 />} path="/films" />
 
           <Route
             element={<APandemonicSerenade
