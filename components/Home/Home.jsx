@@ -28,7 +28,12 @@ export default function Home() {
   }
 
   return (
-    <div className="m-0 p-0 d-flex justify-content-center embed-responsive embed-responsive-16by9 align-items-center vw-100 w-100 h-100 vh-100">
+    <div className="m-0 p-0 d-flex justify-content-center embed-responsive embed-responsive-16by9 align-items-center vw-100 w-100 h-100 vh-100 bg-image " style={{
+      backgroundImage: `url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png")`  
+}}>
+      <div className="mask "
+           style={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
+    </div>
       <video
         controls={false}
         controlsList="nodownload noplayback"
@@ -36,7 +41,7 @@ export default function Home() {
         muted
         loop
         id="video-home"
-        className="  well embed-responsive-item "
+        className="  well embed-responsive-item z-3"
         allowFullScreen
         src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4"
       />
