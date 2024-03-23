@@ -9,9 +9,11 @@ export default function NavigationDani() {
     
     setOverlayDisplay(() => {
       if (overlayDisplay === "block") {
+        document.getElementById("films-menu").style.display = "none!important";
         return "none";
 
       } else {
+        document.getElementById("films-menu").style.display = "block!important";
         return "block";
       }
     });
