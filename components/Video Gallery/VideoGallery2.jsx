@@ -15,7 +15,7 @@ export default function VideoGallery() {
         position: 'fixed!important',
         bottom: '0!important',
         width: 'fit-content',
-        fontSize: '0.2em !important' /* Large letters */
+        fontSize: '2.3em !important' /* Large letters */
     }
 
     // const navLinkHoverStyle = {
@@ -75,14 +75,14 @@ export default function VideoGallery() {
 
     
             <nav id="films-menu" style={styleNavigationBar}   className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`} >
-            <a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
-                >The Wrench
+            <a className=" bg-transparent" href="/films/a-pandemonic-serenade" onMouseEnter={() => setPandemonic(true)} onMouseLeave={() => setPandemonic(false)}
+                >A Pandemonic Serenade
                 </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
                 >The Wrench
-                </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
-                >The Wrench
-                </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
-                >The Wrench
+                </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setRackets(true)} onMouseLeave={() => setRackets(false)}
+                >Rackets All the Way Down
+                </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setThree(true)} onMouseLeave={() => setThree(false)}
+                >Three Bullets to Bombay Beach
                 </a>
         </nav>
     </div>);
