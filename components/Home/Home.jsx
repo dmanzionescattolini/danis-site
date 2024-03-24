@@ -34,9 +34,9 @@ export default function Home() {
   
       <div className="mask "
            style={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
-        <div className="w-100 p-0 m-0 d-flex flex-row justify-content-center position-absolute top-0 align-items-start">
+        {/* <div className="float-end">
           <img width={200} className=" p-0 m-0 animate__animated animate__zoomIn animate__slower z-3 bg-transparent shadow-0" src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/sign.png"} />
-        </div>
+        </div> */}
     </div>
       <video
         controls={false}
@@ -44,8 +44,9 @@ export default function Home() {
         autoPlay
         muted
         loop
+        
         id="video-home"
-        className="  well embed-responsive-item"
+        className="  well embed-responsive-item animate__animated animate__slower animate__infinite"
         allowFullScreen
         src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4"
       />

@@ -124,6 +124,7 @@ section {
   align-content: center;
   margin: 0;
   padding: 0;
+  animation: myPulse 2s;
 }
 
 #films-video {
@@ -1687,4 +1688,23 @@ y:0px;
 
 #toggler {
   z-index:12;
+}
+
+@keyframes myPulse {
+  0% {
+      filter: drop-shadow(0rem 0rem 0.00rem $dinosaur-yellow 50);
+
+  }
+  25% {
+    filter: drop-shadow(0rem 0rem 0.50rem $dinosaur-yellow 50);
+  }
+  50% {
+    filter: drop-shadow(0rem 0rem 1.00rem $dinosaur-yellow 50);
+  }
+  75% {
+    filter: drop-shadow(0rem 0rem 0.50rem $dinosaur-yellow 50);
+  }
+  100% {
+    filter: drop-shadow(0rem 0rem 0.00rem $dinosaur-yellow 50);
+  }
 }

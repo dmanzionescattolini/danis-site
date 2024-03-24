@@ -155,20 +155,20 @@ export default function VideoGallery() {
         //         </div>
 
         //     </section>
-        <div className="d-flex flex-column justify-content-evenly overflow-scroll">
-            <video className="w-100 h-auto " playsInline autoPlay loop  src={pandemonicVideoSrc}>
+        <div className="d-flex flex-column justify-content-evenly h-100 overflow-visible ">
+            <video className="h-100 w-auto " playsInline autoPlay loop  src={pandemonicVideoSrc}>
              
                 <img src={pandemonicStill} /></video>
             <a href="/films/a-pandemonic-serenade" className="text-nowrap text-center">A Pandemonic Serenade</a>
-            <video className="w-100 h-auto  " playsInline autoPlay loop src={wrenchVideoSrc}>
+            <video className="  " playsInline autoPlay loop src={wrenchVideoSrc}>
                 <img src={wrenchStill} /></video>
             <a href="/films/the-wrench" className=" text-nowrap text-center">The Wrench</a>
 
-            <video className="w-100 h-auto  " playsInline autoPlay loop src={racketsVideoSrc}>
+            <video className="h-100 w-auto  " playsInline autoPlay loop src={racketsVideoSrc}>
                 <img src={racketsStill} /></video>
             <a href="/films/rackets-all-the-way-down" className="text-nowrap text-center">Rackets All the Way Down</a>
 
-            <video className="w-100 h-auto  " playsInline autoPlay loop src={threeVideoSrc}>
+            <video className="h-100 w-auto  " playsInline autoPlay loop src={threeVideoSrc}>
                 <img src={threeStill} /></video>
             <a href="/films/three-bullets-to-bombay-beach" className="text-nowrap text-center">Three Bullets to Bombay Beach</a>
 

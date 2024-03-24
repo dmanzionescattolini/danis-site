@@ -27,8 +27,9 @@ export default function FilmTemplate(params) {
                         controls
                         src={clip}
                         autoFocus
+                        alt={title}
                         onEnded={() => setBasicModal(false)}
-                        title="YouTube video"
+                        title={title}
                         allowfullscreen
                         style={{ display: (basicModal) ? "block" : "none", width: "fit-content", height: "100%",marginInline:"25%" }}
                     ></video>
