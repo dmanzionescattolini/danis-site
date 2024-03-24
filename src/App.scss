@@ -309,7 +309,7 @@ a.nav-link:hover {
 
   overflow-x: hidden;
   // transition: 120ms all ease-in-out;
-  z-index: 10;
+  z-index: 11;
   --header-padding-horiz: 42px;
   --header-padding-top: calc(3vw * 1.5);
   --header-padding-bottom: 24px;
@@ -380,7 +380,7 @@ a {
     display: block;
     text-align: left;
     color: white;
-    font-weight: 900!important;
+    font-weight: normal;
     letter-spacing: 0px!important;
     text-align:left!Important;
     font-size:2.3em;
@@ -414,7 +414,7 @@ a {
   background: none;
   border: none;
   box-shadow: none;
-  z-index: 10;
+  z-index: 15;
   position: fixed;
 }
 
@@ -474,7 +474,7 @@ a {
     display: block;
     text-align: left;
     color: white;
-    font-weight: 900;
+    font-weight: normal;
     letter-spacing: 0px;
     width:fit-content;
     text-wrap:pretty;
@@ -1674,4 +1674,17 @@ x:0px;
 y:0px;  
 
 
+
+
+}
+
+#video-home {
+  z-index:10;
+}
+#myNav {
+  z-index:11;
+}
+
+#toggler {
+  z-index:12;
 }

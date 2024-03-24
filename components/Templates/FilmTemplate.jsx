@@ -34,7 +34,7 @@ export default function FilmTemplate(params) {
                     ></video>
                 </div> 
                 {/* <video autoPlay loop style={{display:(basicModal)?"block":"none"}} src={clip} width="100%" height="100%" alt={title}/> */}
-                <div className="mask bg-dark bg-opacity-25 "></div>
+                {/* <div className="mask bg-dark bg-opacity-25 "></div> */}
                 {basicModal===false &&
                 <MDBBtn onClick={toggleOpen} id="playbutton" className="play-btn hover-overlay shadow-1 hover bg-image hover-overlay ripple shadow-1-strong rounded" >
                     <svg enableBackground="new 0 0 141.73 141.73"

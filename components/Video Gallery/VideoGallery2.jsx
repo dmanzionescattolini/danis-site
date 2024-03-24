@@ -37,7 +37,6 @@ export default function VideoGallery() {
         position: 'fixed',
         top: '0',
         left: '0',
-        zIndex: '-1',
         opacity: '0.5',
         objectFit: 'cover',
         backgroundColor: 'black',
@@ -76,6 +75,7 @@ export default function VideoGallery() {
         }
     }, [pandemonic, three, wrench, rackets]);
     if (window.screen.width > 768) return (
+        <>
         <div className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
             <div className="mask bg-light-subtle opacity-25 w-100 h-auto" ></div>
             {rackets && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />}
@@ -87,7 +87,11 @@ export default function VideoGallery() {
             {three && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />}
             {activeVideo === "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4" && <video style={{ ...videoBackgroundStyle, filter: "blur(1.5em)" }} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed" alt="All Clips" />}
 
-            <nav id="films-menu" style={styleNavigationBar} className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`} >
+         
+
+
+        </div >
+           <nav id="films-menu" style={styleNavigationBar} className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`} >
                 <a className=" bg-transparent" href="/films/a-pandemonic-serenade" onMouseEnter={() => setPandemonic(true)} onMouseLeave={() => setPandemonic(false)}
                 >A Pandemonic Serenade
                 </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
@@ -97,10 +101,7 @@ export default function VideoGallery() {
                 </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setThree(true)} onMouseLeave={() => setThree(false)}
                 >Three Bullets to Bombay Beach
                 </a>
-            </nav>
-
-
-        </div >);
+            </nav></>);
     else return (
         //     else return <section>
         // <nav className="films-menu">

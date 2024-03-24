@@ -45,7 +45,7 @@ export default function Home() {
         muted
         loop
         id="video-home"
-        className="  well embed-responsive-item z-3"
+        className="  well embed-responsive-item"
         allowFullScreen
         src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4"
       />

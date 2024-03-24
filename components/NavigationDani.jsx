@@ -1,20 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MDBBtn, MDBNavbar } from "mdb-react-ui-kit";
 
 // eslint-disable-next-line react/prop-types
 export default function NavigationDani() {
-  const [overlayDisplay, setOverlayDisplay] = useState("none");
+  const [overlayDisplay, setOverlayDisplay] = useState("block");
   const [videoFilms, setVideoFilms] = useState(true);
   function openCloseNav(e) {
     e.preventDefault();
-    
+
     setOverlayDisplay(() => {
+
       if (overlayDisplay === "block") {
-        document.getElementById("myNav").style.display = "none!important";
+
         return "none";
 
       } else {
-        document.getElementById("myNav").style.display = "block!important";
         return "block";
       }
     });
@@ -26,40 +26,51 @@ export default function NavigationDani() {
     // }
     setVideoFilms(!videoFilms);
   }
+  useEffect(() => {
+    if (overlayDisplay === "none") {
+      document.getElementById("myNav").style.display = "block";
+      if (document.getElementById("films-menu") !== null && document.getElementById("films-menu") !== undefined)
+        document.getElementById("films-menu").style.display = "none";
+    }
+    else {
+      document.getElementById("myNav").style.display = "none";
+      if (document.getElementById("films-menu") !== null && document.getElementById("films-menu") !== undefined)
+        document.getElementById("films-menu").style.display = "block";
+    }
 
+  }, [overlayDisplay]);
   // function closeNav() {
   //     setOverlayDisplay("none");
   // }
   return (<>
 
-      <MDBNavbar id="top-navbar"  className={"border-0 position-fixed"}>
-        {window.location.pathname.trim() !== "/" && window.location.pathname.trim() !== "" &&
+    <MDBNavbar id="top-navbar" className={"border-0 position-fixed"}>
+      {window.location.pathname.trim() !== "/" && window.location.pathname.trim() !== "" &&
         <a
           id={"toggler"}
-          onClick={(e) => openCloseNav(e)}
-          className={"bg-transparent border-0 shadow-0 z-3 w-75"}
+          onClick={openCloseNav}
+          className={"bg-transparent border-0 shadow-0 z-2 w-75"}
         >
           <img
-            style={{ display: !overlayDisplay }}
             src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
             width={200}
-            className={"shadow-0 border-0 bg-transparent  img-fluid well p-3 ms-2"}
+            className={"shadow-0 border-0 bg-transparent  img-fluid p-3 ms-2"}
             alt={"dinosaur toggle"}
           />
-        
-            
-        </a>
-}
-      </MDBNavbar>
-      <div id="myNav" className="overlay-x lh-sm text-left" style={{ display: overlayDisplay }}>
-        
 
-        <div className="overlay-x-content">
-          <a className="shadow-1 object-fit-fill" href="/home">Home</a>
-          <a href="/films">Films</a>
-          <a href="/about">About</a>
-        </div>
+
+        </a>
+      }
+    </MDBNavbar>
+    <div id="myNav" className="overlay-x lh-sm text-left" style={{ display: `${overlayDisplay}!important` }}>
+
+
+      <div className="overlay-x-content">
+        <a className="shadow-1 object-fit-fill" href="/home">Home</a>
+        <a href="/films">Films</a>
+        <a href="/about">About</a>
       </div>
-    </>
+    </div>
+  </>
   );
 }
