@@ -3,7 +3,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect, useState } from "react";
 import "animate.css";
-import { MDBNavbar, MDBNavbarLink, MDBListGroup, MDBListGroupItem, MDBNavbarNav } from 'mdb-react-ui-kit';
+import { MDBNavbar,  MDBListGroup, MDBListGroupItem, MDBNavbarNav } from 'mdb-react-ui-kit';
 
 export default function VideoGallery() {
     const [pandemonic, setPandemonic] = useState(false);
@@ -23,7 +23,7 @@ export default function VideoGallery() {
     // }
 
     const videoBackgroundStyle = {
-        animationDuration: '3s',
+        animationDuration: '2s',
         animationName: 'fadeIn',
         animationFillMode: 'both',
         height: '100%',
@@ -65,7 +65,7 @@ export default function VideoGallery() {
         {pandemonic && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" style={videoBackgroundStyle} alt="All Clips" />}
 
         {three && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />}
-        {activeVideo === "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4" && <video style={{ ...videoBackgroundStyle, filter: "blur(1em)" } } autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower md-blur_on" alt="All Clips" />}
+        {activeVideo === "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4" && <video style={{ ...videoBackgroundStyle, filter: "blur(1.5em)" } } autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed" alt="All Clips" />}
         {/* {
             activeVideo === "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4" &&
             <img style={{ ...videoBackgroundStyle, filter: "blur(1em)"}} src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/Still.png"} alt="All Clips" />
@@ -73,36 +73,17 @@ export default function VideoGallery() {
 
 
 
-        <MDBListGroup  >
     
-            <MDBNavbarNav id="films-menu" style={styleNavigationBar}   className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start text-md-start lh-1 bg-transparent border-0 shadow-0 well`} >
-<MDBListGroupItem className="bg-transparent">
-            <MDBNavbarLink className="text-m-1 bg-transparent" href="/films/rackets-all-the-way-down" onMouseEnter={
-                () => setRackets(true)} onMouseLeave={() => setRackets(false)}>
-                Rackets All the Way Down
-            </MDBNavbarLink>
-</MDBListGroupItem>
-<MDBListGroupItem className="bg-transparent">
-            <MDBNavbarLink onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
-                href="/films/the-wrench">
-                The Wrench
-            </MDBNavbarLink>
-</MDBListGroupItem>
-<MDBListGroupItem className='bg-transparent'>
-
-            <MDBNavbarLink
-                onMouseEnter={() => setPandemonic(true)} onMouseLeave={() => setPandemonic(false)} href="/films/a-pandemonic-serenade"> A Pandemonic
-                Serenade </MDBNavbarLink>
-</MDBListGroupItem>
-<MDBListGroupItem className='bg-transparent'>
-
-            <MDBNavbarLink
-                href="/films/three-bullets-for-bombay" onMouseEnter={
-                    () => setThree(true)} onMouseLeave={() => setThree(false)}>
-                Three Bullets to Bombay Beach
-            </MDBNavbarLink>
-</MDBListGroupItem>
-        </MDBNavbarNav>
-    </MDBListGroup>
+            <nav id="films-menu" style={styleNavigationBar}   className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`} >
+            <a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
+                >The Wrench
+                </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
+                >The Wrench
+                </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
+                >The Wrench
+                </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
+                >The Wrench
+                </a>
+        </nav>
     </div>);
 }

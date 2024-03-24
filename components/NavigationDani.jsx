@@ -5,15 +5,16 @@ import { MDBBtn, MDBNavbar } from "mdb-react-ui-kit";
 export default function NavigationDani() {
   const [overlayDisplay, setOverlayDisplay] = useState("none");
   const [videoFilms, setVideoFilms] = useState(true);
-  function openCloseNav() {
+  function openCloseNav(e) {
+    e.preventDefault();
     
     setOverlayDisplay(() => {
       if (overlayDisplay === "block") {
-        document.getElementById("films-menu").style.display = "none!important";
+        document.getElementById("myNav").style.display = "none!important";
         return "none";
 
       } else {
-        document.getElementById("films-menu").style.display = "block!important";
+        document.getElementById("myNav").style.display = "block!important";
         return "block";
       }
     });
@@ -31,13 +32,12 @@ export default function NavigationDani() {
   // }
   return (
     <>
-      <MDBNavbar id="top-navbar"  className={"border-0 position-fixed z-10"}>
+      <MDBNavbar id="top-navbar"  className={"border-0 position-fixed"}>
         {window.location.pathname.trim() !== "/" && window.location.pathname.trim() !== "" &&
         <a
           id={"toggler"}
-          href="#"
-          onClick={() => openCloseNav()}
-          className={"bg-transparent border-0 shadow-0 "}
+          onClick={(e) => openCloseNav(e)}
+          className={"bg-transparent border-0 shadow-0 z-3 w-75"}
         >
           <img
             style={{ display: !overlayDisplay }}
