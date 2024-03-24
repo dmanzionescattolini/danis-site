@@ -31,8 +31,12 @@ export default function Home() {
     <div className="m-0 p-0 d-flex justify-content-center embed-responsive embed-responsive-16by9 align-items-center vw-100 w-100 h-100 vh-100 bg-image " style={{
       backgroundImage: `url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png")`  
 }}>
+  
       <div className="mask "
            style={{backgroundColor: 'rgba(0, 0, 0, 0.6)'}}>
+        <div className="w-100 p-0 m-0 d-flex flex-row justify-content-center position-absolute top-0 align-items-start">
+          <img width={200} className=" p-0 m-0 animate__animated animate__zoomIn animate__slower z-3 bg-transparent shadow-0" src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/sign.png"} />
+        </div>
     </div>
       <video
         controls={false}

@@ -30,8 +30,8 @@ export default function NavigationDani() {
   // function closeNav() {
   //     setOverlayDisplay("none");
   // }
-  return (
-    <>
+  return (<>
+
       <MDBNavbar id="top-navbar"  className={"border-0 position-fixed"}>
         {window.location.pathname.trim() !== "/" && window.location.pathname.trim() !== "" &&
         <a
@@ -46,6 +46,8 @@ export default function NavigationDani() {
             className={"shadow-0 border-0 bg-transparent  img-fluid well p-3 ms-2"}
             alt={"dinosaur toggle"}
           />
+        
+            
         </a>
 }
       </MDBNavbar>
