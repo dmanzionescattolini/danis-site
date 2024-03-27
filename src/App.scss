@@ -124,7 +124,7 @@ section {
   align-content: center;
   margin: 0;
   padding: 0;
-  animation: myPulse 8s;
+  animation: myPulse 32s;
 }
 
 #films-video {
@@ -184,7 +184,7 @@ section {
 }
 
 .floating-effect {
-  box-shadow: $dinosaur-yellow 2px 10px 30px -8px;
+  box-shadow: rgba(168, 201, 248, 0.593) 2px 10px 30px -8px;
   max-width: fit-content !important;
   margin: auto;
   //background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
@@ -1687,7 +1687,7 @@ y:0px;
 
 #video-home {
   z-index:10;
-  animation: myPulse 1s linear infinite;
+  animation: myPulse 1s both infinite;
 }
 #myNav {
   z-index:11;
@@ -1699,21 +1699,21 @@ y:0px;
 
 @keyframes myPulse {
   0% {
-  box-shadow: $dinosaur-yellow 0.2rem 0rem 0rem;
+  filter: drop-shadow(rgba(168, 201, 248, 0.593) 0.2rem 0rem 1.5rem);
 
   }
   25% {
-      box-shadow: $dinosaur-yellow 0.2rem 0rem 2rem;
+  filter: drop-shadow(rgba(168, 201, 248, 0.593) 0.2rem 0rem 1.75rem);
 
   }
   50% {
-  box-shadow: $dinosaur-yellow 0.2rem 0rem 4rem;
+  filter: drop-shadow(rgba(168, 201, 248, 0.593) 0.2rem 0rem 2rem);
   }
   75% {
-  box-shadow: $dinosaur-yellow 0.2rem 0rem 2rem;
+  filter: drop-shadow(rgba(168, 201, 248, 0.593) 0.2rem 0rem 1.75rem);
   }
   100% {
-  box-shadow: $dinosaur-yellow 0.2rem 0rem 0rem;
+  filter: drop-shadow(rgba(168, 201, 248, 0.593) 0.2rem 0rem 1.5rem);
   }
 }
 
