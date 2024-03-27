@@ -120,19 +120,19 @@ export default function VideoGallery() {
             <nav id="films-menu" style={styleNavigationBar} className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`} >
                 {currentImageIndex === 0 && <a className="text-opacity-50 text-light bg-transparent  fadeOutAnchor " id="A+Pandemonic+Serenade" href="/films/a-pandemonic-serenade" onMouseEnter={() => setPandemonic(true)} onMouseLeave={() => setPandemonic(false)}
                 >A Pandemonic Serenade
-                </a> || <a className="bg-transparent text-white fadeInAnchor" href="/films/a-pandemonic-serenade">A Pandemonic Serenade</a>}
+                </a> || <a onMouseEnter={() => setPandemonic(true)} onMouseLeave={() => setPandemonic(false)} className="bg-transparent text-white fadeInAnchor" href="/films/a-pandemonic-serenade">A Pandemonic Serenade</a>}
                 {currentImageIndex === 1 && <a className="text-opacity-50 text-light bg-transparent  fadeOutAnchor " id="The+Wrench" href="/films/the-wrench" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
                 >The Wrench
-                </a> || <a href="/films/the-wrench" className="text-white fadeInAnchor">The Wrench</a>}
+                </a> || <a onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)} href="/films/the-wrench" className="text-white fadeInAnchor">The Wrench</a>}
 
                 {currentImageIndex === 2 &&
                     <a className="text-opacity-50 text-light bg-transparent fadeOutAnchor " id="Rackets+All+the+Way+Down" href="/films/rackets-all-the-way-down" onMouseEnter={() => setRackets(true)} onMouseLeave={() => setRackets(false)}>
 
-                        Rackets All the Way Down            </a> || <a href="/films/rackets-all-the-way-down" className="text-white fadeInAnchor">Rackets All the Way Down</a>}
+                        Rackets All the Way Down            </a> || <a onMouseEnter={() => setRackets(true)} onMouseLeave={() => setRackets(false)} href="/films/rackets-all-the-way-down" className="text-white fadeInAnchor">Rackets All the Way Down</a>}
                 {currentImageIndex === 3 &&
                     <a className="text-opacity-50 text-light bg-transparent  fadeOutAnchor " id="Three+Bullets+to+Bombay+Beach" href="/films/three-bullets-to-bombay-beach" onMouseEnter={() => setThree(true)} onMouseLeave={() => setThree(false)}>
 
-                        Three Bullets to Bombay Beach            </a> || <a className="text-white fadeInAnchor">Three Bullets to Bombay Beach</a>}
+                        Three Bullets to Bombay Beach            </a> || <a onMouseEnter={()=>setThree(true)} onMouseLeave={()=>setThree(false)} href="/films/three-bullets-to-bombay-beach" className="text-white fadeInAnchor">Three Bullets to Bombay Beach</a>}
                 </nav>            </div >
 </>);
     else return (
