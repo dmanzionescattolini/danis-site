@@ -76,22 +76,22 @@ export default function VideoGallery() {
     }, [pandemonic, three, wrench, rackets]);
     if (window.screen.width > 768) return (
         <>
-        <div className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
-            <div className="mask bg-light-subtle opacity-25 w-100 h-auto" ></div>
-            {rackets && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />}
-            {wrench && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower"
-                style={videoBackgroundStyle}
-                alt="All Clips" />}
-            {pandemonic && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" style={videoBackgroundStyle} alt="All Clips" />}
+            <div className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
+                <div className="mask bg-light-subtle opacity-25 w-100 h-auto" ></div>
+                {rackets && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />}
+                {wrench && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower"
+                    style={videoBackgroundStyle}
+                    alt="All Clips" />}
+                {pandemonic && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" style={videoBackgroundStyle} alt="All Clips" />}
 
-            {three && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />}
-            {activeVideo === "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4" && <video style={{ ...videoBackgroundStyle, filter: "blur(1.5em)" }} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed" alt="All Clips" />}
-
-         
+                {three && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />}
+                {activeVideo === "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4" && <video style={{ ...videoBackgroundStyle, filter: "blur(1.5em)" }} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed" alt="All Clips" />}
 
 
-        </div >
-           <nav id="films-menu" style={styleNavigationBar} className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`} >
+
+
+            </div >
+            <nav id="films-menu" style={styleNavigationBar} className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`} >
                 <a className=" bg-transparent" href="/films/a-pandemonic-serenade" onMouseEnter={() => setPandemonic(true)} onMouseLeave={() => setPandemonic(false)}
                 >A Pandemonic Serenade
                 </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
@@ -155,24 +155,258 @@ export default function VideoGallery() {
         //         </div>
 
         //     </section>
-        <div className="d-flex flex-column justify-content-evenly h-100 overflow-visible ">
-            <video className="h-100 w-auto " playsInline autoPlay loop  src={pandemonicVideoSrc}>
-             
-                <img src={pandemonicStill} /></video>
-            <a href="/films/a-pandemonic-serenade" className="text-nowrap text-center">A Pandemonic Serenade</a>
-            <video className="  " playsInline autoPlay loop src={wrenchVideoSrc}>
-                <img src={wrenchStill} /></video>
-            <a href="/films/the-wrench" className=" text-nowrap text-center">The Wrench</a>
+        <section className="all-films">
+        
+            <div className="grid media-tiles">
+               
+                <div className="grid section-header">
+                    <div className="title all">
+                        <h2 className="group-name text-center text-bg-black" >Films</h2>
+                    </div>
+                  
+            
+                </div>
+            
+                <div className="media-tile film active has-thumb mt-0">
+                    <a href="/films/the-wrench" title="The Wrench">
+                        <figure>
 
-            <video className="h-100 w-auto  " playsInline autoPlay loop src={racketsVideoSrc}>
-                <img src={racketsStill} /></video>
-            <a href="/films/rackets-all-the-way-down" className="text-nowrap text-center">Rackets All the Way Down</a>
 
-            <video className="h-100 w-auto  " playsInline autoPlay loop src={threeVideoSrc}>
-                <img src={threeStill} /></video>
-            <a href="/films/three-bullets-to-bombay-beach" className="text-nowrap text-center">Three Bullets to Bombay Beach</a>
 
-        </div>);
+
+
+
+                            <div className="w-responsive">
+                                <div className="embed-responsive-container">
+
+
+
+
+
+                                    <div className="img-fluid">
+                                        <video className="img-thumbnail" src={wrenchVideoSrc} style={{ width: "339.333px", marginLeft: "0px", marginTop: "-8px" }} playsInline autoPlay loop muted />
+
+                                    </div>
+                                </div>
+
+
+                                <div className="overlay-vid">
+
+
+                                    <div className="overlay-data-group credit">
+                                        <div className="datum"></div>
+                                    </div>
+
+                                    <div className="overlay-data-group release-date">
+                                        <h4>Release Date</h4>
+                                        <div className="datum">
+
+                                            <time >2018 </time>
+                                        </div>
+                                    </div>
+                                    <div className="overlay-data-group credit">
+                                        <h4>Written and Directed by</h4>
+                                        <div className="datum">Daniel Grzywacz</div>
+                                    </div>
+                                    <div className="overlay-data-group credit">
+                                        <h4>Starring</h4>
+                                        <div className="datum">Lord Actor, Lady Actress</div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <figcaption>
+
+                                <h3>The Wrench</h3>
+
+                            </figcaption>
+                        </figure>
+
+                    </a>
+                </div> 
+                
+                <div className="media-tile film active has-thumb mt-0">
+                    <a href="/films/three-bullets-for-bombay-beach" title="Three Bullets for Bombay Beach">
+                        <figure>
+
+
+
+
+
+
+                            <div className="w-responsive">
+                                <div className="embed-responsive-container">
+
+
+
+
+
+                                    <div className="img-fluid">
+                                        <video className="img-thumbnail" src={threeVideoSrc} style={{ width: "339.333px", marginLeft: "0px", marginTop: "-8px" }} playsInline autoPlay loop muted />
+
+                                    </div>
+                                </div>
+
+
+                                <div className="overlay-vid">
+
+
+                                    <div className="overlay-data-group credit">
+                                        <div className="datum"></div>
+                                    </div>
+
+                                    <div className="overlay-data-group release-date">
+                                        <h4>Release Date</h4>
+                                        <div className="datum">
+
+                                            <time >2018 </time>
+                                        </div>
+                                    </div>
+                                    <div className="overlay-data-group credit">
+                                        <h4>Written and Directed by</h4>
+                                        <div className="datum">Daniel Grzywacz</div>
+                                    </div>
+                                    <div className="overlay-data-group credit">
+                                        <h4>Starring</h4>
+                                        <div className="datum">Lord Actor, Lady Actress</div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <figcaption>
+
+                                <h3>Three Bullets for Bombay Beach</h3>
+
+                            </figcaption>
+                        </figure>
+
+                    </a>
+                </div>
+                <div className="media-tile film active has-thumb mt-0">
+                    <a href="/films/rackets-all-the-way-down" title="Rackets All the Way Down">
+                        <figure>
+
+
+
+
+
+
+                            <div className="w-responsive">
+                                <div className="embed-responsive-container">
+
+
+
+
+
+                                    <div className="img-fluid">
+                                        <video className="img-thumbnail" src={racketsVideoSrc} style={{ width: "339.333px", marginLeft: "0px", marginTop: "-8px" }} playsInline autoPlay loop muted />
+
+                                    </div>
+                                </div>
+
+
+                                <div className="overlay-vid">
+
+
+                                    <div className="overlay-data-group credit">
+                                        <div className="datum"></div>
+                                    </div>
+
+                                    <div className="overlay-data-group release-date">
+                                        <h4>Release Date</h4>
+                                        <div className="datum">
+
+                                            <time >2018 </time>
+                                        </div>
+                                    </div>
+                                    <div className="overlay-data-group credit">
+                                        <h4>Written and Directed by</h4>
+                                        <div className="datum">Daniel Grzywacz</div>
+                                    </div>
+                                    <div className="overlay-data-group credit">
+                                        <h4>Starring</h4>
+                                        <div className="datum">Lord Actor, Lady Actress</div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <figcaption>
+
+                                <h3>Rackets All the Way Down</h3>
+
+                            </figcaption>
+                        </figure>
+
+                    </a>
+                </div>
+                <div className="media-tile film active has-thumb mt-0">
+                    <a href="/films/a-pandemonic-serenade" title="A Pandemonic Serenade">
+                        <figure>
+
+
+
+
+
+
+                            <div className="w-responsive">
+                                <div className="embed-responsive-container">
+
+
+
+
+
+                                    <div className="img-fluid">
+                                        <video className="img-thumbnail" src={pandemonicVideoSrc} style={{ width: "339.333px", marginLeft: "0px", marginTop: "-8px" }} playsInline autoPlay loop muted />
+
+                                    </div>
+                                </div>
+
+
+                                <div className="overlay-vid">
+
+
+                                    <div className="overlay-data-group credit">
+                                        <div className="datum"></div>
+                                    </div>
+
+                                    <div className="overlay-data-group release-date">
+                                        <h4>Release Date</h4>
+                                        <div className="datum">
+
+                                            <time >2018 </time>
+                                        </div>
+                                    </div>
+                                    <div className="overlay-data-group credit">
+                                        <h4>Written and Directed by</h4>
+                                        <div className="datum">Daniel Grzywacz</div>
+                                    </div>
+                                    <div className="overlay-data-group credit">
+                                        <h4>Starring</h4>
+                                        <div className="datum">Lord Actor, Lady Actress</div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                            <figcaption>
+
+                                <h3>A Pandemonic Serenade</h3>
+
+                            </figcaption>
+                        </figure>
+
+                    </a>
+                </div>
+
+            </div></section>
+    );
 
 }
 
