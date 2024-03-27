@@ -3,8 +3,6 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect, useState } from "react";
 import "animate.css";
-import FadeIn from "react-fade-in";
-import { MDBNavbar, MDBListGroup, MDBListGroupItem, MDBNavbarNav, MDBPagination, MDBPaginationItem, MDBPaginationLink, MDBContainer } from 'mdb-react-ui-kit';
 
 export default function VideoGallery() {
     const [pandemonic, setPandemonic] = useState(false);
@@ -53,7 +51,7 @@ export default function VideoGallery() {
     const [activeVideo, setActiveVideo] = useState("https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4");
     const images = [pandemonicStill, wrenchStill,racketsStill,threeStill];
     const [currentImageIndex, setCurrentImageIndex] = useState(1);
-    const [image, setCurrentImage] = useState(<FadeIn><img className="w-100 h-100 img-fluid bg-image animate__animated animate__fadeIn animate__slower" src={images[0]} alt={images[0].split("/")[5].split('+').join(" ")}/></FadeIn>);
+    const [image, setCurrentImage] = useState(<img className="w-100 h-100 img-fluid bg-image animate__animated animate__fadeIn animate__slower" src={images[0]} alt={images[0].split("/")[5].split('+').join(" ")}/>);
     const changePicture = () => {
         if(wrench||pandemonic||rackets||three){
             document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
@@ -70,7 +68,7 @@ export default function VideoGallery() {
         }
 
         document.getElementById(images[currentImageIndex].split("/")[5].trim()).style.color="lightgray";
-        setCurrentImage(<FadeIn transitionDuration={2000}><img className="w-100 h-100 animate__animated animate__fadeIn animate__slower"src={images[currentImageIndex]} alt={images[currentImageIndex].split("/")[5].split('+').join(" ")}/></FadeIn>);
+        setCurrentImage(<img className="w-100 h-100 animate__animated animate__fadeIn animate__slower"src={images[currentImageIndex]} alt={images[currentImageIndex].split("/")[5].split('+').join(" ")}/>);
         console.log(images[currentImageIndex].split("/")[5].trim());
     };
     window.setInterval(changePicture,5000);
