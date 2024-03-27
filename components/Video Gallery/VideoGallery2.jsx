@@ -86,7 +86,7 @@ export default function VideoGallery() {
     useEffect(() => {
         changePicture();
         if(wrench || pandemonic || rackets || three) {
-            document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
+            document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white!important");
             return;
         }
 
