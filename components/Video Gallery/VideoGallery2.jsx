@@ -85,6 +85,10 @@ export default function VideoGallery() {
 
     useEffect(() => {
         changePicture();
+        if(wrench || pandemonic || rackets || three) {
+            document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
+            return;
+        }
 
         if (pandemonic) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/APS+Clip.mp4");
