@@ -3,7 +3,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect, useState } from "react";
 import "animate.css";
-import {default as Fade} from "react-fade";
+import FadeIn from "react-fade-in";
 import { MDBNavbar, MDBListGroup, MDBListGroupItem, MDBNavbarNav, MDBPagination, MDBPaginationItem, MDBPaginationLink, MDBContainer } from 'mdb-react-ui-kit';
 
 export default function VideoGallery() {
@@ -51,9 +51,9 @@ export default function VideoGallery() {
     const allClips = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4";
     const videos = [pandemonicVideoSrc, wrenchVideoSrc, racketsVideoSrc, threeVideoSrc, allClips];
     const [activeVideo, setActiveVideo] = useState("https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4");
-    const images = [ pandemonicStill, wrenchStill,racketsStill,threeStill];
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const [image, setCurrentImage] = useState(<img className="w-100 h-100 img-fluid bg-image animate__animated animate__fadeIn animate__slower" src={images[currentImageIndex]} alt={images[0].split("/")[5].split('+').join(" ")}/>);
+    const images = [pandemonicStill, wrenchStill,racketsStill,threeStill];
+    const [currentImageIndex, setCurrentImageIndex] = useState(1);
+    const [image, setCurrentImage] = useState(<FadeIn><img className="w-100 h-100 img-fluid bg-image animate__animated animate__fadeIn animate__slower" src={images[0]} alt={images[0].split("/")[5].split('+').join(" ")}/></FadeIn>);
     const changePicture = () => {
         if(wrench||pandemonic||rackets||three){
             document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
@@ -61,7 +61,7 @@ export default function VideoGallery() {
         }
         document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
 
-        if(currentImageIndex===3){
+        if(currentImageIndex===3||currentImageIndex===-1){
             setCurrentImageIndex(0);
         }else {
             setCurrentImageIndex(currentImageIndex+1);
@@ -70,7 +70,7 @@ export default function VideoGallery() {
         }
 
         document.getElementById(images[currentImageIndex].split("/")[5].trim()).style.color="lightgray";
-        setCurrentImage(<img className="w-100 h-100 animate__animated animate__fadeIn animate__slower"src={images[currentImageIndex]} alt={images[currentImageIndex].split("/")[5].split('+').join(" ")}/>);
+        setCurrentImage(<FadeIn transitionDuration={2000}><img className="w-100 h-100 animate__animated animate__fadeIn animate__slower"src={images[currentImageIndex]} alt={images[currentImageIndex].split("/")[5].split('+').join(" ")}/></FadeIn>);
         console.log(images[currentImageIndex].split("/")[5].trim());
     };
     window.setInterval(changePicture,5000);
@@ -98,8 +98,12 @@ export default function VideoGallery() {
                 {pandemonic && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" style={videoBackgroundStyle} alt="All Clips" />}
 
                 {three && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />}
-                {!three && !pandemonic && !wrench && !rackets && <>{image}</>}
-
+                {!pandemonic&&!wrench&&!rackets&&!three&&<>
+               {currentImageIndex===0&&<>{image}</>}
+                {currentImageIndex===1&&<>{image}</>}
+                {currentImageIndex===2&&<>{image}</>}
+                {currentImageIndex===3&&<>{image}</>}
+                    </>}
 
         
 
