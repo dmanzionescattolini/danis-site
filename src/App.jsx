@@ -14,6 +14,7 @@ import VideoGallery from "../components/Video Gallery/VideoGallery.jsx";
 export default function App() {
   const [goingUp, setGoingUp] = useState(true);
   const [x, setX] = useState(0);
+  const [speed, setSpeed] = useState((window.screen.width<768)?100:20);
   useEffect(() => {
     let y = Number.parseInt(x);
     let up = goingUp;
@@ -35,7 +36,7 @@ export default function App() {
           setX(y);
         }
       }
-    }, 100);
+  }, (speed));
   }, []);
   return (
     <>

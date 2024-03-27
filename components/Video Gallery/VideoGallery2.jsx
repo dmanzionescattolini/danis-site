@@ -49,31 +49,39 @@ export default function VideoGallery() {
     const allClips = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4";
     const videos = [pandemonicVideoSrc, wrenchVideoSrc, racketsVideoSrc, threeVideoSrc, allClips];
     const [activeVideo, setActiveVideo] = useState("https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4");
-    const images = [pandemonicStill, wrenchStill,racketsStill,threeStill];
-    const [currentImageIndex, setCurrentImageIndex] = useState(1);
-    const [image, setCurrentImage] = useState(<img className="w-100 h-100 img-fluid bg-image animate__animated animate__fadeIn animate__slower" src={images[0]} alt={images[0].split("/")[5].split('+').join(" ")}/>);
+    const images = [pandemonicStill, wrenchStill, racketsStill, threeStill];
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const changePicture = () => {
-        if(wrench||pandemonic||rackets||three){
-            document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
+        if (wrench || pandemonic || rackets || three) {
+            // document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
             return;
         }
-        document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
+        // document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
 
-        if(currentImageIndex===3||currentImageIndex===-1){
+        if (currentImageIndex === 3 || currentImageIndex === -1) {
             setCurrentImageIndex(0);
-        }else {
-            setCurrentImageIndex(currentImageIndex+1);
+        } else {
+            setCurrentImageIndex(Math.floor((Math.random() * 3)+1));
+            console.log(Math.floor((Math.random() * 3)+1));
 
 
         }
 
-        document.getElementById(images[currentImageIndex].split("/")[5].trim()).style.color="lightgray";
-        setCurrentImage(<img className="w-100 h-100 animate__animated animate__fadeIn animate__slower"src={images[currentImageIndex]} alt={images[currentImageIndex].split("/")[5].split('+').join(" ")}/>);
-        console.log(images[currentImageIndex].split("/")[5].trim());
-    };
-    window.setInterval(changePicture,5000);
-    useEffect(() => {
+        // document.getElementById(images[currentImageIndex].split("/")[5].trim()).style.color = "gray";
+        setTimeout(() => {
+            const element = document.getElementById('filmimage');
+            // const anchorEl = document.getElementById(images[currentImageIndex].split("/")[5].trim());
+            element.classList.remove('fadeIn'); // Remove fadeIn class
+            // anchorEl.classList.remove('fadeIn');
+            element.classList.add('fadeOut');
+            // anchorEl.classList.add('fadeOut'); // Add fadeOut class
+        }, 5000);
 
+    };
+    window.setInterval(changePicture, 9000);
+
+    useEffect(() => {
+        changePicture();
 
         if (pandemonic) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/APS+Clip.mp4");
@@ -83,41 +91,47 @@ export default function VideoGallery() {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Rackets+Clip.mp4");
         } else if (three) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/3BBB+Clip.mp4");
-        } 
+        }
     }, [pandemonic, three, wrench, rackets]);
     if (window.screen.width > 768) return (
         <>
             <div className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
                 <div className="mask bg-light-subtle opacity-25 w-100 h-auto" ></div>
-                {rackets && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" /> }
-                {wrench && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower"
+                {rackets && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn " alt="All Clips" />}
+                {wrench && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
                     style={videoBackgroundStyle}
                     alt="All Clips" />}
-                {pandemonic && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" style={videoBackgroundStyle} alt="All Clips" />}
+                {pandemonic && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn " style={videoBackgroundStyle} alt="All Clips" />}
 
-                {three && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />}
-                {!pandemonic&&!wrench&&!rackets&&!three&&<>
-               {currentImageIndex===0&&<>{image}</>}
-                {currentImageIndex===1&&<>{image}</>}
-                {currentImageIndex===2&&<>{image}</>}
-                {currentImageIndex===3&&<>{image}</>}
-                    </>}
-
-        
+                {three && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn " alt="All Clips" />}
+                {!pandemonic && !wrench && !rackets && !three && <>
+                    {currentImageIndex === 0 && <img id={"filmimage"} src={pandemonicStill} className="w-100 h-100 min-vh-100 min-vw-100 img-fluid bg-image   fadeIn" />}
+                    {currentImageIndex === 1 && <img id={"filmimage"} src={wrenchStill} className="w-100 h-100 min-vh-100 min-vw-100 img-fluid bg-image   fadeIn" />}
+                    {currentImageIndex === 2 && <img id={"filmimage"} src={racketsStill} className="min-vw-100 min-vh-100 w-100 h-100 img-fluid bg-image   fadeIn" />}
+                    {currentImageIndex === 3 && <img id={"filmimage"} src={threeStill} className="min-vw-100 min-vh-100 w-100 h-100 img-fluid bg-image   fadeIn" />}
+                </>}
 
 
-            </div >
+
+
             <nav id="films-menu" style={styleNavigationBar} className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`} >
-                <a className=" bg-transparent" id="A+Pandemonic+Serenade" href="/films/a-pandemonic-serenade" onMouseEnter={() => setPandemonic(true)} onMouseLeave={() => setPandemonic(false)}
+                {currentImageIndex === 0 && <a className="text-opacity-50 text-light bg-transparent  fadeOutAnchor " id="A+Pandemonic+Serenade" href="/films/a-pandemonic-serenade" onMouseEnter={() => setPandemonic(true)} onMouseLeave={() => setPandemonic(false)}
                 >A Pandemonic Serenade
-                </a><a className=" bg-transparent" id="The+Wrench" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
+                </a> || <a className="bg-transparent text-white fadeInAnchor" href="/films/a-pandemonic-serenade">A Pandemonic Serenade</a>}
+                {currentImageIndex === 1 && <a className="text-opacity-50 text-light bg-transparent  fadeOutAnchor " id="The+Wrench" href="/films/the-wrench" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
                 >The Wrench
-                </a><a className=" bg-transparent" id="Rackets+All+the+Way+Down" href="/films/rackets-all-the-way-down" onMouseEnter={() => setRackets(true)} onMouseLeave={() => setRackets(false)}
-                >Rackets All the Way Down
-                </a><a className=" bg-transparent text-white" id="Three+Bullets+to+Bombay+Beach" href="/films/three-bullets-to-bombay-beach" onMouseEnter={() => setThree(true)} onMouseLeave={() => setThree(false)}
-                >Three Bullets to Bombay Beach
-                </a>
-            </nav></>);
+                </a> || <a href="/films/the-wrench" className="text-white fadeInAnchor">The Wrench</a>}
+
+                {currentImageIndex === 2 &&
+                    <a className="text-opacity-50 text-light bg-transparent fadeOutAnchor " id="Rackets+All+the+Way+Down" href="/films/rackets-all-the-way-down" onMouseEnter={() => setRackets(true)} onMouseLeave={() => setRackets(false)}>
+
+                        Rackets All the Way Down            </a> || <a href="/films/rackets-all-the-way-down" className="text-white fadeInAnchor">Rackets All the Way Down</a>}
+                {currentImageIndex === 3 &&
+                    <a className="text-opacity-50 text-light bg-transparent  fadeOutAnchor " id="Three+Bullets+to+Bombay+Beach" href="/films/three-bullets-to-bombay-beach" onMouseEnter={() => setThree(true)} onMouseLeave={() => setThree(false)}>
+
+                        Three Bullets to Bombay Beach            </a> || <a className="text-white fadeInAnchor">Three Bullets to Bombay Beach</a>}
+                </nav>            </div >
+</>);
     else return (
         //     else return <section>
         // <nav className="films-menu">
@@ -171,19 +185,19 @@ export default function VideoGallery() {
         //         </div>
 
         //     </section>
-        <section className="all-films">
-        
-            <div className="grid media-tiles">
-               
-                <div className="grid section-header">
+        <section className="all-films" style={{ backgroundColor: "white", maxWidth: "fit-content!important", overflowX: "hidden!important" }}>
+
+            <div className="grid media-tiles" style={{ overflowX: "hidden!important" }}>
+
+                <div className="grid section-header" style={{ overflowX: "hidden!important" }}>
                     <div className="title all">
-                        <h2 className="group-name text-center text-bg-black" >Films</h2>
+                        <h2 className="group-name text-center" style={{ color: "white!important" }}>Films</h2>
                     </div>
-                  
-            
+
+
                 </div>
-            
-                <div className="media-tile film active has-thumb mt-0">
+
+                <div className="media-tile film active has-thumb mt-0" style={{ overflowX: "hidden!important" }}>
                     <a href="/films/the-wrench" title="The Wrench">
                         <figure>
 
@@ -241,9 +255,9 @@ export default function VideoGallery() {
                         </figure>
 
                     </a>
-                </div> 
-                
-                <div className="media-tile film active has-thumb mt-0">
+                </div>
+
+                <div className="media-tile film active has-thumb mt-0" style={{ overflowX: "hidden!important" }}>
                     <a href="/films/three-bullets-for-bombay-beach" title="Three Bullets for Bombay Beach">
                         <figure>
 
@@ -302,7 +316,7 @@ export default function VideoGallery() {
 
                     </a>
                 </div>
-                <div className="media-tile film active has-thumb mt-0">
+                <div className="media-tile film active has-thumb mt-0" style={{ overflowX: "hidden!important" }}>
                     <a href="/films/rackets-all-the-way-down" title="Rackets All the Way Down">
                         <figure>
 
@@ -361,7 +375,7 @@ export default function VideoGallery() {
 
                     </a>
                 </div>
-                <div className="media-tile film active has-thumb mt-0">
+                <div className="media-tile film active has-thumb mt-0" style={{ overflowX: "hidden!important" }}>
                     <a href="/films/a-pandemonic-serenade" title="A Pandemonic Serenade">
                         <figure>
 
