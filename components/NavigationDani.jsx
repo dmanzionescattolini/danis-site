@@ -30,12 +30,12 @@ export default function NavigationDani() {
     if (overlayDisplay === "none") {
       document.getElementById("myNav").style.display = "block";
       if (document.getElementById("films-menu") !== null && document.getElementById("films-menu") !== undefined)
-        document.getElementById("films-menu").style.display = "none";
+        document.querySelectorAll("figcaption > h3").forEach(x=>x.style.display = "none");
     }
     else {
       document.getElementById("myNav").style.display = "none";
       if (document.getElementById("films-menu") !== null && document.getElementById("films-menu") !== undefined)
-        document.getElementById("films-menu").style.display = "block";
+        document.querySelectorAll("figcaption > h3").forEach(x=>x.style.display = "block");
     }
 
   }, [overlayDisplay]);

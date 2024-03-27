@@ -206,7 +206,7 @@ section {
   $twentieth: 1/20;
   letter-spacing: 0.005rem;
   text-decoration: none;
-  color: black;
+  color: white;
   font-weight: normal;
   text-align: left;
   //filter:brightness(120%);
@@ -2041,7 +2041,8 @@ div.grid.media-tiles {
     padding: 0;
     border-top: 1px solid black;
     padding-top: 30px;
-    overflow:scroll;
+    overflow-y:scroll;
+    overflow-x:visible;
 }
 
 div.grid.section-header > div.title.all{
