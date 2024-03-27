@@ -733,7 +733,7 @@ text-align:start;
 text-align-last:auto;
 
 
-text-decoration-color:black;
+// text-decoration-color:black;
 text-decoration-line:none;
 
 
@@ -773,7 +773,7 @@ word-break:normal;
 word-spacing:0px;
 
 
-color:black;
+// color:black;
 background-attachment:scroll;
 
 
@@ -1539,7 +1539,7 @@ text-combine-upright:none;
 text-decoration-skip-ink:auto;
 
 
-text-emphasis-color:black;
+// text-emphasis-color:black;
 text-emphasis-position:over;
 
 
@@ -1654,11 +1654,11 @@ view-transition-name:none;
 -webkit-text-decorations-in-effect:none;
 
 
--webkit-text-fill-color:black;
+// -webkit-text-fill-color:black;
 -webkit-text-security:none;
 
 
--webkit-text-stroke-color:black;
+// -webkit-text-stroke-color:black;
 -webkit-text-stroke-width:0px;
 
 
@@ -2139,4 +2139,8 @@ div.title.all > h2 {
     font-weight: 400;
     margin-bottom: 24px;
     color:black!Important;
+}
+
+a.active {
+  color:gray!Important;
 }

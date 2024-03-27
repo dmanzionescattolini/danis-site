@@ -3,7 +3,7 @@ import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect, useState } from "react";
 import "animate.css";
-
+import {default as Fade} from "react-fade";
 import { MDBNavbar, MDBListGroup, MDBListGroupItem, MDBNavbarNav, MDBPagination, MDBPaginationItem, MDBPaginationLink, MDBContainer } from 'mdb-react-ui-kit';
 
 export default function VideoGallery() {
@@ -16,7 +16,6 @@ export default function VideoGallery() {
     const racketsStill = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Still.png";
     const wrenchStill = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/Still.png";
 
-    const [imageSrc, setImageSrc] = useState("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Still.png");
     const styleNavigationBar = {
         position: 'fixed!important',
         bottom: '0!important',
@@ -52,53 +51,68 @@ export default function VideoGallery() {
     const allClips = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4";
     const videos = [pandemonicVideoSrc, wrenchVideoSrc, racketsVideoSrc, threeVideoSrc, allClips];
     const [activeVideo, setActiveVideo] = useState("https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4");
-    const images = [threeStill, pandemonicStill, racketsStill, wrenchStill];
+    const images = [ pandemonicStill, wrenchStill,racketsStill,threeStill];
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [image, setCurrentImage] = useState(<img className="w-100 h-100 img-fluid bg-image animate__animated animate__fadeIn animate__slower" src={images[currentImageIndex]} alt={images[0].split("/")[5].split('+').join(" ")}/>);
+    const changePicture = () => {
+        if(wrench||pandemonic||rackets||three){
+            document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
+            return;
+        }
+        document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
 
+        if(currentImageIndex===3){
+            setCurrentImageIndex(0);
+        }else {
+            setCurrentImageIndex(currentImageIndex+1);
+
+
+        }
+
+        document.getElementById(images[currentImageIndex].split("/")[5].trim()).style.color="lightgray";
+        setCurrentImage(<img className="w-100 h-100 animate__animated animate__fadeIn animate__slower"src={images[currentImageIndex]} alt={images[currentImageIndex].split("/")[5].split('+').join(" ")}/>);
+        console.log(images[currentImageIndex].split("/")[5].trim());
+    };
+    window.setInterval(changePicture,5000);
     useEffect(() => {
 
 
         if (pandemonic) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/APS+Clip.mp4");
-            setImageSrc(pandemonicStill);
         } else if (wrench) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/The+wrench+clip.mp4");
-            setImageSrc(wrenchStill);
         } else if (rackets) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Rackets+Clip.mp4");
-            setImageSrc(racketsStill);
         } else if (three) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/3BBB+Clip.mp4");
-            setImageSrc(threeStill);
-        } else {
-            setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4");
-            setImageSrc(racketsStill);
-        }
+        } 
     }, [pandemonic, three, wrench, rackets]);
     if (window.screen.width > 768) return (
         <>
             <div className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
                 <div className="mask bg-light-subtle opacity-25 w-100 h-auto" ></div>
-                {rackets && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />}
+                {rackets && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" /> }
                 {wrench && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower"
                     style={videoBackgroundStyle}
                     alt="All Clips" />}
                 {pandemonic && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" style={videoBackgroundStyle} alt="All Clips" />}
 
                 {three && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />}
-                {activeVideo === "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4" && <video style={{ ...videoBackgroundStyle, filter: "blur(1.5em)" }} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed" alt="All Clips" />}
+                {!three && !pandemonic && !wrench && !rackets && <>{image}</>}
 
 
+        
 
 
             </div >
             <nav id="films-menu" style={styleNavigationBar} className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`} >
-                <a className=" bg-transparent" href="/films/a-pandemonic-serenade" onMouseEnter={() => setPandemonic(true)} onMouseLeave={() => setPandemonic(false)}
+                <a className=" bg-transparent" id="A+Pandemonic+Serenade" href="/films/a-pandemonic-serenade" onMouseEnter={() => setPandemonic(true)} onMouseLeave={() => setPandemonic(false)}
                 >A Pandemonic Serenade
-                </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
+                </a><a className=" bg-transparent" id="The+Wrench" href="/films/the-wretch" onMouseEnter={() => setWrench(true)} onMouseLeave={() => setWrench(false)}
                 >The Wrench
-                </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setRackets(true)} onMouseLeave={() => setRackets(false)}
+                </a><a className=" bg-transparent" id="Rackets+All+the+Way+Down" href="/films/rackets-all-the-way-down" onMouseEnter={() => setRackets(true)} onMouseLeave={() => setRackets(false)}
                 >Rackets All the Way Down
-                </a><a className=" bg-transparent" href="/films/the-wretch" onMouseEnter={() => setThree(true)} onMouseLeave={() => setThree(false)}
+                </a><a className=" bg-transparent text-white" id="Three+Bullets+to+Bombay+Beach" href="/films/three-bullets-to-bombay-beach" onMouseEnter={() => setThree(true)} onMouseLeave={() => setThree(false)}
                 >Three Bullets to Bombay Beach
                 </a>
             </nav></>);
