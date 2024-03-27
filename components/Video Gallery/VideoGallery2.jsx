@@ -69,6 +69,9 @@ export default function VideoGallery() {
 
         // document.getElementById(images[currentImageIndex].split("/")[5].trim()).style.color = "gray";
         setTimeout(() => {
+            if(wrench || pandemonic || rackets || three) {
+                return;
+            }
             const element = document.getElementById('filmimage');
             // const anchorEl = document.getElementById(images[currentImageIndex].split("/")[5].trim());
             element.classList.remove('fadeIn'); // Remove fadeIn class
