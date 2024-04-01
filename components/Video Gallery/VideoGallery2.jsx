@@ -73,11 +73,11 @@ export default function VideoGallery() {
                 return;
             }
             const element = document.getElementById('filmimage');
-            // const anchorEl = document.getElementById(images[currentImageIndex].split("/")[5].trim());
+            const anchorEl = document.getElementById(images[currentImageIndex].split("/")[5].trim());
             element.classList.remove('fadeIn'); // Remove fadeIn class
-            // anchorEl.classList.remove('fadeIn');
+            anchorEl.classList.remove('fadeInAnchor');
             element.classList.add('fadeOut');
-            // anchorEl.classList.add('fadeOut'); // Add fadeOut class
+            anchorEl.classList.add('fadeOutAnchor'); // Add fadeOut class
         }, 5000);
 
     };
@@ -86,27 +86,27 @@ export default function VideoGallery() {
     useEffect(() => {
         changePicture();
         if(wrench || pandemonic || rackets || three) {
-            document.querySelectorAll("#films-menu a").forEach(x => {x.style.color = "white!important"; x.classList.remove("fadeOutAnchor"); x.classList.add("fadeInAnchor");});
+            // document.querySelectorAll("#films-menu a").forEach(x => {x.style.color = "white!important"; x.classList.remove("fadeOutAnchor"); x.classList.add("fadeInAnchor");});
             return;
         }
 
         if (pandemonic) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/APS+Clip.mp4");
-            document.getElementById("pandemonicLink").style.color="gray!important";
-            document.getElementById("pademonicLink").classList.add("fadeOutAnchor");
+            // document.getElementById("pandemonicLink").style.color="gray!important";
+            // document.getElementById("pademonicLink").classList.add("fadeOutAnchor");
         } else if (wrench) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/The+wrench+clip.mp4");
-            document.getElementById("wrenchLink").style.color="gray!important";
-            document.getElementById("wrenchLink").classList.add("fadeOutAnchor");
+            // document.getElementById("wrenchLink").style.color="gray!important";
+            // document.getElementById("wrenchLink").classList.add("fadeOutAnchor");
 
         } else if (rackets) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Rackets+Clip.mp4");
-            document.getElementById("racketsLink").style.color="gray!important";
-            document.getElementById("racketsLink").classList.add("fadeOutAnchor");
+            // document.getElementById("racketsLink").style.color="gray!important";
+            // document.getElementById("racketsLink").classList.add("fadeOutAnchor");
         } else if (three) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/3BBB+Clip.mp4");
-            document.getElementById("threeLink").style.color="gray!important";
-            document.getElementById("threeLink").classList.add("fadeOutAnchor");
+        //     document.getElementById("threeLink").style.color="gray!important";
+        //     document.getElementById("threeLink").classList.add("fadeOutAnchor");
         }
     }, [pandemonic, three, wrench, rackets]);
     if (window.screen.width > 768) return (
