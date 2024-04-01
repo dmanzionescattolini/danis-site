@@ -44,7 +44,7 @@ export default function Home() {
           <div id="monitor-screen"  className="ratio ratio-16x9">
               <iframe
                 src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4"
-                title="YouTube video"
+                title="Rough Reel"
                 allowfullscreen
               ></iframe>
             </div>

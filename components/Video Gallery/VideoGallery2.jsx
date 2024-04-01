@@ -86,31 +86,40 @@ export default function VideoGallery() {
     useEffect(() => {
         changePicture();
         if(wrench || pandemonic || rackets || three) {
-            document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
+            document.querySelectorAll("#films-menu a").forEach(x => {x.style.color = "white!important"; x.classList.remove("fadeOutAnchor"); x.classList.add("fadeInAnchor");});
             return;
         }
 
         if (pandemonic) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/APS+Clip.mp4");
+            document.getElementById("pandemonicLink").style.color="gray!important";
+            document.getElementById("pademonicLink").classList.add("fadeOutAnchor");
         } else if (wrench) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/The+wrench+clip.mp4");
+            document.getElementById("wrenchLink").style.color="gray!important";
+            document.getElementById("wrenchLink").classList.add("fadeOutAnchor");
+
         } else if (rackets) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Rackets+Clip.mp4");
+            document.getElementById("racketsLink").style.color="gray!important";
+            document.getElementById("racketsLink").classList.add("fadeOutAnchor");
         } else if (three) {
             setActiveVideo("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/3BBB+Clip.mp4");
+            document.getElementById("threeLink").style.color="gray!important";
+            document.getElementById("threeLink").classList.add("fadeOutAnchor");
         }
     }, [pandemonic, three, wrench, rackets]);
     if (window.screen.width > 768) return (
         <>
             <div className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
                 <div className="mask bg-light-subtle opacity-25 w-100 h-auto" ></div>
-                {rackets && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn " alt="All Clips" />}
-                {wrench && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
+                {rackets && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={racketsVideoSrc} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn " alt="All Clips" />}
+                {wrench && <video autoPlay playsInline loop muted src={wrenchVideoSrc} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
                     style={videoBackgroundStyle}
                     alt="All Clips" />}
-                {pandemonic && <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn " style={videoBackgroundStyle} alt="All Clips" />}
+                {pandemonic && <video autoPlay playsInline loop muted src={pandemonicVideoSrc} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn " style={videoBackgroundStyle} alt="All Clips" />}
 
-                {three && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn " alt="All Clips" />}
+                {three && <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={threeVideoSrc} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn " alt="All Clips" />}
                 {!pandemonic && !wrench && !rackets && !three && <>
                     {currentImageIndex === 0 && <img id={"filmimage"} src={pandemonicStill} className="w-100 h-100 min-vh-100 min-vw-100 img-fluid bg-image   fadeIn" />}
                     {currentImageIndex === 1 && <img id={"filmimage"} src={wrenchStill} className="w-100 h-100 min-vh-100 min-vw-100 img-fluid bg-image   fadeIn" />}
