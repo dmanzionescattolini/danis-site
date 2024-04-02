@@ -1,8 +1,7 @@
-import React from 'react';
 import {
     MDBCard,
     MDBCardBody,
-    MDBCardText,
+    MDBTypography,
     MDBCardImage
 } from 'mdb-react-ui-kit';
 
