@@ -34,19 +34,19 @@ export default function Home() {
       {/* //       backgroundImage: `url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png")`   */}
       {/* // }}> */}
 
-      <div className="mask " style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
+      <div className="mask " style={{ backgroundColor: 'rgba(0,0, 0, 0.6)' }}>
         {/* <div className="float-end">
           <img width={200} className=" p-0 m-0 animate__animated animate__zoomIn animate__slower z-3 bg-transparent shadow-0" src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/sign.png"} />
         </div> */}
       </div>
-      <div id="container-tv" className="position-fixed w-50 left-50 right-auto">
+      <div id="container-tv" className="position-fixed col-xs-8 col-md-6 col-xl-6 col-xxl-6 left-50 right-auto">
         <div id="monitor" className="">
           <div id="monitor-screen"  className="ratio ratio-16x9">
-              <iframe
+              <video
                 src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4"
                 title="Rough Reel"
-                allowfullscreen
-              ></iframe>
+                allowFullScreen
+              ></video>
             </div>
             
         </div>
