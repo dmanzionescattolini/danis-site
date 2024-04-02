@@ -1843,9 +1843,9 @@ a.active {
 }
 
 #monitor {
-	background: #000; 
+	background: #555; 
 	position: relative;
-	border-top: 3px solid #888; 
+	border-top: 3px solid black; 
 	margin: 5%;
 	padding: 2% 2% 4% 2%; 
 	border-radius: 10px; 
@@ -1862,7 +1862,7 @@ a.active {
 	left: 36%;
 	height: .5%; 
 	width: 28%;
-	background: #ddd; 
+	background: #888; 
 	border-radius: 50%; 
 	box-shadow: 0 0 3px 0 white; 
 }

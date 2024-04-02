@@ -34,7 +34,7 @@ export default function Home() {
       {/* //       backgroundImage: `url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png")`   */}
       {/* // }}> */}
 
-      <div className="mask " style={{ backgroundColor: 'rgba(0, 0, 0, 0.6)' }}>
+      <div className="mask " style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)' }}>
         {/* <div className="float-end">
           <img width={200} className=" p-0 m-0 animate__animated animate__zoomIn animate__slower z-3 bg-transparent shadow-0" src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/sign.png"} />
         </div> */}
