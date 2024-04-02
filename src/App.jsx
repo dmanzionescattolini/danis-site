@@ -10,6 +10,7 @@ import NavigationDani from "../components/NavigationDani.jsx";
 import APandemonicSerenade from "../components/Video Gallery/Pandemonic Serenade/APandemonicSerenade.jsx";
 import VideoGallery2 from "../components/Video Gallery/VideoGallery2.jsx";
 import VideoGallery from "../components/Video Gallery/VideoGallery.jsx";
+import About from "../components/About/About.jsx";
 
 export default function App() {
   const [goingUp, setGoingUp] = useState(true);
@@ -61,6 +62,7 @@ export default function App() {
             element={<ThreeBulletsForBombay />}
             path="/films/three-bullets-for-bombay"
           />
+          <Route element={<About/>} path={"/about"}/>
         </Routes>
       </BrowserRouter>
     </>
