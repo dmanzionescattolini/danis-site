@@ -22,18 +22,7 @@ export default function FilmTemplate(params) {
 
             <div id={"banner-film"} className={"bg-image"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundImage: `url(${still})`, backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
                 <div style={{ display: (basicModal) ? "flex" : "none" }} className="ratio ratio-16x9 flex-row justify-content-center" width="fit-content" height="100%">
-                    <video
-                        playsInline
-
-                        controls
-                        src={clip}
-                        autoFocus
-                        alt={title}
-                        onEnded={() => setBasicModal(false)}
-                        title={title}
-                        allowfullscreen
-                        style={{ display: (basicModal) ? "block" : "none", width: "fit-content", height: "100%", marginInline: "25%" }}
-                    ></video>
+                    <video id={"video-film-page"} playsInline controls src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/FullLength.mp4" alt="Three Bullets for Bombay" title="Three Bullets for Bombay" ></video>
                 </div>
                 {/* <video autoPlay loop style={{display:(basicModal)?"block":"none"}} src={clip} width="100%" height="100%" alt={title}/> */}
                 {/* <div className="mask bg-dark bg-opacity-25 "></div> */}

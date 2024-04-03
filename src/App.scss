@@ -1924,3 +1924,8 @@ a.active {
   background-color:#e8e6e3 !important;
   color:$dinosaur-brown !important;
 }
+#video-film-page {
+  object-fit:cover!important;
+  max-height:95vh!important;
+  width:auto;
+}
