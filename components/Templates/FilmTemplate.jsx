@@ -1,8 +1,7 @@
 import {
     MDBBtn,
     MDBContainer,
-    MDBTable,
-    MDBTableBody,
+    MDBCard,
 } from "mdb-react-ui-kit";
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,21 +9,22 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 
 export default function FilmTemplate(params) {
     const [play, setPlay] = useState(false);
-    const { clip, still, fullLengthFilmLink, title, cast, process, director, runtime } = params;
+    const {  still, clip, title, cast, process, director, runtime, blurb } = params;
+    
     const [basicModal, setBasicModal] = useState(false);
-
+    const filmParams = params;
     const toggleOpen = () => setBasicModal(!basicModal);
     return (
         <MDBContainer fluid
-            className={"vh-100 h-100 d-flex flex-column justify-content-stretch align-items-stretch align-items-stretch p-0 m-0"}>
+            className={"vh-100 h-100 d-flex flex-column justify-content-evenly align-items-evenly p-0 m-0"}>
 
-            <div id={"banner-film"} className={"bg-image jumbotron jumbotron-fluid  ratio ratio-16x9"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundImage: `url(${ still})`, backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
+            <div id={"banner-film"} className={"bg-image jumbotron jumbotron-fluid  ratio ratio-16x9"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundImage: `url(${still})`, backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
                 <div style={{ display: (basicModal) ? "flex" : "none" }} className="ratio ratio-16x9 flex-row justify-content-center" width="fit-content" height="100%">
                     <video
                         playsInline
 
                         controls
-                        src={fullLengthFilmLink}
+                        src={clip}
                         autoFocus
                         alt={title}
                         onEnded={() => setBasicModal(false)}
@@ -81,21 +81,28 @@ export default function FilmTemplate(params) {
                     </MDBModalDialog>
                 </MDBModal> */}
             </div>
-            <MDBTable
-                className="h-100 w-100 m-0"
+            <MDBContainer fluid bg="white"
+                className="bg-white h-100 justify-content-evenly align-items-evenly lead w-100 min-vw-100 min-vh-50"
                 border={0}
-            >
-                <MDBTableBody>
-                    <tr>
-                        {Object.entries(params).map((entry) => {
-                            const k = entry[0];
-                            const v = entry[1];
-                            return (<td key={Object.keys(this).indexOf(k)}>{<><dt>{`${k}`}</dt><dd>{`${(typeof v === 'object') ? JSON.stringify(v) : v}`}</dd></>}</td>);
-                        })}
+                id="movie-info"
 
-                    </tr>
-                </MDBTableBody>
-            </MDBTable>
+            >
+                {Object.entries(filmParams).map(({k,v})=>{
+
+                    <MDBCard className="border-0 bg-white">
+                      <div className="card-body">
+                        <h5 className="card-title">{k}</h5>
+                        <p className="card-text">
+                          {JSON.stringify(v)}
+                        </p>
+                        <button type="button" className="btn btn-primary">Button</button>
+                      </div>
+                    </MDBCard>
+                })}
+               
+                
+
+            </MDBContainer>
 
         </MDBContainer>);
 }

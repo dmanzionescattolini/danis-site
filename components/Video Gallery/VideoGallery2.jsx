@@ -38,7 +38,7 @@ export default function VideoGallery() {
         objectFit: 'cover',
         backgroundColor: 'black',
         overflow: 'hidden',
-        transition: 'opacity 3s ease backwards',
+        // transition: 'opacity 3s ease backwards',
 
 
     }
