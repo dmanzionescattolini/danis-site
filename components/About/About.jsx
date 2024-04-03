@@ -1,7 +1,7 @@
 import {
-    MDBRow, MDBCol,
-    MDBTypography,
-    MDBCardImage
+    MDBContainer, MDBRow, MDBCol,
+    MDBCard, MDBCardBody,
+    MDBTypography
 } from 'mdb-react-ui-kit';
 
 export default function About() {
@@ -29,36 +29,40 @@ export default function About() {
             <cite title='Dan Signature'>Dan</cite>
         </footer>
     </MDBTypography>;
+    const danielProfilePicLink = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Dan+About+Me+Page.jpg";
     return (
-        <section>
-            {window.screen.size < 768 ?
-                <MDBRow>
-                    <MDBCol xs={12} sm={12} md={6} lg={6} xl={6} xxl={6}>
-                        <MDBCardImage src='https://pagina-mama.s3.amazonaws.com/assets2/daniel/Dan+About+Me+Page.jpg' alt='Dan Profile Pic' position='left' className="w-100 h-auto mw-75 min-vw-50" />
-                    </MDBCol>
-                    <MDBCol xs={12} sm={12} md={6} lg={6} xl={6}>
-                        {danielAboutMeText}
-                    </MDBCol>
-                </MDBRow>
-                :
-                <div className="card text-center">
-                    <div className="card-header">About Daniel</div>
-                    <div className="card-body">
-                        <h5 className="card-title"></h5>
-                        <p className="card-text">
-                          {danielAboutMeText}
-                        </p>
-                        <a href="+1 (310) 938-2260" className="btn btn-primary">Contact me</a>
-                    </div>
-              
-                </div>
-            
-            
-            }
 
-        </section>
+        <MDBContainer fluid className="p-0 m-0 w-100 h-100" bg="light" id="about-me-container">
 
-            
+            <MDBRow bg="light" className="container-fluid jumbotron w-100 h-100 overflow-hidden position-fixed p-0 m-0 d-flex flex-row justify-content-evenly" id="about-me-grid">
+
+                <MDBCol xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} id="about-me-col-1">
+                    <img alt={"Daniel's Profile Pic"} src={danielProfilePicLink} className="bg-image img-fluid w-100 h-auto overflow-hidden"></img>
+                </MDBCol>
+                <MDBCol xs={12} sm={12} md={6} lg={6} xl={6} className="d-flex flex-column justify-content-center align-items-center">
+                    <MDBCard className="w-100">
+                        <MDBCardBody className="d-flex flex-column justify-content-center align-items-center">
+                            <p className="m-3 p-5 lead bg-light text-muted text-justify overflow-y-scroll bg-sand">{danielAboutMeText}</p>
+                        </MDBCardBody>
+
+                    </MDBCard>
+                </MDBCol>
+
+
+            </MDBRow>
+
+
+
+
+
+
+
+        </MDBContainer>
+
+
+
+
+
 
     );
-        }``
+} 

@@ -1,5 +1,3 @@
-import { MDBCol, MDBContainer, MDBRow } from "mdb-react-ui-kit";
-import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
 

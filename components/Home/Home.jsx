@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-
+import {MDBContainer, MDBRow, MDBCol} from "mdb-react-ui-kit";
 export default function Home() {
   // let width = 50;
   // let goingUp=true;
@@ -39,7 +39,7 @@ export default function Home() {
           <img width={200} className=" p-0 m-0 animate__animated animate__zoomIn animate__slower z-3 bg-transparent shadow-0" src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/sign.png"} />
         </div> */}
       </div>
-      <div id="container-tv" className="position-fixed col-xs-8 col-md-6 col-xl-6 col-xxl-6 left-50 right-auto">
+      <MDBContainer fluid id="container-tv" className="position-fixed col-xs-12 col-md-6 col-xl-6 col-xxl-6 left-50 right-auto">
         <div id="monitor" className="">
           <div id="monitor-screen"  className="ratio ratio-16x9">
               <video
@@ -50,7 +50,7 @@ export default function Home() {
             </div>
             
         </div>
-      </div>
+      </MDBContainer>
     </div>
   );
 }
