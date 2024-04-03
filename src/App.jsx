@@ -60,7 +60,7 @@ export default function App() {
           <Route element={<TheWrench />} path="/films/the-wrench" />
           <Route
             element={<ThreeBulletsForBombay />}
-            path="/films/three-bullets-for-bombay"
+            path="/films/three-bullets-to-bombay-beach"
           />
           <Route element={<About/>} path={"/about"}/>
         </Routes>

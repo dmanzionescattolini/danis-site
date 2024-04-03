@@ -194,7 +194,9 @@ section {
   width: 100%;
   margin: 0;
   height: auto;
-  max-height: 70%;
+  min-height:50vh!Important;
+  overflow:hidden;
+  object-fit:contain!Important;
 }
 
 .mask {
@@ -665,7 +667,6 @@ html {
 
   text-decoration-style: solid;
 
-  text-decoration-thickness: auto;
 
   text-indent: 0px;
 
@@ -673,7 +674,6 @@ html {
 
   text-shadow: none;
 
-  text-size-adjust: auto;
 
   text-transform: none;
 
@@ -871,7 +871,6 @@ html {
 
   aspect-ratio: auto;
 
-  backdrop-filter: none;
 
   backface-visibility: visible;
 
@@ -1701,8 +1700,8 @@ div.grid.media-tiles > div {
 #movie-info {
   background:white!important;
   color:black!important;
-  padding:2em 5em!important;
   text-align:justify !important;
+  overflow-y:scroll!important;
 }
 div.grid.section-header > div.title.all {
   --header-padding-bottom: 24px;
@@ -1825,9 +1824,17 @@ a.active {
             animation: fadeOut 4s ease forwards ;
         }
         .fadeInAnchor {
-          animation:fadeIn 1s ease forwards;
+          animation:turnGray 3s ease forwards;
         }
 
+        @keyframes turnGray {
+          0% {
+            color:white;
+          }
+          100% {
+            color:lightgray;
+          }
+        }
         @keyframes turnWhite {
           0% {
             color:lightgray;
@@ -1837,7 +1844,7 @@ a.active {
           }
         }
         .fadeOutAnchor {
-          animation:turnWhite 5s ease forwards;
+          animation:turnWhite 4s ease forwards;
           animation-delay:4s;
         }
 

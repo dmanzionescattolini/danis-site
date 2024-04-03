@@ -1,24 +1,26 @@
 import {
     MDBBtn,
     MDBContainer,
-    MDBCard,
+    MDBTable,
+    MDBTableBody,
+    MDBAccordion,
+    MDBAccordionItem,
 } from "mdb-react-ui-kit";
 import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
+let params = { clip: String, image: String, title: String, cast: Array, date: String };
 
 export default function FilmTemplate(params) {
-    const [play, setPlay] = useState(false);
-    const {  still, clip, title, cast, process, director, runtime, blurb } = params;
-    
+    const { clip, title, cast, runtime, blurb, still, process } = params;
     const [basicModal, setBasicModal] = useState(false);
-    const filmParams = params;
+
     const toggleOpen = () => setBasicModal(!basicModal);
     return (
         <MDBContainer fluid
-            className={"vh-100 h-100 d-flex flex-column justify-content-evenly align-items-evenly p-0 m-0"}>
+            className={"vh-100 h-100 d-flex flex-column justify-content-evenly  align-items-stretch p-0 m-0"}>
 
-            <div id={"banner-film"} className={"bg-image jumbotron jumbotron-fluid  ratio ratio-16x9"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundImage: `url(${still})`, backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
+            <div id={"banner-film"} className={"bg-image"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundImage: `url(${still})`, backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
                 <div style={{ display: (basicModal) ? "flex" : "none" }} className="ratio ratio-16x9 flex-row justify-content-center" width="fit-content" height="100%">
                     <video
                         playsInline
@@ -81,28 +83,52 @@ export default function FilmTemplate(params) {
                     </MDBModalDialog>
                 </MDBModal> */}
             </div>
-            <MDBContainer fluid bg="white"
-                className="bg-white h-100 justify-content-evenly align-items-evenly lead w-100 min-vw-100 min-vh-50"
+            <MDBTable
+                className="vh-50  w-100 m-0 bg-white"
                 border={0}
-                id="movie-info"
-
+                id={"movie-info"}
             >
-                {Object.entries(filmParams).map(({k,v})=>{
+                <h2 className="display-6 text-center my-2"><small>{title}</small></h2>
+                <div className="px-5 mx-5 my-2 text-justify lead mw-50"><div className="mx-5 px-5 py-2 my-2 ms-5">{blurb}</div></div>
+                <MDBTableBody className="bg-white">
+                    <tr className="d-flex flex-row justify-content-evenly">
+                        <td className="">
+                            <dt className="text-muted ">Release Date</dt>
+                            <dd>{"November 6th, 2022"}</dd>
+                        </td>
+                        <td>
+                            <dt className="text-muted">Director</dt>
+                            <dd>Daniel Grzywacz</dd>
+                        </td>
+                        <td>
+                            <dt className={"text-muted"}>Starring</dt>
+                            <ul className="list-unstyled">
+                                {cast.map((c) =>
+                                    (<li key={cast.indexOf(c)}>{`${c.castMember}`}<small><em> as </em><span className="ms-1"> {c.role}</span></small></li>))}
 
-                    <MDBCard className="border-0 bg-white">
-                      <div className="card-body">
-                        <h5 className="card-title">{k}</h5>
-                        <p className="card-text">
-                          {JSON.stringify(v)}
-                        </p>
-                        <button type="button" className="btn btn-primary">Button</button>
-                      </div>
-                    </MDBCard>
-                })}
-               
-                
+                            </ul>
+                        </td>
+                        <td>
+                            <dt className={"text-muted"}>Runtime</dt>
+                            <dd>{`${runtime.value} ${runtime.unit ? runtime.unit : runtime.units}`}</dd>
+                        </td>
+                    </tr>
 
-            </MDBContainer>
+
+
+                </MDBTableBody>
+                <MDBAccordion flush className="">
+                    <MDBAccordionItem collapseId={1} headerTitle='My Process'>
+                        <div className="p-3 overflow-y-scroll">
+                            {process.map(p => {
+                                return (<p key={process.indexOf(p)} className="text-justify text-muted" style={{ textIndent: '1em' }}>
+                                    {p}
+                                </p>);
+                            })}
+                        </div>
+                    </MDBAccordionItem>
+                </MDBAccordion>
+            </MDBTable>
 
         </MDBContainer>);
 }

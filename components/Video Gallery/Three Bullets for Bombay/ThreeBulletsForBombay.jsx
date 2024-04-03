@@ -3,7 +3,7 @@ import FilmTemplate from "../../Templates/FilmTemplate.jsx"; export const ThreeB
       <>
         <FilmTemplate
           clip=
-            "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/3BBB+Clip.mp4"           blurb="A blood-soaked supernatural western about a woman lost in the desert after a heist gone wrong. With three bullets in her gun and a talking rock by her side, can she make it back to civilization before her co-conspirators catch up with her? Alice Bright will give it her best three shots."
+            "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/FullLength.mp4"           blurb="A blood-soaked supernatural western about a woman lost in the desert after a heist gone wrong. With three bullets in her gun and a talking rock by her side, can she make it back to civilization before her co-conspirators catch up with her? Alice Bright will give it her best three shots."
           director="Daniel Grzywacz"
           runtime={{value:21, units:"minutes"}}
           cast={[{castMember: "Bree Wernicke",role:"Alice"},{castMember: "Phil Shea",role:"Cadwallader"},{castMember: "Landon McDonald",role:"Red"}]}
