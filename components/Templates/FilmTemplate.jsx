@@ -18,13 +18,13 @@ export default function FilmTemplate(params) {
         <MDBContainer fluid
             className={"vh-100 h-100 d-flex flex-column justify-content-stretch align-items-stretch align-items-stretch p-0 m-0"}>
 
-            <div id={"banner-film"} className={"bg-image jumbotron jumbotron-fluid  ratio ratio-16x9"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundImage: `url(${image})`, backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
+            <div id={"banner-film"} className={"bg-image jumbotron jumbotron-fluid  ratio ratio-16x9"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundImage: `url(${ still})`, backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
                 <div style={{ display: (basicModal) ? "flex" : "none" }} className="ratio ratio-16x9 flex-row justify-content-center" width="fit-content" height="100%">
                     <video
                         playsInline
 
                         controls
-                        src={clip}
+                        src={fullLengthFilmLink}
                         autoFocus
                         alt={title}
                         onEnded={() => setBasicModal(false)}
