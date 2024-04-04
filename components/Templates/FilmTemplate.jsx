@@ -17,14 +17,17 @@ export default function FilmTemplate(params) {
     const [basicModal, setBasicModal] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
     const toggleInfo = () => setShowInfo(!showInfo);
-    const toggleOpen = () => setBasicModal(!basicModal);
+    const toggleOpen = () => {setBasicModal(!basicModal);
+        const vid = document.getElementById("video-film-page");
+        vid.play();
+    };
     return (
         <MDBContainer fluid
             className={"vh-100 h-100 d-flex flex-column justify-content-evenly  align-items-evenly p-0 m-0"}>
 
             <div id={"banner-film"} className={"bg-image"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundImage: `url(${still})`, backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
                 <div style={{ display: (basicModal) ? "flex" : "none" }} className="ratio ratio-16x9 d-flex flex-row justify-content-center embed-responsive-container" width="fit-content" height="100%">
-                    <video className="embed-responsive-item" id={"video-film-page"} playsInline controls src={fullLengthVideo} alt="Three Bullets for Bombay" title="Three Bullets to Bombay Beach" ></video>
+                    <video style={{display:(basicModal)?"flex":"none"}} className="embed-responsive-item" id={"video-film-page"} playsInline controls autoPlay="false"src={fullLengthVideo} alt="Three Bullets for Bombay" title="Three Bullets to Bombay Beach" ></video>
                 </div>
                 {/* <video autoPlay loop style={{display:(basicModal)?"block":"none"}} src={clip} width="100%" height="100%" alt={title}/> */}
                 {/* <div className="mask bg-dark bg-opacity-25 "></div> */}
