@@ -62,10 +62,10 @@ export default function NavigationDani() {
         </a>
       }
     </MDBNavbar>
-    <div id="myNav" className="overlay-x lh-sm text-left" style={{ display: `${overlayDisplay}!important` }}>
+    <div id="myNav" className="overlay-x lh-sm text-left m-0 " style={{ display: `${overlayDisplay}!important` }}>
 
 
-      <div className="overlay-x-content">
+      <div className="overlay-x-content d-flex flex-column justify-content-center justify-content-center">
         <a className="shadow-1 object-fit-fill" href="/home">Home</a>
         <a href="/films">Films</a>
         <a href="/about">About</a>

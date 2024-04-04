@@ -22,6 +22,7 @@ body {
   background-size: cover;
   font-family: "Roboto", sans-serif;
   background-color: transparent;
+  overflow-y:scroll;
 }
 
 #films-menu {
@@ -38,7 +39,7 @@ main {
   margin: 0;
   max-width: 100%;
   background-size: cover;
-  overflow: hidden !important;
+  overflow:hidden;
 }
 
 // body>div.offcanvas.offcanvas-start.show>div.offcanvas-header {
@@ -333,7 +334,7 @@ a.nav-link:hover {
   padding: 0;
   border: 0;
 
-  vertical-align: baseline;
+  vertical-align: center;
   position: fixed;
   top: 0;
   bottom: 0;
@@ -602,7 +603,6 @@ html {
 
   overflow-x: visible;
 
-  overflow-y: visible;
 
   padding-bottom: 0px;
 
@@ -1694,14 +1694,12 @@ div.grid.media-tiles > div {
   padding: 0;
   border-top: 1px solid black;
   padding-top: 30px;
-  overflow-y: scroll;
   overflow-x: visible;
 }
 #movie-info {
   background:white!important;
   color:black!important;
   text-align:justify !important;
-  overflow-y:scroll!important;
 }
 div.grid.section-header > div.title.all {
   --header-padding-bottom: 24px;
@@ -1926,6 +1924,10 @@ a.active {
 }
 #video-film-page {
   object-fit:cover!important;
-  max-height:95vh!important;
-  width:auto;
+  max-width:50vw;
+  max-height:fit-content;
+  margin-left:25vw;
+  margin-top:0;
+  margin-bottom:0;
+  height:auto;
 }
