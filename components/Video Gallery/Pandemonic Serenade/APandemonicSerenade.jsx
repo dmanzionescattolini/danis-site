@@ -4,7 +4,7 @@ const dateNow = Date.now();
 export default function APandemonicSerenade() {
 
   return <FilmTemplate
-    date={dateNow}
+    date={2019}
     blurb={"A feature-length hellish comedy about an exorcist’s apprentice who discovers her roommate has fallen for the ageless demon who moved into their building. Marion finds herself stuck in the middle as she attempts to navigate the forces of good and evil before it's too late for best friend."}
     director="Daniel Grzywacz"
     duration={{ value: 105, units: "minutes" }}

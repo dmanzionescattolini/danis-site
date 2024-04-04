@@ -13,7 +13,7 @@ import 'bootstrap/dist/js/bootstrap.bundle';
 let params = { clip: String, image: String, title: String, cast: Array, date: String };
 
 export default function FilmTemplate(params) {
-    const { clip, fullLengthVideo, title, cast, runtime, blurb, still, process } = params;
+    const { date, fullLengthVideo, title, cast, runtime, blurb, still, process } = params;
     const [basicModal, setBasicModal] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
     const toggleInfo = () => setShowInfo(!showInfo);
@@ -25,9 +25,13 @@ export default function FilmTemplate(params) {
         <MDBContainer fluid
             className={"vh-100 h-100 d-flex flex-column justify-content-evenly  align-items-evenly p-0 m-0"}>
 
-            <div id={"banner-film"} className={"bg-image"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundImage: `url(${still})`, backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
-                <div style={{ display: (basicModal) ? "flex" : "none" }} className="ratio ratio-16x9 d-flex flex-row justify-content-center embed-responsive-container" width="fit-content" height="100%">
-                    <video style={{display:(basicModal)?"flex":"none"}} className="embed-responsive-item" id={"video-film-page"} playsInline controls autoPlay="false"src={fullLengthVideo} alt="Three Bullets for Bombay" title="Three Bullets to Bombay Beach" ></video>
+            <div id={"banner-film"} className={"bg-image"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
+                <div style={{ display: (basicModal) ? "flex" : "none" }} className="d-block mx-auto" width="fit-content" height="100%">
+                    <video style={{display:(basicModal)?"flex":"none"}} className="ratio" id={"video-film-page"} playsInline controls autoPlay="false"src={fullLengthVideo} alt="Three Bullets for Bombay" title="Three Bullets to Bombay Beach" ></video>
+                    {!basicModal &&
+                    <img src={still} alt={`#{title} Still Image`} className="img-fluid mx-auto d-block mw-50 min-vw-50 w-lg-50 h-lg-50 w-sm-100 h-sm-100 w-xl-50 h-xl-50"/>
+}
+
                 </div>
                 {/* <video autoPlay loop style={{display:(basicModal)?"block":"none"}} src={clip} width="100%" height="100%" alt={title}/> */}
                 {/* <div className="mask bg-dark bg-opacity-25 "></div> */}
@@ -83,12 +87,12 @@ export default function FilmTemplate(params) {
                 id={"movie-info"}
             >
                 <h2 className="display-6 text-center my-2"><small>{title}</small></h2>
-                <div className="px-5 mx-5 my-2 text-justify lead mw-50"><div className="mx-5 px-5 py-2 my-2 ms-5">{blurb}</div></div>
+                <div className="px-5 mx-5 my-2 text-justify mw-50"><p className="m-sm-0 p-sm-0 ms-sm-2 mx-lg-5 px-lg-5 py-2 my-2 ms-5 fs-5">{blurb}</p></div>
                 <MDBTableBody className="bg-white">
                     <tr className="d-flex flex-row justify-content-evenly">
                         <td className="">
                             <dt className="text-muted ">Release Date</dt>
-                            <dd>{"November 6th, 2022"}</dd>
+                            <dd>{date}</dd>
                         </td>
                         <td>
                             <dt className="text-muted">Director</dt>
