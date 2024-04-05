@@ -5,8 +5,8 @@ import {
 } from 'mdb-react-ui-kit';
 
 export default function About() {
-    const danielAboutMeText = <MDBTypography blockquote className='mb-0'>
-        <p className="lead text-justify text-wrap">
+    const danielAboutMeText = <MDBTypography blockquote className='mb-0 w-100 overflow-y-scroll'>
+        <p className="text-justify text-wrap">
             Hello, my name is Daniel, and I love the movies. I&apos;ve been making movies any way that I can for almost 8 years now. This has usually meant writing them, directing them, acting in them, editing them and everything else in between.
         </p>
 
@@ -32,9 +32,9 @@ export default function About() {
     const danielProfilePicLink = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Dan+About+Me+Page.jpg";
     return (
 
-        <MDBContainer fluid className="p-0 m-0 w-100 h-100" bg="light" id="about-me-container">
+        
 
-            <MDBRow bg="light" className="container-fluid jumbotron w-100 h-100 overflow-hidden position-fixed p-0 m-0 d-flex flex-row justify-content-evenly" id="about-me-grid">
+            <MDBRow bg="light" className="vw-100 vh-100 w-100 h-100 overflow-scroll position-fixed p-0 m-0 d-flex flex-row justify-content-evenly">
 
                 <MDBCol xs={12} sm={12} md={6} lg={6} xl={6} xxl={6} id="about-me-col-1">
                     <img alt={"Daniel's Profile Pic"} src={danielProfilePicLink} className="bg-image img-fluid w-100 h-auto overflow-hidden"></img>
@@ -57,7 +57,7 @@ export default function About() {
 
 
 
-        </MDBContainer>
+        
 
 
 

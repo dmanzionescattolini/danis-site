@@ -131,7 +131,7 @@ export default function VideoGallery() {
     }, [pandemonic, three, wrench, rackets]);
     if (window.screen.width > 768)
         return (
-            <>
+            <div className= "container container-fluid vw-100 vh-100 overflow-hidden bg-white">
                 <div className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
                     <div className="mask bg-light-subtle opacity-25 w-100 h-auto"></div>
                     {rackets && (
@@ -186,6 +186,11 @@ export default function VideoGallery() {
                         <>
                             {currentImageIndex === 0 && (
                                 <img
+                                onAnimationEnd={(e)=>{
+                                    e.preventDefault();
+                                    e.target.classList.remove("fadeIn");
+                                    e.target.classList.add("fadeOut");
+                                }}
                                     id={"filmimage"}
                                     src={threeStill}
                                     alt={"Still of Three Bullets for Bombay Beach"}
@@ -194,6 +199,11 @@ export default function VideoGallery() {
                             )}
                             {currentImageIndex === 1 && (
                                 <img
+                                    onAnimationEnd={(e) => {
+                                        e.preventDefault();
+                                        e.target.classList.remove("fadeIn");
+                                        e.target.classList.add("fadeOut");
+                                    }}
                                     id={"filmimage"}
                                     src={pandemonicStill}
                                     className="w-100 h-100 min-vh-100 min-vw-100 img-fluid bg-image   fadeIn"
@@ -201,6 +211,11 @@ export default function VideoGallery() {
                             )}
                             {currentImageIndex === 2 && (
                                 <img
+                                    onAnimationEnd={(e) => {
+                                        e.preventDefault();
+                                        e.target.classList.remove("fadeIn");
+                                        e.target.classList.add("fadeOut");
+                                    }}
                                     id={"filmimage"}
                                     src={wrenchStill}
                                     className="min-vw-100 min-vh-100 w-100 h-100 img-fluid bg-image   fadeIn"
@@ -208,6 +223,11 @@ export default function VideoGallery() {
                             )}
                             {currentImageIndex === 3 && (
                                 <img
+                                    onAnimationEnd={(e) => {
+                                        e.preventDefault();
+                                        e.target.classList.remove("fadeIn");
+                                        e.target.classList.add("fadeOut");
+                                    }}
                                     id={"filmimage"}
                                     src={racketsStill}
                                     className="min-vw-100 min-vh-100 w-100 h-100 img-fluid bg-image   fadeIn"
@@ -239,13 +259,12 @@ export default function VideoGallery() {
                             </a>
                         )) || (
                                 <a
-                                onAnimationEnd={(e) => {
+                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
-                                    let hasFadeIn = e.target.value.classList.contains("fadeInAnchor");
-                                    if (hasFadeIn) {
+                                    
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    }
+                                    
                                 }}
                                     onMouseEnter={() => setThree(true)}
                                     onMouseLeave={() => setThree(false)}
@@ -257,13 +276,12 @@ export default function VideoGallery() {
                             )}
                         {(currentImageIndex === 1 && (
                             <a
-                                onAnimationEnd={(e) => {
+                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
-                                    let hasFadeIn = e.target.value.classList.contains("fadeInAnchor");
-                                    if (hasFadeIn) {
+                                    
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    }
+                                    
                                 }}
                                 className="text-opacity-50 text-light bg-transparent  fadeOutAnchor "
                                 id="A+Pandemonic+Serenade"
@@ -275,13 +293,12 @@ export default function VideoGallery() {
                             </a>
                         )) || (
                                 <a
-                                onAnimationEnd={(e) => {
+                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
-                                    let hasFadeIn = e.target.value.classList.contains("fadeInAnchor");
-                                    if (hasFadeIn) {
+                                    
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    }
+                                    
                                 }}
                                     onMouseEnter={() => setPandemonic(true)}
                                     onMouseLeave={() => setPandemonic(false)}
@@ -296,11 +313,10 @@ export default function VideoGallery() {
                             <a
                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
-                                    let hasFadeIn = e.target.value.classList.contains("fadeInAnchor");
-                                    if (hasFadeIn) {
+                                    
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    }
+                                    
                                 }}
                                 className="text-opacity-50 text-light bg-transparent  fadeOutAnchor "
                                 id="The+Wrench"
@@ -312,13 +328,12 @@ export default function VideoGallery() {
                             </a>
                         )) || (
                                 <a
-                                onAnimationEnd={(e) => {
+                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
-                                    let hasFadeIn = e.target.value.classList.contains("fadeInAnchor");
-                                    if (hasFadeIn) {
+                                    
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    }
+                                    
                                 }}
                                     onMouseEnter={() => setWrench(true)}
                                     onMouseLeave={() => setWrench(false)}
@@ -333,13 +348,12 @@ export default function VideoGallery() {
 
                         {(currentImageIndex === 3 && (
                             <a
-                                onAnimationEnd={(e) => {
+                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
-                                    let hasFadeIn = e.target.value.classList.contains("fadeInAnchor");
-                                    if (hasFadeIn) {
+                                    
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    }
+                                    
                                 }}
                                 className="text-opacity-50 text-light bg-transparent  fadeOutAnchor "
                                 id="Rackets+All+the+Way+Down"
@@ -351,13 +365,12 @@ export default function VideoGallery() {
                             </a>
                         )) || (
                                 <a
-                                onAnimationEnd={(e) => {
+                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
-                                    let hasFadeIn = e.target.value.classList.contains("fadeInAnchor");
-                                    if (hasFadeIn) {
+                                    
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    }
+                                    
                                 }}
                                     onMouseEnter={() => setRackets(true)}
                                     onMouseLeave={() => setRackets(false)}
@@ -370,12 +383,12 @@ export default function VideoGallery() {
                             )}
                     </nav>{" "}
                 </div>
-            </>
+            </div>
         );
     else
         return (
             <section
-                className="all-films"
+                className="all-films vw-100 vh-100 overflow-hidden overflow-y-scroll"
                 style={{
                     backgroundColor: "white",
                     maxWidth: "fit-content!important",

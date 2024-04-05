@@ -42,11 +42,11 @@ export default function Home() {
       <MDBContainer fluid id="container-tv" className="position-fixed col-xs-12 col-md-6 col-xl-6 col-xxl-6 left-50 right-auto">
         <div id="monitor" className="">
           <div id="monitor-screen"  className="ratio ratio-16x9">
-              <video
+              <iframe
                 src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4"
                 title="Rough Reel"
                 allowFullScreen
-              ></video>
+              ></iframe>
             </div>
             
         </div>

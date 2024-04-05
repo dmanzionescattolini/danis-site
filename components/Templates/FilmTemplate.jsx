@@ -22,6 +22,7 @@ export default function FilmTemplate(params) {
         vid.play();
     };
     return (
+<<<<<<< HEAD
         <div className="">
             <div className="jumbotron jumbotron-fluid embed-responsive embed-responsive-16by9 px-50 mx-auto bg-black">
                 {(window.screen.width < 768) &&
@@ -42,6 +43,34 @@ export default function FilmTemplate(params) {
                                 xmlnsXlink="http://www.w3.org/1999/xlink">
                                 <g>
                                     <path d="M101.628,40.092c-8.22-8.22-19.149-12.746-30.774-12.746c-11.624,0-22.553,4.526-30.772,12.746
+=======
+        <MDBRow
+            className={"vw-100 vh-100 d-flex flex-column justify-content-evenly  align-items-evenly p-0 m-0"}>
+
+            <div id={""} className={"vw-100"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundColor: `rgb(0,0,0)`, maxHeight: "50vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
+                <div style={{ display: (basicModal) ? "flex" : "none" }} className="embed-responsive embed-responsive-16by9">
+                    <iframe style={{display:(basicModal)?"flex":"none"}} className="embed-responsive-item" id={"video-film-page"} playsInline controls autoPlay="false"src={fullLengthVideo} alt="Three Bullets for Bombay" title="Three Bullets to Bombay Beach" ></iframe>
+                    {!basicModal &&
+                    <img src={still} alt={`#{title} Still Image`} className="img-fluid "/>
+}
+
+                </div>
+                {/* <video autoPlay loop style={{display:(basicModal)?"block":"none"}} src={clip} width="100%" height="100%" alt={title}/> */}
+                {/* <div className="mask bg-dark bg-opacity-25 "></div> */}
+                {basicModal === false &&
+                    <MDBBtn onClick={toggleOpen} id="playbutton" className="play-btn hover-overlay shadow-1 hover bg-image hover-overlay ripple shadow-1-strong rounded" >
+                        <svg enableBackground="new 0 0 141.73 141.73"
+                            height="141.73px"
+                            id="Warstwa_1"
+                            version="1.1"
+                            viewBox="0 0 141.73 141.73"
+                            width="141.73px"
+                            xmlSpace="preserve"
+                            xmlns="http://www.w3.org/2000/svg"
+                            xmlnsXlink="http://www.w3.org/1999/xlink">
+                            <g>
+                                <path d="M101.628,40.092c-8.22-8.22-19.149-12.746-30.774-12.746c-11.624,0-22.553,4.526-30.772,12.746
+>>>>>>> ab696f55911127ae249f5deeddb2c920ab1a90bc
         c-16.968,16.969-16.967,44.578,0.001,61.546c8.22,8.22,19.149,12.747,30.773,12.747s22.553-4.526,30.772-12.746
         s12.747-19.148,12.747-30.773S109.848,48.312,101.628,40.092z M100.214,100.225c-7.842,7.842-18.269,12.16-29.358,12.16
         s-21.517-4.319-29.359-12.161c-16.188-16.188-16.188-42.529-0.001-58.718c7.842-7.842,18.269-12.16,29.358-12.16
@@ -176,6 +205,7 @@ export default function FilmTemplate(params) {
 
                         <MDBCollapse open={showInfo} className='mt-3'>
 
+<<<<<<< HEAD
                             {process.map(p => {
                                 return (<p key={process.indexOf(p)} className="text-justify text-muted p-2" style={{ textIndent: '1em' }}>
                                     {p}
@@ -191,4 +221,18 @@ export default function FilmTemplate(params) {
             </MDBTable >
         </div>
     );
+=======
+                        {process.map(p => {
+                            return (<p key={process.indexOf(p)} className="text-justify text-muted" style={{ textIndent: '1em' }}>
+                                {p}
+                            </p>);
+                        })}
+                    </MDBCollapse>
+                </MDBCol>
+                <MDBCol></MDBCol>
+            </MDBRow>
+        </MDBTable>
+
+        </MDBRow >);
+>>>>>>> ab696f55911127ae249f5deeddb2c920ab1a90bc
 }
