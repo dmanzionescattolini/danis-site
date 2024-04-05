@@ -12,19 +12,29 @@ $dinosaur-brown: #5a441b;
 $dinosaur-mustard: #eda803;
 $first-dinosaur-width: $first-dinosaur-height * 228/160;
 $one-twenty-fifth-of-dinosaur-width: $first-dinosaur-width/25;
-
+html {
+  width:100%;
+  height:100vh;
+  background:white;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+}
 body {
-  width: 100%;
+  width: 100%!important;
   height: 100vh;
-  position:fixed;
+  left:0;
+  right:0;
+  top:0;
+  bottom:0;
+
   background-image: url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png");
   background-repeat: repeat-x;
   font-family: "Roboto", sans-serif!important;
+  background-size:cover;
  
 
-  background-color: transparent;
-  overflow-y: scroll;
-  overflow-x:visible;
 }
 
 #films-menu {
@@ -36,7 +46,7 @@ main {
   font-family: "Roboto";
   font-weight: normal;
   font-weight: normal;
-  width:100%;
+  width:100vw;
   height: 100vh;
   padding: 0;
   margin: 0;

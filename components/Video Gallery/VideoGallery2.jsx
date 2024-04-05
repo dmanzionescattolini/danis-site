@@ -113,9 +113,9 @@ export default function VideoGallery() {
     }, [pandemonic, three, wrench, rackets]);
     if (window.screen.width > 768)
         return (
-            <div className="w-100 min-vh-100 min-vw-100 h-100 p-0 m-0 position-fixed" >
-                <div className="w-100 min-vh-100 min-vw-100 h-100 p-0 m-0 position-fixed">
-                    <div className="mask bg-light-subtle opacity-25 w-100 h-auto"></div>
+            <div className="min-vw-100 min-vh-100 p-0 m-0 " >
+              
+                    <div className="mask bg-light-subtle opacity-25 vw-100 h-auto"></div>
                     {rackets && (
                         <video
                             style={videoBackgroundStyle}
@@ -124,7 +124,7 @@ export default function VideoGallery() {
                             loop
                             muted
                             src={racketsVideoSrc}
-                            className=" vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
+                            className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
                             alt="All Clips"
                         />
                     )}
@@ -135,7 +135,7 @@ export default function VideoGallery() {
                             loop
                             muted
                             src={wrenchVideoSrc}
-                            className=" vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
+                            className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
                             style={videoBackgroundStyle}
                             alt="All Clips"
                         />
@@ -147,7 +147,7 @@ export default function VideoGallery() {
                             loop
                             muted
                             src={pandemonicVideoSrc}
-                            className=" vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
+                            className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
                             style={videoBackgroundStyle}
                             alt="All Clips"
                         />
@@ -160,7 +160,7 @@ export default function VideoGallery() {
                             loop
                             muted
                             src={threeVideoSrc}
-                            className=" vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
+                            className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
                             alt="All Clips"
                         />
                     )}
@@ -176,7 +176,7 @@ export default function VideoGallery() {
                                     
                                     src={threeStill}
                                     alt={"Still of Three Bullets for Bombay Beach"}
-                                    className="vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn"
+                                    className="img-fluid fadeIn vw-100 vh-100 p-0 m-0"
                                 />
                             )}
                             {currentImageIndex === 1 && (
@@ -188,7 +188,7 @@ export default function VideoGallery() {
                                     }}
                                     
                                     src={pandemonicStill}
-                                    className="vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn"
+                                    className="img-fluid fadeIn vw-100 vh-100 p-0 m-0"
                                 />
                             )}
                             {currentImageIndex === 2 && (
@@ -200,7 +200,7 @@ export default function VideoGallery() {
                                     }}
                                     
                                     src={wrenchStill}
-                                    className="vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn"
+                                    className="img-fluid fadeIn vw-100 vh-100 p-0 m-0"
                                 />
                             )}
                             {currentImageIndex === 3 && (
@@ -212,7 +212,7 @@ export default function VideoGallery() {
                                     }}
                                     
                                     src={racketsStill}
-                                    className="vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn"
+                                    className="img-fluid fadeIn vw-100 vh-100 p-0 m-0"
                                 />
                             )}
                         </>
@@ -366,12 +366,11 @@ export default function VideoGallery() {
                             )}
                     </nav>{" "}
                 </div>
-            </div>
         );
     else
         return (
             <section
-                className="all-films vw-100 vh-100 overflow-hidden overflow-y-scroll"
+                className="all-films vw-100 vh-100 p-0 m-0  overflow-y-scroll overflow-x-visible"
                 style={{
                     backgroundColor: "white",
                     maxWidth: "fit-content!important",
@@ -455,7 +454,7 @@ export default function VideoGallery() {
                         style={{ overflowX: "hidden!important" }}
                     >
                         <a
-                            href="/films/three-bullets-for-bombay-beach"
+                            href="/films/three-bullets-to-bombay-beach"
                             title="Three Bullets for Bombay Beach"
                         >
                             <figure>

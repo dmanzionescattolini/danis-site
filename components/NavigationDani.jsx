@@ -51,12 +51,21 @@ export default function NavigationDani() {
           onClick={openCloseNav}
           className={"bg-transparent border-0 shadow-0 z-2 w-75"}
         >
-          <img
-            src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
-            width={200}
-            className={"shadow-0 border-0 bg-transparent  img-fluid p-3 ms-2"}
-            alt={"dinosaur toggle"}
-          />
+          {window.screen.width < 700 &&
+            <img
+              src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
+              width={100}
+              className={"shadow-0 border-0 bg-transparent  img-fluid p-3 ms-2"}
+              alt={"dinosaur toggle"}
+            />
+            ||
+            <img
+              src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
+              width={200}
+              className={"shadow-0 border-0 bg-transparent  img-fluid p-3 ms-2"}
+              alt={"dinosaur toggle"}
+            />
+          }
 
 
         </a>
