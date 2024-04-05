@@ -32,6 +32,8 @@ export default function About() {
                 Please email me at <a href="email:Daniel@YellowDinosaur.io">daniel@yellowdinosaur.io</a> if you would like to collaborate on a project. I look forward to hearing from you.
             </p>
             <cite title='Dan Signature'>Dan</cite>
+            <br></br>
+            <br></br>
         </footer>
     </MDBTypography>;
     const danielProfilePicLink = "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Dan+About+Me+Page.jpg";
