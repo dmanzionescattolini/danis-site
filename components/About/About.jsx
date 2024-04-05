@@ -9,7 +9,7 @@ import {
 import { FloatingWhatsApp } from 'react-floating-whatsapp';
 
 export default function About() {
-    const danielAboutMeText = <MDBTypography blockquote className='mb-0 text-justify overflow-y-scroll vh-100'>
+    const danielAboutMeText = <MDBTypography blockquote className='mb-0 text-justify overflow-y-scroll h-100'>
         <p className="text-muted text-justify small mb-2 mx-3 text-indent fs-6 px-1">
             Hello, my name is Daniel, and I love the movies. I&apos;ve been making movies any way that I can for almost 8 years now. This has usually meant writing them, directing them, acting in them, editing them and everything else in between.
         </p>
