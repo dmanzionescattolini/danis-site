@@ -16,13 +16,13 @@ html,
 body {
   width: 100%;
   height: 100vh;
-   background-image: url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png");
+  background-image: url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png");
   overflow: hidden;
   background-repeat: repeat-x;
   background-size: cover;
   font-family: "Roboto", sans-serif;
   background-color: transparent;
-  overflow-y:scroll;
+  overflow-y: scroll;
 }
 
 #films-menu {
@@ -39,7 +39,7 @@ main {
   margin: 0;
   max-width: 100%;
   background-size: cover;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 // body>div.offcanvas.offcanvas-start.show>div.offcanvas-header {
@@ -115,7 +115,7 @@ section {
 }
 
 #video-home {
-  $width: 50vw!important;
+  $width: 50vw !important;
   width: $width;
   // box-shadow: $dinosaur-yellow 0.2rem 0rem 2rem;
   // drop-shadow(0rem 0rem 0.75rem $dinosaur-yellow 50);
@@ -125,7 +125,7 @@ section {
   align-content: center;
   margin: 0;
   padding: 0;
-  object-fit:cover!Important;
+  object-fit: cover !important;
   // animation:  32s;
 }
 
@@ -195,9 +195,9 @@ section {
   width: 100%;
   margin: 0;
   height: auto;
-  min-height:50vh!Important;
-  overflow:hidden;
-  object-fit:contain!Important;
+  min-height: 50vh !important;
+  overflow: hidden;
+  object-fit: contain !important;
 }
 
 .mask {
@@ -500,7 +500,7 @@ a.nav-link {
 .play-btn {
   position: fixed;
   z-index: 666;
-  top: 25%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: transparent;
@@ -603,7 +603,6 @@ html {
 
   overflow-x: visible;
 
-
   padding-bottom: 0px;
 
   padding-left: 0px;
@@ -667,13 +666,11 @@ html {
 
   text-decoration-style: solid;
 
-
   text-indent: 0px;
 
   text-overflow: clip;
 
   text-shadow: none;
-
 
   text-transform: none;
 
@@ -870,7 +867,6 @@ html {
   appearance: none;
 
   aspect-ratio: auto;
-
 
   backface-visibility: visible;
 
@@ -1310,7 +1306,6 @@ html {
 #video-home {
   z-index: 10;
   // animation: myPulse 1s both infinite;
-  
 }
 #myNav {
   z-index: 11;
@@ -1697,9 +1692,9 @@ div.grid.media-tiles > div {
   overflow-x: visible;
 }
 #movie-info {
-  background:white!important;
-  color:black!important;
-  text-align:justify !important;
+  background: white !important;
+  color: black !important;
+  text-align: justify !important;
 }
 div.grid.section-header > div.title.all {
   --header-padding-bottom: 24px;
@@ -1809,44 +1804,42 @@ a.active {
   color: gray !important;
 }
 
-        img#filmimage {
-            /* Initial state: hidden */
-            opacity: 0;
-        }
-        .fadeIn {
-            /* Fade in effect */
-            animation: fadeIn 3s ease forwards;
-        }
-        .fadeOut {
-            /* Fade out effect */
-            animation: fadeOut 4s ease forwards ;
-        }
-        .fadeInAnchor {
-          animation:turnGray 3s ease forwards;
-        }
+img#filmimage {
+  /* Initial state: hidden */
+  opacity: 0;
+}
+.fadeIn {
+  /* Fade in effect */
+  animation: fadeIn 3s ease forwards;
+}
+.fadeOut {
+  /* Fade out effect */
+  animation: fadeOut 4s ease forwards;
+}
+.fadeInAnchor {
+  animation: turnGray 3s ease forwards;
+}
 
-        @keyframes turnGray {
-          0% {
-            color:white;
-          }
-          100% {
-            color:lightgray;
-          }
-        }
-        @keyframes turnWhite {
-          0% {
-            color:lightgray;
-          }
-          100% {
-            color:white;
-          }
-        }
-        .fadeOutAnchor {
-          animation:turnWhite 4s ease forwards;
-          animation-delay:4s;
-        }
-
-
+@keyframes turnGray {
+  0% {
+    color: white;
+  }
+  100% {
+    color: lightgray;
+  }
+}
+@keyframes turnWhite {
+  0% {
+    color: lightgray;
+  }
+  100% {
+    color: white;
+  }
+}
+.fadeOutAnchor {
+  animation: turnWhite 4s ease forwards;
+  animation-delay: 4s;
+}
 
 #container-tv {
   max-width: 1024px;
@@ -1854,49 +1847,48 @@ a.active {
 }
 
 #monitor {
-	background: black;
-	position: relative;
-	border-top: 3px solid #555; 
-	margin: 5%;
-	padding: 2% 2% 4% 2%; 
-	border-radius: 10px; 
-	border-bottom-left-radius: 50% 2%; 
-	border-bottom-right-radius: 50% 2%; 
-	transition: margin-right 1s;
+  background: black;
+  position: relative;
+  border-top: 3px solid #555;
+  margin: 5%;
+  padding: 2% 2% 4% 2%;
+  border-radius: 10px;
+  border-bottom-left-radius: 50% 2%;
+  border-bottom-right-radius: 50% 2%;
+  transition: margin-right 1s;
 }
 
 #monitor:after {
-	content: '';
-	display: block;
-	position: absolute;
-	bottom: 3%;
-	left: 36%;
-	height: .5%; 
-	width: 28%;
-	background: #888; 
-	border-radius: 50%; 
-	box-shadow: 0 0 3px 0 white; 
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 3%;
+  left: 36%;
+  height: 0.5%;
+  width: 28%;
+  background: #888;
+  border-radius: 50%;
+  box-shadow: 0 0 3px 0 white;
 }
 
 #monitor-screen {
-	position: relative;
+  position: relative;
   background-color: #ddd;
-	background-size: cover; 
-	background-position: top center;
-	height: 0; 
-	padding-bottom: 56.25%; 
-	position: relative;
-	overflow: hidden;
+  background-size: cover;
+  background-position: top center;
+  height: 0;
+  padding-bottom: 56.25%;
+  position: relative;
+  overflow: hidden;
 }
 #monitor {
-		-webkit-animation: myPulse .2s infinite alternate; 
-		-moz-animation:    myPulse .5s infinite alternate; 
-		-o-animation:      myPulse .5s infinite alternate; 
-		animation:         myPulse .5s infinite alternate; 
-	}
+  -webkit-animation: myPulse 0.2s infinite alternate;
+  -moz-animation: myPulse 0.5s infinite alternate;
+  -o-animation: myPulse 0.5s infinite alternate;
+  animation: myPulse 0.5s infinite alternate;
+}
 
 // @media all and (min-width: 960px) {
-	
 
 // 	@-webkit-keyframes tvflicker {
 // 	  0%   { box-shadow: 0 0 80px 0 rgba(200,235,255,0.4); }
@@ -1916,34 +1908,32 @@ a.active {
 // 	}
 // }
 
-
-
-#about-me-container, #about-me-row, #about-me-column {
-  background-color:#e8e6e3 !important;
-  color:$dinosaur-brown !important;
+#about-me-container,
+#about-me-row,
+#about-me-column {
+  background-color: #e8e6e3 !important;
+  color: $dinosaur-brown !important;
 }
 #video-film-page {
-  object-fit:cover!important;
-  max-width:50vw;
-  max-height:fit-content;
-  margin-left:25vw;
-  margin-top:0;
-  margin-bottom:0;
-  height:auto;
+  width: "100vw";
+  display: "flex";
+  height: "auto";
+  max-height: "50vh";
+  min-height: "50vh";
 }
 
 #film-image {
-  max-width:50vw;
-  max-height:fit-content;
-  margin-left:auto;
-  margin-top:0;
-  margin-bottom:0;
-  height:auto;
+  max-width: 50vw;
+  max-height: fit-content;
+  margin-left: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  height: auto;
 }
 
-@media screen and (max-width: 700px){
+@media screen and (max-width: 700px) {
   #video-film-page {
-    width:100vw!important;
-    height:100%!important;
+    width: 100vw !important;
+    height: 100% !important;
   }
 }
