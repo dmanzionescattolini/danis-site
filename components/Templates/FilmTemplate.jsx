@@ -15,7 +15,7 @@ export default function FilmTemplate(params) {
 
 
 
-        <div className="vh-100 vw-100 h-100 w-100 p-0 m-0 bg-white overflow-y-scroll">
+        <div className="vh-100 vw-100 h-100 w-100 p-0 m-0 bg-white overflow-y-scroll" style={{animation: "cyclingimages ease",animationDuration:"32s",animationIterationCount:"infinite",animationTimingFunction:"linear"}}>
             <MDBCard className="text-justify vh-100 w-100 p-0 m-0 bg-white">
                 {!basicModal &&
                     <div className="bg-image hover-overlay ripple" data-ripple-color="light">

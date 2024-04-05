@@ -1874,3 +1874,20 @@ img#filmimage {
     height: 100% !important;
   }
 }
+
+
+
+@keyframes cyclingimages {
+  0% {
+    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Still.png")';
+  }
+  50% {
+    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/Still.png")';
+  }
+  75% {
+    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Still.png")';
+  }
+  100% {
+    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/Still.png")';
+  }
+}
