@@ -131,7 +131,7 @@ export default function VideoGallery() {
     }, [pandemonic, three, wrench, rackets]);
     if (window.screen.width > 768)
         return (
-            <>
+            <div className= "container container-fluid vw-100 vh-100 overflow-hidden bg-white">
                 <div className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
                     <div className="mask bg-light-subtle opacity-25 w-100 h-auto"></div>
                     {rackets && (
@@ -383,12 +383,12 @@ export default function VideoGallery() {
                             )}
                     </nav>{" "}
                 </div>
-            </>
+            </div>
         );
     else
         return (
             <section
-                className="all-films"
+                className="all-films vw-100 vh-100 overflow-hidden overflow-y-scroll"
                 style={{
                     backgroundColor: "white",
                     maxWidth: "fit-content!important",

@@ -22,14 +22,14 @@ export default function FilmTemplate(params) {
         vid.play();
     };
     return (
-        <MDBContainer fluid
-            className={"vh-100 h-100 d-flex flex-column justify-content-evenly  align-items-evenly p-0 m-0"}>
+        <MDBRow
+            className={"vw-100 vh-100 d-flex flex-column justify-content-evenly  align-items-evenly p-0 m-0"}>
 
-            <div id={"banner-film"} className={"bg-image"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
-                <div style={{ display: (basicModal) ? "flex" : "none" }} className="d-block mx-auto" width="fit-content" height="100%">
-                    <video style={{display:(basicModal)?"flex":"none"}} className="ratio" id={"video-film-page"} playsInline controls autoPlay="false"src={fullLengthVideo} alt="Three Bullets for Bombay" title="Three Bullets to Bombay Beach" ></video>
+            <div id={""} className={"vw-100"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundColor: `rgb(0,0,0)`, maxHeight: "50vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
+                <div style={{ display: (basicModal) ? "flex" : "none" }} className="embed-responsive embed-responsive-16by9">
+                    <iframe style={{display:(basicModal)?"flex":"none"}} className="embed-responsive-item" id={"video-film-page"} playsInline controls autoPlay="false"src={fullLengthVideo} alt="Three Bullets for Bombay" title="Three Bullets to Bombay Beach" ></iframe>
                     {!basicModal &&
-                    <img src={still} alt={`#{title} Still Image`} className="img-fluid mx-auto d-block mw-50 min-vw-50 w-lg-50 h-lg-50 w-sm-100 h-sm-100 w-xl-50 h-xl-50"/>
+                    <img src={still} alt={`#{title} Still Image`} className="img-fluid "/>
 }
 
                 </div>
@@ -135,5 +135,5 @@ export default function FilmTemplate(params) {
             </MDBRow>
         </MDBTable>
 
-        </MDBContainer >);
+        </MDBRow >);
 }
