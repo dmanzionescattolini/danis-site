@@ -37,8 +37,8 @@ export default function FilmTemplate(params) {
                 }
 
                 <MDBCardBody className="px-5 pt-2 h-50 bg-white vh-50 position-fixed bottom-0 overflow-y-scroll">
-                    <MDBCardTitle className="text-center">{title}</MDBCardTitle>
-                    <MDBCardText className="text-justify">
+                    <MDBCardTitle className="text-center mb-3 mt-2">{title}</MDBCardTitle>
+                    <MDBCardText className="text-justify mb-2">
                         {blurb}
                     </MDBCardText>
 
@@ -47,7 +47,7 @@ export default function FilmTemplate(params) {
                             <dt>Director</dt>
                             <dd className="flex-wrap m-0">Daniel Grzywacz</dd>
                         </MDBListGroupItem>
-                        <MDBListGroupItem className="m-0">
+                        <MDBListGroupItem className="me-3 mb-4">
                             <dt>Cast</dt>
                             <dd className="flex-wrap m-0">{cast.map((m) => { return (<li key={cast.indexOf(m)} className="list-unstyled text-nowrap small">{m.castMember} as {m.role} <br /></li>); })}</dd>
                         </MDBListGroupItem>
