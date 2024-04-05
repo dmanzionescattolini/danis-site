@@ -8,7 +8,7 @@ import {
 } from 'mdb-react-ui-kit';
 
 export default function About() {
-    const danielAboutMeText = <MDBTypography blockquote className='mb-0 text-justify overflow-y-scroll'>
+    const danielAboutMeText = <MDBTypography blockquote className='mb-0 text-justify overflow-y-scroll vh-100'>
         <p className="text-muted text-justify small mb-2 mx-3 text-indent fs-6">
             Hello, my name is Daniel, and I love the movies. I&apos;ve been making movies any way that I can for almost 8 years now. This has usually meant writing them, directing them, acting in them, editing them and everything else in between.
         </p>
@@ -44,8 +44,8 @@ export default function About() {
                     {danielAboutMeText}</div>
             </div>
             ||
-            <div className="card overflow-y-scroll">
-                <div className="bg-image hover-overlay ripple" data-ripple-color="light">
+            <div className="card overflow-y-scroll vh-100">
+                <div className="bg-image hover-overlay ripple vh-100" data-ripple-color="light">
                     <img
                         src={danielProfilePicLink}
                         className="img-fluid w-100 d-flex justify-self-center"
@@ -54,7 +54,7 @@ export default function About() {
                         <div className="mask" style={{backgroundColor: "rgba(251, 251, 251, 0.15)"}}></div>
                     </a>
                 </div>
-                <div className="card-body overflow-y-scroll">
+                <div className="card-body overflow-y-scroll vh-100">
                     <h5 className="card-title text-center">Daniel Grzywacz</h5>
                     <div className="card-text overflow-y-scroll">
                         {danielAboutMeText}
