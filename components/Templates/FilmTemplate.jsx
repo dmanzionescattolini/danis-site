@@ -34,45 +34,45 @@ export default function FilmTemplate(params) {
                     </div>
                     ||
                     <div className="embed-responsive embed-responsive-16by9 hover-overlay ripple" data-ripple-color="light">
-                        <iframe className="embed-responsive-item vw-100 p-0 m-0 min-vh-100 h-100"src={fullLengthVideo} title={title} allowFullScreen></iframe>
+                        <iframe className="embed-responsive-item vw-100 p-0 m-0 min-vh-100 h-100" src={fullLengthVideo} title={title} allowFullScreen></iframe>
                     </div>
                 }
 
                 <MDBCardBody className="h-100 bg-white">
-                    <MDBCardTitle>{title}</MDBCardTitle>
+                    <MDBCardTitle className="text-center">{title}</MDBCardTitle>
                     <MDBCardText className="text-justify">
                         {blurb}
                     </MDBCardText>
-            
-                <MDBListGroup horizontal className="border-0 shadow-0 vw-100  p-0 m-0 flex-row justify-content-evenly">
-                    <MDBListGroupItem className="border-0 shadow-0">
-                        <dt>Director</dt>
-                        <dd>{director}</dd>
-                    </MDBListGroupItem>
-                    <MDBListGroupItem className="border-0 shadow-0">
-                        <dt>Cast</dt>
-                        <dd>{cast.map((m) => <>{m.castMember} as {m.role} <br /></>)}</dd>
-                    </MDBListGroupItem>
-                    <MDBListGroupItem className="border-0 shadow-0">
-                        <dt>Release</dt>
-                        <dd>{date}</dd>
-                    </MDBListGroupItem>
-                    <MDBListGroupItem className="border-0 shadow-0">
-                        <dt>Runtime</dt>
-                        <dd>{runtime.value} {runtime.unit || runtime.units}</dd>
-                    </MDBListGroupItem>
 
-                </MDBListGroup>
-                
-                    <MDBBtn onClick={toggleInfo} className="bg-white z-3 w-100 justify-content-center text-center text-black bg-none border-0 shadow-none">
-                        {showInfo ? 'Hide' : 'Peek into Daniel\'s Process'}
+                    <div className="overflow-x-visible w-fit-content mw-100 vw-100 p-0 m-0 mb-3 d-flex flex-row justify-content-center align-content-center text-wrap flex-wrap ">
+                        <MDBListGroupItem className="me-3 mb-4">
+                            <dt>Director</dt>
+                            <dd className="flex-wrap m-0">Daniel Grzywacz</dd>
+                        </MDBListGroupItem>
+                        <MDBListGroupItem className="m-0">
+                            <dt>Cast</dt>
+                            <dd className="flex-wrap m-0">{cast.map((m) => { return (<li key={cast.indexOf(m)} className="list-unstyled text-nowrap small">{m.castMember} as {m.role} <br /></li>); })}</dd>
+                        </MDBListGroupItem>
+                        <MDBListGroupItem className="me-3 mb-4">
+                            <dt>Release</dt>
+                            <dd className="flex-wrap m-0">{date}</dd>
+                        </MDBListGroupItem>
+                        <MDBListGroupItem className="me-3 mb-4">
+                            <dt>Runtime</dt>
+                            <dd className="flex-wrap m-0">{runtime.value} {runtime.unit || runtime.units}</dd>
+                        </MDBListGroupItem>
+
+                    </div>
+
+                    <MDBBtn onClick={toggleInfo} className="bg-white z-3 mw-100 justify-content-center text-center text-black bg-none border-0 shadow-none">
+                        {showInfo ? <span className="fw-lighter">Hide <MDBIcon fa icon="caret-up" /></span> : <span className="fw-lighter">Peek into Daniel's Process <MDBIcon fa icon="caret-down" /></span>}
                     </MDBBtn>
 
 
-                <MDBCollapse open={showInfo} className="text-justify p-4 h-100 bg-white" col="12" >
-                    
-                                {process.map((m) => {return (<p key={process.indexOf(m)}>{m}</p>);})}
-                </MDBCollapse>
+                    <MDBCollapse open={showInfo} className="text-justify p-4 h-100 bg-white" col="12" >
+
+                        {process.map((m) => { return (<p key={process.indexOf(m)}>{m}</p>); })}
+                    </MDBCollapse>
                 </MDBCardBody>
 
             </MDBCard>
