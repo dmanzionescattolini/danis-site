@@ -14,10 +14,10 @@ export default function FilmTemplate(params) {
 
 
 
-        <div className="vh-100 vw-100 h-100 w-100 p-0 m-0 bg-white overflow-y-scroll" >
-            <MDBCard className="text-justify vh-100 w-100 p-0 m-0 bg-white">
+        <div className="vh-100 vw-100 h-100 w-100 p-0 m-0 bg-white vw-100 vh-100" >
+            <MDBCard className="text-justify vh-100 w-100 p-0 m-0 bg-white vw-100">
                 {!basicModal &&
-                    <div className="bg-image hover-overlay ripple" data-ripple-color="light">
+                    <div className="bg-image hover-overlay ripple vh-100 vw-100 p-0 m-0" data-ripple-color="light">
                         <MDBBtn size="3x" onClick={toggleModal} color="white" floating tag='a' className="z-3 fw-lighter position-absolute w-100 h-100 d-flex flex-row justify-content-center align-items-center text-white align-items-center bg-none align-content-center">
                             <MDBIcon far color="white" className="fw-lighter" size="3x" icon="play-circle" />
                         </MDBBtn>
@@ -33,8 +33,8 @@ export default function FilmTemplate(params) {
 
                     </div>
                     ||
-                    <div className="embed-responsive embed-responsive-16by9 hover-overlay ripple" data-ripple-color="light">
-                        <iframe className="embed-responsive-item vw-100 p-0 m-0 min-vh-100 h-100" src={fullLengthVideo} title={title} allowFullScreen></iframe>
+                    <div className="embed-responsive embed-responsive-16by9 hover-overlay ripple vw-100 vh-50 bg-black justify-content-center align-items-center py-0" data-ripple-color="light">
+                        <iframe className="embed-responsive-item vh-auto w-100 vw-100" src={fullLengthVideo} title={title} allowFullScreen></iframe>
                     </div>
                 }
 
