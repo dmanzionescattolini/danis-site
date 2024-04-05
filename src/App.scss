@@ -1940,3 +1940,10 @@ a.active {
   margin-bottom:0;
   height:auto;
 }
+
+@media screen and (max-width: 700px){
+  #video-film-page {
+    width:100vw!important;
+    height:100%!important;
+  }
+}

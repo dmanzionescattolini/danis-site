@@ -1,6 +1,5 @@
 import {
     MDBBtn,
-    MDBContainer,
     MDBTable,
     MDBTableBody,
     MDBRow,
@@ -17,22 +16,33 @@ export default function FilmTemplate(params) {
     const [basicModal, setBasicModal] = useState(false);
     const [showInfo, setShowInfo] = useState(false);
     const toggleInfo = () => setShowInfo(!showInfo);
-    const toggleOpen = () => {setBasicModal(!basicModal);
+    const toggleOpen = () => {
+        setBasicModal(!basicModal);
         const vid = document.getElementById("video-film-page");
         vid.play();
     };
     return (
-        <MDBContainer fluid
-            className={"vh-100 h-100 d-flex flex-column justify-content-evenly  align-items-evenly p-0 m-0"}>
 
-            <div id={"banner-film"} className={"bg-image"} style={(basicModal) ? { backgroundColor: "rgb(0,0,0)" } : { backgroundColor: `rgb(0,0,0)`, maxHeight: "70vh", maxWidth: "100%", width: "auto", height: "auto", backgroundSize: "contain", backgroundPosition: "center" }}>
-                <div style={{ display: (basicModal) ? "flex" : "none" }} className="d-block mx-auto" width="fit-content" height="100%">
-                    <video style={{display:(basicModal)?"flex":"none"}} className="ratio" id={"video-film-page"} playsInline controls autoPlay="false"src={fullLengthVideo} alt="Three Bullets for Bombay" title="Three Bullets to Bombay Beach" ></video>
-                    {!basicModal &&
-                    <img src={still} alt={`#{title} Still Image`} className="img-fluid mx-auto d-block mw-50 min-vw-50 w-lg-50 h-lg-50 w-sm-100 h-sm-100 w-xl-50 h-xl-50"/>
-}
+        <>
+            <div className={"embed-responsive embed-responsive-16by9 vh-auto mh-100 mw-100 vw-100"} style={{backgroundColor: `${(basicModal)?"rgb(0,0,0)":""}`}}>
+                {window.screen.width < 768 &&
 
-                </div>
+                    <>   {basicModal && <video className="embed-responsive-item justify-content-center" playsInline={true} controls={true} autoPlay={false} src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/FullLength.mp4" alt="Three Bullets for Bombay" title="Three Bullets to Bombay Beach" style={{width: "100vw",display: "flex",height: "auto",maxHeight: "50vh",minHeight: "50vh"}}></video>
+                        ||
+                        <img src={still} alt={`#{title} Still Image`} className="mh-100 mw-100 vw-100 vh-auto img-fluid embed-responsive-item" />
+
+                    }
+                    </>
+                    ||
+                    <div style={{ display: (basicModal) ? "flex" : "none" }} className="embed-responsive embed-responsive-16by9 object-fit-cover" width="fit-content" height="100%">
+                        {basicModal && <iframe style={{ display: (basicModal) ? "flex" : "none" }} className="embed-responsive-item" autoPlay="false" src={fullLengthVideo} alt="Three Bullets for Bombay" title="Three Bullets to Bombay Beach" ></iframe>
+                            ||
+                            <img src={still} alt={`#{title} Still Image`} className="img-fluid mx-auto d-block mw-50 min-vw-50 w-lg-50 h-lg-50 w-sm-100 h-sm-100 w-xl-50 h-xl-50" />
+
+                        }
+
+                    </div>
+                }
                 {/* <video autoPlay loop style={{display:(basicModal)?"block":"none"}} src={clip} width="100%" height="100%" alt={title}/> */}
                 {/* <div className="mask bg-dark bg-opacity-25 "></div> */}
                 {basicModal === false &&
@@ -87,53 +97,67 @@ export default function FilmTemplate(params) {
                 id={"movie-info"}
             >
                 <h2 className="display-6 text-center my-2"><small>{title}</small></h2>
-                <div className="px-5 mx-5 my-2 text-justify mw-50"><p className="m-sm-0 p-sm-0 ms-sm-2 mx-lg-5 px-lg-5 py-2 my-2 ms-5 fs-5">{blurb}</p></div>
-                <MDBTableBody className="bg-white">
-                    <tr className="d-flex flex-row justify-content-evenly">
-                        <td className="">
-                            <dt className="text-muted ">Release Date</dt>
-                            <dd>{date}</dd>
-                        </td>
-                        <td>
-                            <dt className="text-muted">Director</dt>
-                            <dd>Daniel Grzywacz</dd>
-                        </td>
-                        <td>
-                            <dt className={"text-muted"}>Starring</dt>
-                            <ul className="list-unstyled">
-                                {cast.map((c) =>
-                                    (<li key={cast.indexOf(c)}>{`${c.castMember}`}<small><em> as </em><span className="ms-1"> {c.role}</span></small></li>))}
 
-                            </ul>
-                        </td>
-                        <td>
-                            <dt className={"text-muted"}>Runtime</dt>
-                            <dd>{`${runtime.value} ${runtime.unit ? runtime.unit : runtime.units}`}</dd>
-                        </td>
-                    </tr>
+                {window.screen.width < 700 &&
+                    <div>
+                        <p className="fs-5 p-5">{blurb}</p>
+                    </div>
+                    ||
+                    <div className="px-5 mx-5 my-2 text-justify mw-50">
+                        <p className="m-sm-0 p-sm-0 ms-sm-2 mx-lg-5 px-lg-5 py-2 my-2 ms-5 fs-5">{blurb}</p>
+                    </div>
+                }
+            <MDBTableBody className="bg-white">
+                <tr className="d-flex flex-row justify-content-evenly">
+                    <td className="">
+                        <dt className="text-muted ">Release Date</dt>
+                        <dd>{date}</dd>
+                    </td>
+                    <td>
+                        <dt className="text-muted">Director</dt>
+                        <dd>Daniel Grzywacz</dd>
+                    </td>
+                    <td>
+                        <dt className={"text-muted"}>Starring</dt>
+                        <ul className="list-unstyled">
+                            {cast.map((c) =>
+                                (<li key={cast.indexOf(c)}>{`${c.castMember}`}<small><em> as </em><span className="ms-1"> {c.role}</span></small></li>))}
+
+                        </ul>
+                    </td>
+                    <td>
+                        <dt className={"text-muted"}>Runtime</dt>
+                        <dd>{`${runtime.value} ${runtime.unit ? runtime.unit : runtime.units}`}</dd>
+                    </td>
+                </tr>
 
 
 
-                </MDBTableBody>
+            </MDBTableBody>
 
-                <MDBRow>
+            <MDBRow>
+                {window.screen.width > 700 &&
                     <MDBCol>
                     </MDBCol>
+                }
                 <MDBCol>
-                        <MDBBtn color="muted" className="border-0 shadow-0 outline-0 d-flex text-center flex-row justify-content-center" onClick={toggleInfo}>Peek into Daniel's process&nbsp;&nbsp;<span className="text-muted fw-light"><i className="fa fa-caret-down" aria-hidden="true"></i></span></MDBBtn>
+                    <MDBBtn color="muted" className="border-0 shadow-0 outline-0 d-flex text-center flex-row justify-content-center" onClick={toggleInfo}>Peek into Daniel's process&nbsp;&nbsp;<span className="text-muted fw-light"><i className="fa fa-caret-down" aria-hidden="true"></i></span></MDBBtn>
 
                     <MDBCollapse open={showInfo} className='mt-3'>
 
                         {process.map(p => {
-                            return (<p key={process.indexOf(p)} className="text-justify text-muted" style={{ textIndent: '1em' }}>
+                            return (<p key={process.indexOf(p)} className="text-justify text-muted p-2" style={{ textIndent: '1em' }}>
                                 {p}
                             </p>);
                         })}
                     </MDBCollapse>
                 </MDBCol>
-                <MDBCol></MDBCol>
+                {window.screen.width > 700 &&
+                    <MDBCol>
+                    </MDBCol>
+                }
             </MDBRow>
-        </MDBTable>
-
-        </MDBContainer >);
+        </MDBTable >
+        </>
+    );
 }
