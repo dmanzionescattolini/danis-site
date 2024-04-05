@@ -1,7 +1,7 @@
 // eslint-disable-()=>setVideonext-line no-unused-varsimport {MDBNavbar} from "mdb-react-ui-kit";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 export default function VideoGallery() {
     const [pandemonic, setPandemonic] = useState(false);
@@ -55,36 +55,28 @@ export default function VideoGallery() {
         "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4"
     );
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const changePicture = () => {
+    function changePicture() {
         if (wrench || pandemonic || rackets || three) {
             // document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
             return;
         }
         // document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
 
-        if (currentImageIndex === 3 || currentImageIndex === -1) {
+        if (currentImageIndex === 3) {
             setCurrentImageIndex(0);
-        } else {
-            setCurrentImageIndex(Math.floor(Math.random() * 3 + 1));
-            console.log(Math.floor(Math.random() * 3 + 1));
+        } else if(currentImageIndex===1){
+            setCurrentImageIndex(2);
+        }else if(currentImageIndex===0){
+            setCurrentImageIndex(1);
+        }else if(currentImageIndex===2){
+            setCurrentImageIndex(3);
+        }else{
+            setCurrentImageIndex(currentImageIndex+1);
         }
 
-        // document.getElementById(images[currentImageIndex].split("/")[5].trim()).style.color = "gray";
-        // setTimeout(() => {
-        //     if (wrench || pandemonic || rackets || three) {
-        //         return;
-        //     }
-        //     const element = document.getElementById("filmimage");
-        //     const anchorEl = document.getElementById(
-        //         images[currentImageIndex].split("/")[5].trim()
-        //     );
-        //     element.classList.remove("fadeIn"); // Remove fadeIn class
-        //     anchorEl.classList.remove("fadeInAnchor");
-        //     element.classList.add("fadeOut");
-        //     // anchorEl.classList.add("fadeOutAnchor"); // Add fadeOut class
-        // }, 4000);
-    };
-    window.setInterval(changePicture, 7000);
+     
+    }
+    window.setInterval(changePicture, 8000);
 
     useEffect(() => {
         changePicture();
@@ -118,7 +110,7 @@ export default function VideoGallery() {
             //     document.getElementById("threeLink").style.color="gray!important";
             //     document.getElementById("threeLink").classList.add("fadeOutAnchor");
         }
-    }, [pandemonic, three, wrench, rackets, changePicture]);
+    }, [pandemonic, three, wrench, rackets]);
     if (window.screen.width > 768)
         return (
             <div className="container container-fluid vw-100 vh-100 overflow-hidden bg-white">
@@ -132,7 +124,7 @@ export default function VideoGallery() {
                             loop
                             muted
                             src={racketsVideoSrc}
-                            className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
+                            className=" vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
                             alt="All Clips"
                         />
                     )}
@@ -143,7 +135,7 @@ export default function VideoGallery() {
                             loop
                             muted
                             src={wrenchVideoSrc}
-                            className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
+                            className=" vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
                             style={videoBackgroundStyle}
                             alt="All Clips"
                         />
@@ -155,7 +147,7 @@ export default function VideoGallery() {
                             loop
                             muted
                             src={pandemonicVideoSrc}
-                            className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
+                            className=" vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
                             style={videoBackgroundStyle}
                             alt="All Clips"
                         />
@@ -168,7 +160,7 @@ export default function VideoGallery() {
                             loop
                             muted
                             src={threeVideoSrc}
-                            className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
+                            className=" vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn "
                             alt="All Clips"
                         />
                     )}
@@ -184,7 +176,7 @@ export default function VideoGallery() {
                                     id={"filmimage"}
                                     src={threeStill}
                                     alt={"Still of Three Bullets for Bombay Beach"}
-                                    className="w-100 h-100 min-vh-100 min-vw-100 img-fluid bg-image   fadeIn position-fixed"
+                                    className="w-100 h-100 min-vh-100 vw-100 img-fluid bg-image position-fixed   fadeIn"
                                 />
                             )}
                             {currentImageIndex === 1 && (
@@ -196,7 +188,7 @@ export default function VideoGallery() {
                                     }}
                                     id={"filmimage"}
                                     src={pandemonicStill}
-                                    className="w-100 h-100 min-vh-100 min-vw-100 img-fluid bg-image   fadeIn position-fixed"
+                                    className="w-100 h-100 min-vh-100 vw-100 img-fluid bg-image position-fixed  fadeIn"
                                 />
                             )}
                             {currentImageIndex === 2 && (
@@ -208,7 +200,7 @@ export default function VideoGallery() {
                                     }}
                                     id={"filmimage"}
                                     src={wrenchStill}
-                                    className="min-vw-100 min-vh-100 w-100 h-100 img-fluid bg-image   fadeIn"
+                                    className="vw-100 min-vh-100 w-100 h-100 img-fluid bg-image position-fixed  fadeIn"
                                 />
                             )}
                             {currentImageIndex === 3 && (
@@ -220,7 +212,7 @@ export default function VideoGallery() {
                                     }}
                                     id={"filmimage"}
                                     src={racketsStill}
-                                    className="min-vw-100 min-vh-100 w-100 h-100 img-fluid bg-image   fadeIn"
+                                    className="vw-100 min-vh-100 w-100 h-100 img-fluid bg-image position-fixed  fadeIn"
                                 />
                             )}
                         </>

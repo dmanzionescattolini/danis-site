@@ -14,7 +14,7 @@ $first-dinosaur-width: $first-dinosaur-height * 228/160;
 $one-twenty-fifth-of-dinosaur-width: $first-dinosaur-width/25;
 html,
 body {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
   background-image: url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png");
   overflow: hidden;
@@ -23,6 +23,7 @@ body {
   font-family: "Roboto", sans-serif;
   background-color: transparent;
   overflow-y: scroll;
+  overflow-x:visible;
 }
 
 #films-menu {
@@ -1728,17 +1729,31 @@ img#filmimage {
   /* Initial state: hidden */
   opacity: 0;
 }
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 .fadeIn {
   /* Fade in effect */
-  animation: fadeIn 3s ease forwards;
+  animation: fadeIn 4s ease forwards;
 }
 .fadeOut {
   /* Fade out effect */
   animation: fadeOut 4s ease forwards;
 }
-.fadeInAnchor {
-  animation: turnGray 3s ease forwards;
-}
+
 
 @keyframes turnGray {
   0% {
@@ -1758,7 +1773,9 @@ img#filmimage {
 }
 .fadeOutAnchor {
   animation: turnWhite 4s ease forwards;
-  animation-delay: 4s;
+}
+.fadeInAnchor {
+  animation: turnGray 4s ease forwards;
 }
 
 #container-tv {
