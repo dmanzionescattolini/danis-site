@@ -15,8 +15,8 @@ export default function FilmTemplate(params) {
 
 
 
-        <div className="vh-100 vw-100 h-100 w-100 p-0 m-0 ">
-            <MDBCard className="text-justify h-100 w-100 p-0 m-0">
+        <div className="vh-100 vw-100 h-100 w-100 p-0 m-0 bg-white overflow-y-scroll">
+            <MDBCard className="text-justify vh-100 w-100 p-0 m-0 bg-white">
                 {!basicModal &&
                     <div className="bg-image hover-overlay ripple" data-ripple-color="light">
                         <MDBBtn size="3x" onClick={toggleModal} color="white" floating tag='a' className="z-3 fw-lighter position-absolute w-100 h-100 d-flex flex-row justify-content-center align-items-center text-white align-items-center bg-none align-content-center">
@@ -35,7 +35,7 @@ export default function FilmTemplate(params) {
                     </div>
                     ||
                     <div className="embed-responsive embed-responsive-16by9 hover-overlay ripple" data-ripple-color="light">
-                        <iframe className="embed-responsive-item w-100 p-0 m-0 min-vh-50 h-100"src={fullLengthVideo} title={title} allowFullScreen></iframe>
+                        <iframe className="embed-responsive-item vw-100 p-0 m-0 min-vh-100 h-100"src={fullLengthVideo} title={title} allowFullScreen></iframe>
                     </div>
                 }
 
@@ -64,18 +64,18 @@ export default function FilmTemplate(params) {
                     </MDBListGroupItem>
 
                 </MDBListGroup>
-                </MDBCardBody>
-                <MDBCardFooter>
+                
                     <MDBBtn onClick={toggleInfo} className="bg-white z-3 w-100 justify-content-center text-center text-black bg-none border-0 shadow-none">
                         {showInfo ? 'Hide' : 'Peek into Daniel\'s Process'}
                     </MDBBtn>
 
-                </MDBCardFooter>
 
-                <MDBCollapse open={showInfo} className="text-justify p-4 h-100 bg-white" >
+                <MDBCollapse open={showInfo} className="text-justify p-4 h-100 bg-white" col="12" >
                     
                                 {process.map((m) => {return (<p key={process.indexOf(m)}>{m}</p>);})}
                 </MDBCollapse>
+                </MDBCardBody>
+
             </MDBCard>
         </div >
     );

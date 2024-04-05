@@ -184,7 +184,7 @@ export default function VideoGallery() {
                                     id={"filmimage"}
                                     src={threeStill}
                                     alt={"Still of Three Bullets for Bombay Beach"}
-                                    className="w-100 h-100 min-vh-100 min-vw-100 img-fluid bg-image   fadeIn"
+                                    className="w-100 h-100 min-vh-100 min-vw-100 img-fluid bg-image   fadeIn position-fixed"
                                 />
                             )}
                             {currentImageIndex === 1 && (
@@ -196,7 +196,7 @@ export default function VideoGallery() {
                                     }}
                                     id={"filmimage"}
                                     src={pandemonicStill}
-                                    className="w-100 h-100 min-vh-100 min-vw-100 img-fluid bg-image   fadeIn"
+                                    className="w-100 h-100 min-vh-100 min-vw-100 img-fluid bg-image   fadeIn position-fixed"
                                 />
                             )}
                             {currentImageIndex === 2 && (
