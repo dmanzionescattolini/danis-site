@@ -1,85 +1,86 @@
-import { useEffect, useState } from "react";
-import { MDBNavbar } from "mdb-react-ui-kit";
+import {useEffect, useState} from "react";
+import {MDBNavbar} from "mdb-react-ui-kit";
 
 // eslint-disable-next-line react/prop-types
 export default function NavigationDani() {
-  const [overlayDisplay, setOverlayDisplay] = useState("block");
-  const [videoFilms, setVideoFilms] = useState(true);
-  function openCloseNav(e) {
-    e.preventDefault();
+    const [overlayDisplay, setOverlayDisplay] = useState("block");
+    const [videoFilms, setVideoFilms] = useState(true);
 
-    setOverlayDisplay(() => {
+    function openCloseNav(e) {
+        e.preventDefault();
 
-      if (overlayDisplay === "block") {
+        setOverlayDisplay(() => {
 
-        return "none";
+            if (overlayDisplay === "block") {
 
-      } else {
-        return "block";
-      }
-    });
-    // if(overlayDisplay==="block"){
-    //   document.getElementById("toggler").style.transform="none";
+                return "none";
 
-    // }else {
-    //   document.getElementById("toggler").style.transform="rotate(40deg)";
+            } else {
+                return "block";
+            }
+        });
+        // if(overlayDisplay==="block"){
+        //   document.getElementById("toggler").style.transform="none";
+
+        // }else {
+        //   document.getElementById("toggler").style.transform="rotate(40deg)";
+        // }
+        setVideoFilms(!videoFilms);
+    }
+
+    useEffect(() => {
+        if (overlayDisplay === "none") {
+            document.getElementById("myNav").style.display = "block";
+            if (document.getElementById("films-menu") !== null && document.getElementById("films-menu") !== undefined)
+                document.querySelectorAll("figcaption > h3").forEach(x => x.style.display = "none");
+        } else {
+            document.getElementById("myNav").style.display = "none";
+            if (document.getElementById("films-menu") !== null && document.getElementById("films-menu") !== undefined)
+                document.querySelectorAll("figcaption > h3").forEach(x => x.style.display = "block");
+        }
+
+    }, [overlayDisplay]);
+    // function closeNav() {
+    //     setOverlayDisplay("none");
     // }
-    setVideoFilms(!videoFilms);
-  }
-  useEffect(() => {
-    if (overlayDisplay === "none") {
-      document.getElementById("myNav").style.display = "block";
-      if (document.getElementById("films-menu") !== null && document.getElementById("films-menu") !== undefined)
-        document.querySelectorAll("figcaption > h3").forEach(x => x.style.display = "none");
-    }
-    else {
-      document.getElementById("myNav").style.display = "none";
-      if (document.getElementById("films-menu") !== null && document.getElementById("films-menu") !== undefined)
-        document.querySelectorAll("figcaption > h3").forEach(x => x.style.display = "block");
-    }
+    return (<>
 
-  }, [overlayDisplay]);
-  // function closeNav() {
-  //     setOverlayDisplay("none");
-  // }
-  return (<>
-
-    <MDBNavbar id="top-navbar" className={"border-0 position-fixed"}>
-      {window.location.pathname.trim() !== "/" && window.location.pathname.trim() !== "" &&
-        <a
-          id={"toggler"}
-          onClick={openCloseNav}
-          className={"bg-transparent border-0 shadow-0 z-2 w-75"}
-        >
-          {window.screen.width < 700 &&
-            <img
-              src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
-              width={100}
-              className={"shadow-0 border-0 bg-transparent  img-fluid p-3 ms-2"}
-              alt={"dinosaur toggle"}
-            />
-            ||
-            <img
-              src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
-              width={200}
-              className={"shadow-0 border-0 bg-transparent  img-fluid p-3 ms-2"}
-              alt={"dinosaur toggle"}
-            />
-          }
+            <MDBNavbar id="top-navbar" className={"border-0 position-fixed"}>
+                {window.location.pathname.trim() !== "/" && window.location.pathname.trim() !== "" &&
+                    <a
+                        id={"toggler"}
+                        onClick={openCloseNav}
+                        className={"bg-transparent border-0 shadow-0 z-2 w-75"}
+                    >
+                        {window.screen.width < 700 &&
+                            <img
+                                src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
+                                width={100}
+                                className={"shadow-0 border-0 bg-transparent  img-fluid p-3 ms-2"}
+                                alt={"dinosaur toggle"}
+                            />
+                            ||
+                            <img
+                                src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
+                                width={200}
+                                className={"shadow-0 border-0 bg-transparent  img-fluid p-3 ms-2"}
+                                alt={"dinosaur toggle"}
+                            />
+                        }
 
 
-        </a>
-      }
-    </MDBNavbar>
-    <div id="myNav" className="overlay-x lh-sm text-left m-0 " style={{ display: `${overlayDisplay}!important` }}>
+                    </a>
+                }
+            </MDBNavbar>
+            <div id="myNav" className="overlay-x lh-sm text-left m-0 " style={{display: `${overlayDisplay}!important`}}>
 
 
-      <div className="overlay-x-content d-flex flex-column justify-content-evenly" >
-        <a className="shadow-1 flex-fill fs-1" href="/home"><h1 className="display-1">Home</h1></a>
-        <a className="flex-fill display-1"href="/films"><h1 className="display-1">Films</h1></a>
-        <a className="flex-fill fs-1" href="/about"><h1 className="display-1">About</h1></a>
-      </div>
-    </div>
-  </>
-  );
+                <div className="overlay-x-content d-flex flex-column justify-content-evenly">
+                    <a className="shadow-1 flex-fill fs-1" href="/home"><h1 className="display-1">Home</h1></a>
+                    <a className="flex-fill display-1" href="/films"><h1 className="display-1">Films</h1></a>
+                    <a className="flex-fill fs-1" href="/about"><h1 className="display-1">About</h1></a>
+                </div>
+            </div>
+        </>
+    );
 }
