@@ -34,7 +34,7 @@ export default function About() {
 
         <footer className='blockquote-footer'>
             <p className="text-muted text-justify small mb-2 mx-3 text-indent fs-6 px-1">
-                Please email me at <a href="email:Daniel@YellowDinosaur.io">daniel@yellowdinosaur.io</a> if you would like to collaborate on a project. I look forward to hearing from you.
+                Please email me at <a href="mail:Daniel@YellowDinosaur.io">daniel@yellowdinosaur.io</a> if you would like to collaborate on a project. I look forward to hearing from you.
             </p>
             <cite title='Dan Signature'>Dan</cite>
             <br></br>
