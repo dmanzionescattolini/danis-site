@@ -2,8 +2,6 @@
 import 'mdb-react-ui-kit/dist/css/mdb.min.css'
 import 'bootstrap/dist/css/bootstrap.css';
 import { useEffect, useState } from "react";
-import "animate.css";
-import { MDBNavbar, MDBListGroup, MDBListGroupItem, MDBNavbarNav } from 'mdb-react-ui-kit';
 
 export default function VideoGallery() {
     const [pandemonic, setPandemonic] = useState(false);

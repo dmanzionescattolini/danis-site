@@ -1,6 +1,5 @@
 import { useState } from "react";
-import FilmTemplate from "../../Templates/FilmTemplate.jsx";
-const dateNow = Date.now();
+import FilmTemplate from "../../Templates/FilmTemplate";
 export default function APandemonicSerenade() {
 
   return <FilmTemplate

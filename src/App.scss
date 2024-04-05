@@ -984,16 +984,13 @@ html {
   flood-color: rgb(0, 0, 0);
   flood-opacity: 1;
 
-  hyphenate-character: auto;
 
   hyphenate-limit-chars: auto;
 
-  hyphens: manual;
 
   image-orientation: from-image;
   image-rendering: auto;
 
-  initial-letter: normal;
 
   inset-block-end: auto;
 
@@ -1028,16 +1025,7 @@ html {
 
   marker-start: none;
 
-  mask-clip: border-box;
-  mask-composite: add;
 
-  mask-image: none;
-
-  mask-mode: match-source;
-  mask-origin: border-box;
-  mask-repeat: repeat;
-
-  mask-size: auto;
 
   mask-type: luminance;
 
@@ -1045,44 +1033,21 @@ html {
 
   math-shift: normal;
 
-  math-style: normal;
 
   mix-blend-mode: normal;
 
   object-fit: fill;
 
   object-position: 50% 50%;
-  object-view-box: none;
-
-  offset-anchor: auto;
-
-  offset-distance: 0px;
-
-  offset-path: none;
-
   offset-position: normal;
 
-  offset-rotate: auto 0deg;
 
   opacity: 1;
 
-  orphans: 2;
-
-  overflow-anchor: auto;
-
-  overflow-clip-margin: 0px;
 
   overflow-wrap: normal;
 
   overlay: none;
-
-  overscroll-behavior-block: auto;
-
-  overscroll-behavior-inline: auto;
-
-  overscroll-behavior-x: auto;
-
-  overscroll-behavior-y: auto;
 
   padding-block-end: 0px;
 
@@ -1092,9 +1057,6 @@ html {
 
   padding-inline-start: 0px;
 
-  page: auto;
-
-  page-orientation: normal;
   paint-order: normal;
 
   perspective: none;
@@ -1105,17 +1067,10 @@ html {
 
   r: 0px;
 
-  rotate: none;
 
   row-gap: normal;
 
-  ruby-position: over;
 
-  rx: auto;
-
-  ry: auto;
-
-  scale: none;
 
   scroll-behavior: auto;
 
@@ -1153,7 +1108,6 @@ html {
 
   scroll-snap-align: none;
 
-  scroll-snap-stop: normal;
 
   scroll-snap-type: none;
 
@@ -1161,11 +1115,6 @@ html {
 
   scroll-timeline-name: none;
 
-  scrollbar-color: auto;
-
-  scrollbar-gutter: auto;
-
-  scrollbar-width: auto;
 
   shape-image-threshold: 0;
 
@@ -1176,7 +1125,6 @@ html {
   shape-rendering: auto;
 
   size: normal;
-  speak: normal;
 
   stop-color: rgb(0, 0, 0);
   stop-opacity: 1;
@@ -1199,18 +1147,6 @@ html {
 
   text-anchor: start;
 
-  text-combine-upright: none;
-
-  text-decoration-skip-ink: auto;
-
-  // text-emphasis-color:black;
-  text-emphasis-position: over;
-
-  text-emphasis-style: none;
-
-  text-underline-offset: auto;
-
-  text-underline-position: auto;
 
   timeline-scope: none;
 
@@ -1223,13 +1159,9 @@ html {
 
   transform-style: flat;
 
-  translate: none;
 
   unicode-bidi: normal;
 
-  user-select: none;
-
-  vector-effect: none;
 
   view-timeline-axis: block;
 
@@ -1241,7 +1173,6 @@ html {
 
   -webkit-box-align: stretch;
 
-  -webkit-box-decoration-break: slice;
 
   -webkit-box-direction: normal;
 
@@ -1253,7 +1184,6 @@ html {
 
   -webkit-box-pack: start;
 
-  -webkit-box-reflect: none;
 
   -webkit-line-clamp: none;
 
@@ -1271,19 +1201,15 @@ html {
   -webkit-mask-position-y: 0%;
   -webkit-perspective-origin-x: economy;
   -webkit-perspective-origin-y: economy;
-  -webkit-print-color-adjust: economy;
 
   -webkit-rtl-ordering: logical;
 
-  -webkit-ruby-position: before;
 
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-text-combine: none;
 
   -webkit-text-decorations-in-effect: none;
 
   // -webkit-text-fill-color:black;
-  -webkit-text-security: none;
 
   // -webkit-text-stroke-color:black;
   -webkit-text-stroke-width: 0px;
@@ -1293,14 +1219,8 @@ html {
   -webkit-transform-origin-z: auto;
   -webkit-user-drag: auto;
 
-  -webkit-user-modify: read-only;
-  widows: 2;
-
   will-change: auto;
 
-  x: 0px;
-
-  y: 0px;
 }
 
 #video-home {

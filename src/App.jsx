@@ -15,7 +15,7 @@ import About from "../components/About/About.jsx";
 export default function App() {
   const [goingUp, setGoingUp] = useState(true);
   const [x, setX] = useState(0);
-  const [speed, setSpeed] = useState((window.screen.width<768)?100:20);
+  const [speed] = useState((window.screen.width < 768) ? 100 : 20);
   useEffect(() => {
     let y = Number.parseInt(x);
     let up = goingUp;
@@ -37,8 +37,8 @@ export default function App() {
           setX(y);
         }
       }
-  }, (speed));
-  }, []);
+    }, (speed));
+  }, [goingUp, speed, x]);
   return (
     <>
       <NavigationDani />
@@ -51,7 +51,7 @@ export default function App() {
 
           <Route
             element={<APandemonicSerenade
-            />}path={"/films/a-pandemonic-serenade"}
+            />} path={"/films/a-pandemonic-serenade"}
           />
           <Route
             element={<RacketsAllTheWayDown />}
@@ -62,7 +62,7 @@ export default function App() {
             element={<ThreeBulletsForBombay />}
             path="/films/three-bullets-to-bombay-beach"
           />
-          <Route element={<About/>} path={"/about"}/>
+          <Route element={<About />} path={"/about"} />
         </Routes>
       </BrowserRouter>
     </>

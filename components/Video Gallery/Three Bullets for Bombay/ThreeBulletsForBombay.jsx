@@ -1,8 +1,9 @@
-import FilmTemplate from "../../Templates/FilmTemplate.jsx"; export const ThreeBulletsForBombay = () => {
+import FilmTemplate from "../../Templates/FilmTemplate"; 
+export const ThreeBulletsForBombay = () => {
   return (
     <>
       <FilmTemplate
-      date={2016}
+        date={2016}
         className="overflow-y-scroll"
         fullLengthVideo=
         "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/FullLength.mp4" blurb="A blood-soaked supernatural western about a woman lost in the desert after a heist gone wrong. With three bullets in her gun and a talking rock by her side, can she make it back to civilization before her co-conspirators catch up with her? Alice Bright will give it her best three shots."

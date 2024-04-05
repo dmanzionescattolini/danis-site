@@ -2,7 +2,6 @@
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { useEffect, useState } from "react";
-import "animate.css";
 
 export default function VideoGallery() {
     const [pandemonic, setPandemonic] = useState(false);
@@ -52,18 +51,9 @@ export default function VideoGallery() {
         "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Rackets+Clip.mp4";
     const threeVideoSrc =
         "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/3BBB+Clip.mp4";
-    const allClips =
-        "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4";
-    const videos = [
-        threeVideoSrc,
-        pandemonicVideoSrc,
-        wrenchVideoSrc,
-        racketsVideoSrc,
-    ];
-    const [activeVideo, setActiveVideo] = useState(
+    const [, setActiveVideo] = useState(
         "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4"
     );
-    const images = [threeStill, pandemonicStill, wrenchStill, racketsStill];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const changePicture = () => {
         if (wrench || pandemonic || rackets || three) {
@@ -128,10 +118,10 @@ export default function VideoGallery() {
             //     document.getElementById("threeLink").style.color="gray!important";
             //     document.getElementById("threeLink").classList.add("fadeOutAnchor");
         }
-    }, [pandemonic, three, wrench, rackets]);
+    }, [pandemonic, three, wrench, rackets, changePicture]);
     if (window.screen.width > 768)
         return (
-            <div className= "container container-fluid vw-100 vh-100 overflow-hidden bg-white">
+            <div className="container container-fluid vw-100 vh-100 overflow-hidden bg-white">
                 <div className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
                     <div className="mask bg-light-subtle opacity-25 w-100 h-auto"></div>
                     {rackets && (
@@ -186,11 +176,11 @@ export default function VideoGallery() {
                         <>
                             {currentImageIndex === 0 && (
                                 <img
-                                onAnimationEnd={(e)=>{
-                                    e.preventDefault();
-                                    e.target.classList.remove("fadeIn");
-                                    e.target.classList.add("fadeOut");
-                                }}
+                                    onAnimationEnd={(e) => {
+                                        e.preventDefault();
+                                        e.target.classList.remove("fadeIn");
+                                        e.target.classList.add("fadeOut");
+                                    }}
                                     id={"filmimage"}
                                     src={threeStill}
                                     alt={"Still of Three Bullets for Bombay Beach"}
@@ -249,7 +239,8 @@ export default function VideoGallery() {
                                     if (hasFadeIn) {
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    }}}
+                                    }
+                                }}
                                 id="Three+Bullets+to+Bombay+Beach"
                                 href="/films/three-bullets-to-bombay-beach"
                                 onMouseEnter={() => setThree(true)}
@@ -259,13 +250,13 @@ export default function VideoGallery() {
                             </a>
                         )) || (
                                 <a
-                                 onAnimationEnd={(e) => {
-                                    e.preventDefault();
-                                    
+                                    onAnimationEnd={(e) => {
+                                        e.preventDefault();
+
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    
-                                }}
+
+                                    }}
                                     onMouseEnter={() => setThree(true)}
                                     onMouseLeave={() => setThree(false)}
                                     className="bg-transparent text-white fadeInAnchor"
@@ -276,12 +267,12 @@ export default function VideoGallery() {
                             )}
                         {(currentImageIndex === 1 && (
                             <a
-                                 onAnimationEnd={(e) => {
+                                onAnimationEnd={(e) => {
                                     e.preventDefault();
-                                    
-                                        e.target.value.classList.remove("fadeInAnchor");
-                                        e.target.value.classList.add("fadeOutAnchor");
-                                    
+
+                                    e.target.value.classList.remove("fadeInAnchor");
+                                    e.target.value.classList.add("fadeOutAnchor");
+
                                 }}
                                 className="text-opacity-50 text-light bg-transparent  fadeOutAnchor "
                                 id="A+Pandemonic+Serenade"
@@ -293,13 +284,13 @@ export default function VideoGallery() {
                             </a>
                         )) || (
                                 <a
-                                 onAnimationEnd={(e) => {
-                                    e.preventDefault();
-                                    
+                                    onAnimationEnd={(e) => {
+                                        e.preventDefault();
+
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    
-                                }}
+
+                                    }}
                                     onMouseEnter={() => setPandemonic(true)}
                                     onMouseLeave={() => setPandemonic(false)}
                                     className="bg-transparent text-white fadeInAnchor"
@@ -313,10 +304,10 @@ export default function VideoGallery() {
                             <a
                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
-                                    
-                                        e.target.value.classList.remove("fadeInAnchor");
-                                        e.target.value.classList.add("fadeOutAnchor");
-                                    
+
+                                    e.target.value.classList.remove("fadeInAnchor");
+                                    e.target.value.classList.add("fadeOutAnchor");
+
                                 }}
                                 className="text-opacity-50 text-light bg-transparent  fadeOutAnchor "
                                 id="The+Wrench"
@@ -328,13 +319,13 @@ export default function VideoGallery() {
                             </a>
                         )) || (
                                 <a
-                                 onAnimationEnd={(e) => {
-                                    e.preventDefault();
-                                    
+                                    onAnimationEnd={(e) => {
+                                        e.preventDefault();
+
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    
-                                }}
+
+                                    }}
                                     onMouseEnter={() => setWrench(true)}
                                     onMouseLeave={() => setWrench(false)}
                                     className="bg-transparent text-white fadeInAnchor"
@@ -348,12 +339,12 @@ export default function VideoGallery() {
 
                         {(currentImageIndex === 3 && (
                             <a
-                                 onAnimationEnd={(e) => {
+                                onAnimationEnd={(e) => {
                                     e.preventDefault();
-                                    
-                                        e.target.value.classList.remove("fadeInAnchor");
-                                        e.target.value.classList.add("fadeOutAnchor");
-                                    
+
+                                    e.target.value.classList.remove("fadeInAnchor");
+                                    e.target.value.classList.add("fadeOutAnchor");
+
                                 }}
                                 className="text-opacity-50 text-light bg-transparent  fadeOutAnchor "
                                 id="Rackets+All+the+Way+Down"
@@ -365,13 +356,13 @@ export default function VideoGallery() {
                             </a>
                         )) || (
                                 <a
-                                 onAnimationEnd={(e) => {
-                                    e.preventDefault();
-                                    
+                                    onAnimationEnd={(e) => {
+                                        e.preventDefault();
+
                                         e.target.value.classList.remove("fadeInAnchor");
                                         e.target.value.classList.add("fadeOutAnchor");
-                                    
-                                }}
+
+                                    }}
                                     onMouseEnter={() => setRackets(true)}
                                     onMouseLeave={() => setRackets(false)}
                                     className="bg-transparent text-white fadeInAnchor"
@@ -418,7 +409,7 @@ export default function VideoGallery() {
                         style={{ overflowX: "hidden!important" }}
                     >
                         <a href="/films/the-wrench" title="The Wrench">
-                            
+
                             <figure>
                                 <div className="w-responsive">
                                     <div className="embed-responsive-container">
