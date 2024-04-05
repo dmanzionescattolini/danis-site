@@ -74,10 +74,10 @@ export default function NavigationDani() {
     <div id="myNav" className="overlay-x lh-sm text-left m-0 " style={{ display: `${overlayDisplay}!important` }}>
 
 
-      <div className="overlay-x-content d-flex flex-column justify-content-center justify-content-center">
-        <a className="shadow-1 object-fit-fill" href="/home">Home</a>
-        <a href="/films">Films</a>
-        <a href="/about">About</a>
+      <div className="overlay-x-content d-flex flex-column justify-content-evenly" >
+        <a className="shadow-1 flex-fill fs-1" href="/home"><h1 className="display-1">Home</h1></a>
+        <a className="flex-fill display-1"href="/films"><h1 className="display-1">Films</h1></a>
+        <a className="flex-fill fs-1" href="/about"><h1 className="display-1">About</h1></a>
       </div>
     </div>
   </>
