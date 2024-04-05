@@ -16,7 +16,7 @@ export default function FilmTemplate(params) {
 
 
         <div className="p-0 m-0 bg-white vh-100" >
-            <MDBCard className="text-justify vh-100 vw-100 p-0 m-0 bg-white vw-100">
+            <MDBCard className="text-justify vh-100 vw-100 p-0 m-0 bg-white w-100 overflow-x-visible overflow-y-scroll mw-100">
                 {!basicModal &&
                     <div className="bg-image hover-overlay ripple h-50 vw-100 p-0 m-0 position-fixed vh-50 top-0" data-ripple-color="light" style={{ backgroundImage: `url(${still})` }}>
                         <MDBBtn size="3x" onClick={toggleModal} color="white" floating tag='a' className="z-3 fw-lighter position-absolute w-100 h-100 d-flex flex-row justify-content-center align-items-center text-white align-items-center bg-none align-content-center">
@@ -36,31 +36,31 @@ export default function FilmTemplate(params) {
                     </div>
                 }
 
-                <MDBCardBody className="px-5 pt-2 h-50 bg-white vh-50 position-fixed bottom-0 overflow-y-scroll">
+                <MDBCardBody className="px-5 pt-2 h-50 bg-white vh-50 position-fixed w-100 bottom-0 overflow-y-scroll overflow-x-visible flex-wrap">
                     <MDBCardTitle className="text-center mb-3 mt-2">{title}</MDBCardTitle>
                     <MDBCardText className="text-justify mb-2">
                         {blurb}
                     </MDBCardText>
 
-                    <div className=" ">
-                        <MDBListGroupItem className="me-3 mb-4">
+                    <MDBListGroup className="list-group-horizontal list-unstyled w-100 justify-content-center mt-5 mb-3 flex-wrap" >
+                        <MDBListGroupItem className="me-3 mb-4 border-0 shadow-0">
                             <dt>Director</dt>
                             <dd className="flex-wrap m-0">Daniel Grzywacz</dd>
                         </MDBListGroupItem>
-                        <MDBListGroupItem className="me-3 mb-4">
+                        <MDBListGroupItem className="me-3 mb-4 border-0 shadow-0">
                             <dt>Cast</dt>
                             <dd className="flex-wrap m-0">{cast.map((m) => { return (<li key={cast.indexOf(m)} className="list-unstyled text-nowrap small">{m.castMember} as {m.role} <br /></li>); })}</dd>
                         </MDBListGroupItem>
-                        <MDBListGroupItem className="me-3 mb-4">
+                        <MDBListGroupItem className="me-3 mb-4 border-0 shadow-0">
                             <dt>Release</dt>
                             <dd className="flex-wrap m-0">{date}</dd>
                         </MDBListGroupItem>
-                        <MDBListGroupItem className="me-3 mb-4">
+                        <MDBListGroupItem className="me-3 mb-4 border-0 shadow-0">
                             <dt>Runtime</dt>
                             <dd className="flex-wrap m-0">{runtime.value} {runtime.unit || runtime.units}</dd>
                         </MDBListGroupItem>
 
-                    </div>
+                    </MDBListGroup>
 
                     <MDBBtn onClick={toggleInfo} className="bg-white z-3 mw-100 d-flex flex-row w-100 justify-content-center text-center text-black bg-none border-0 shadow-none">
                         {showInfo ? <span className="fw-lighter text-center w-100">Hide <MDBIcon fa icon="caret-up" /></span> : <span className="fw-lighter text-center w-100">Peek into Daniel's Process <MDBIcon fa icon="caret-down" /></span>}
