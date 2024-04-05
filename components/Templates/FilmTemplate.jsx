@@ -71,7 +71,7 @@ export default function FilmTemplate(params) {
 
                         <div style={{ columnCount: 1 }} className=" col-md-12 gx-5 mb-4 text-muted">
                             
-                            {process.map((m) => { return (<div key={process.indexOf(m)}>{m}</div>); })}
+                            {process.map((m) => { return (<div key={process.indexOf(m)} className="mb-4">{m}</div>); })}
                             
                         </div>
                     </MDBCollapse>
