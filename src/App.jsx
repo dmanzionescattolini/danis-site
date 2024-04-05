@@ -38,11 +38,11 @@ export default function App() {
         }
       }
     }, (speed));
-  }, [goingUp, speed, x]);
+  }, []);
   return (
     <>
       <NavigationDani />
-      <BrowserRouter className={"w-100 h-100 p-0 m-0 "}>
+      <BrowserRouter >
         <Routes>
           <Route element={<LandingPage />} path="" />
           <Route element={<Home />} path="/home" />

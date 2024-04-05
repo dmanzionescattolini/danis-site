@@ -2,8 +2,7 @@ import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 let params = { clip: String, image: String, title: String, cast: Array, date: String };
-import { Button } from "bootstrap/dist/js/bootstrap.bundle";
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardFooter, MDBCardLink, MDBCardOverlay, MDBCardText, MDBCardTitle, MDBCol, MDBCollapse, MDBIcon, MDBListGroup, MDBListGroupItem, MDBRow, MDBTable, MDBTableHead } from "mdb-react-ui-kit";
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardText, MDBCardTitle, MDBCollapse, MDBIcon, MDBListGroup, MDBListGroupItem } from "mdb-react-ui-kit";
 export default function FilmTemplate(params) {
     const { date, fullLengthVideo, title, cast, runtime, blurb, still, process, director } = params;
     const [basicModal, setBasicModal] = useState(false);
@@ -15,7 +14,7 @@ export default function FilmTemplate(params) {
 
 
 
-        <div className="vh-100 vw-100 h-100 w-100 p-0 m-0 bg-white overflow-y-scroll" style={{animation: "cyclingimages ease",animationDuration:"32s",animationIterationCount:"infinite",animationTimingFunction:"linear"}}>
+        <div className="vh-100 vw-100 h-100 w-100 p-0 m-0 bg-white overflow-y-scroll" >
             <MDBCard className="text-justify vh-100 w-100 p-0 m-0 bg-white">
                 {!basicModal &&
                     <div className="bg-image hover-overlay ripple" data-ripple-color="light">

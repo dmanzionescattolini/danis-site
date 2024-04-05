@@ -12,15 +12,16 @@ $dinosaur-brown: #5a441b;
 $dinosaur-mustard: #eda803;
 $first-dinosaur-width: $first-dinosaur-height * 228/160;
 $one-twenty-fifth-of-dinosaur-width: $first-dinosaur-width/25;
-html,
+
 body {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
+  position:fixed;
   background-image: url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png");
-  overflow: hidden;
   background-repeat: repeat-x;
-  background-size: cover;
-  font-family: "Roboto", sans-serif;
+  font-family: "Roboto", sans-serif!important;
+ 
+
   background-color: transparent;
   overflow-y: scroll;
   overflow-x:visible;
@@ -32,15 +33,14 @@ body {
 }
 
 main {
-  font-family: "Roboto Condensed";
+  font-family: "Roboto";
   font-weight: normal;
   font-weight: normal;
-  max-height: 100vh;
+  width:100%;
+  height: 100vh;
   padding: 0;
   margin: 0;
-  max-width: 100%;
-  background-size: cover;
-  overflow: hidden;
+  
 }
 
 // body>div.offcanvas.offcanvas-start.show>div.offcanvas-header {
@@ -667,9 +667,8 @@ html {
 
   text-decoration-style: solid;
 
-  text-indent: 0px;
+  text-indent: 10px;
 
-  text-overflow: clip;
 
   text-shadow: none;
 
@@ -1860,11 +1859,12 @@ img#filmimage {
 }
 
 #film-image {
-  max-width: 50vw;
-  max-height: fit-content;
-  margin-left: auto;
-  margin-top: 0;
-  margin-bottom: 0;
+  max-height: 100vh;
+  min-width: 100vw;
+  overflow:hidden;
+  width:100%;
+  height:auto;
+
   height: auto;
 }
 
@@ -1879,15 +1879,15 @@ img#filmimage {
 
 @keyframes cyclingimages {
   0% {
-    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Still.png")';
+    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Still.png")!important';
   }
   50% {
-    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/Still.png")';
+    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/Still.png")!important';
   }
   75% {
-    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Still.png")';
+    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Still.png")!Important';
   }
   100% {
-    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/Still.png")';
+    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/Still.png")!important';
   }
 }

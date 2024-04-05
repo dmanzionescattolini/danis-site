@@ -113,8 +113,8 @@ export default function VideoGallery() {
     }, [pandemonic, three, wrench, rackets]);
     if (window.screen.width > 768)
         return (
-            <div className="container container-fluid vw-100 vh-100 overflow-hidden bg-white">
-                <div className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
+            <div className="w-100 min-vh-100 min-vw-100 h-100 p-0 m-0 position-fixed" >
+                <div className="w-100 min-vh-100 min-vw-100 h-100 p-0 m-0 position-fixed">
                     <div className="mask bg-light-subtle opacity-25 w-100 h-auto"></div>
                     {rackets && (
                         <video
@@ -173,10 +173,10 @@ export default function VideoGallery() {
                                         e.target.classList.remove("fadeIn");
                                         e.target.classList.add("fadeOut");
                                     }}
-                                    id={"filmimage"}
+                                    
                                     src={threeStill}
                                     alt={"Still of Three Bullets for Bombay Beach"}
-                                    className="w-100 h-100 min-vh-100 vw-100 img-fluid bg-image position-fixed   fadeIn"
+                                    className="vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn"
                                 />
                             )}
                             {currentImageIndex === 1 && (
@@ -186,9 +186,9 @@ export default function VideoGallery() {
                                         e.target.classList.remove("fadeIn");
                                         e.target.classList.add("fadeOut");
                                     }}
-                                    id={"filmimage"}
+                                    
                                     src={pandemonicStill}
-                                    className="w-100 h-100 min-vh-100 vw-100 img-fluid bg-image position-fixed  fadeIn"
+                                    className="vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn"
                                 />
                             )}
                             {currentImageIndex === 2 && (
@@ -198,9 +198,9 @@ export default function VideoGallery() {
                                         e.target.classList.remove("fadeIn");
                                         e.target.classList.add("fadeOut");
                                     }}
-                                    id={"filmimage"}
+                                    
                                     src={wrenchStill}
-                                    className="vw-100 min-vh-100 w-100 h-100 img-fluid bg-image position-fixed  fadeIn"
+                                    className="vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn"
                                 />
                             )}
                             {currentImageIndex === 3 && (
@@ -210,9 +210,9 @@ export default function VideoGallery() {
                                         e.target.classList.remove("fadeIn");
                                         e.target.classList.add("fadeOut");
                                     }}
-                                    id={"filmimage"}
+                                    
                                     src={racketsStill}
-                                    className="vw-100 min-vh-100 w-100 h-100 img-fluid bg-image position-fixed  fadeIn"
+                                    className="vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed  fadeIn"
                                 />
                             )}
                         </>
