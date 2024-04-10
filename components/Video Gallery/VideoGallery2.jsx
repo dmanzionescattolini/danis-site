@@ -2,7 +2,7 @@
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { useCallback, useEffect, useState } from "react";
-
+import {MDBContainer} from "mdb-react-ui-kit";
 export default function VideoGallery() {
     const [pandemonic, setPandemonic] = useState(false);
     const [wrench, setWrench] = useState(false);
@@ -111,9 +111,9 @@ export default function VideoGallery() {
             //     document.getElementById("threeLink").classList.add("fadeOutAnchor");
         }
     }, [pandemonic, three, wrench, rackets]);
-    if (window.screen.width > 768)
+    if (window.screen.width > 700)
         return (
-            <div className="min-vw-100 min-vh-100 p-0 m-0 " >
+            <div className="vw-100 vh-100 p-0 m-0  overflow-y-scroll overflow-x-visible" >
               
                     <div className="mask bg-light-subtle opacity-25 vw-100 h-auto"></div>
                     {rackets && (
@@ -124,7 +124,7 @@ export default function VideoGallery() {
                             loop
                             muted
                             src={racketsVideoSrc}
-                            className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
+                            className=" img-fluid fadeIn min-vw-100 p-0 m-0 "
                             alt="All Clips"
                         />
                     )}
@@ -165,7 +165,7 @@ export default function VideoGallery() {
                         />
                     )}
                     {!pandemonic && !wrench && !rackets && !three && (
-                        <>
+                        <section className="position-fixed left-0 right-0 top-0 bottom-0 min-vw-100 min-vh-100 w-100 h-auto">
                             {currentImageIndex === 0 && (
                                 <img
                                     onAnimationEnd={(e) => {
@@ -176,7 +176,7 @@ export default function VideoGallery() {
                                     
                                     src={threeStill}
                                     alt={"Still of Three Bullets for Bombay Beach"}
-                                    className="img-fluid fadeIn vw-100 vh-100 p-0 m-0"
+                                    className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
                                 />
                             )}
                             {currentImageIndex === 1 && (
@@ -188,7 +188,7 @@ export default function VideoGallery() {
                                     }}
                                     
                                     src={pandemonicStill}
-                                    className="img-fluid fadeIn vw-100 vh-100 p-0 m-0"
+                                    className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
                                 />
                             )}
                             {currentImageIndex === 2 && (
@@ -200,7 +200,7 @@ export default function VideoGallery() {
                                     }}
                                     
                                     src={wrenchStill}
-                                    className="img-fluid fadeIn vw-100 vh-100 p-0 m-0"
+                                    className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
                                 />
                             )}
                             {currentImageIndex === 3 && (
@@ -212,10 +212,10 @@ export default function VideoGallery() {
                                     }}
                                     
                                     src={racketsStill}
-                                    className="img-fluid fadeIn vw-100 vh-100 p-0 m-0"
+                                    className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
                                 />
                             )}
-                        </>
+                        </section>
                     )}{" "}
                     <nav
                         id="films-menu"
@@ -251,7 +251,7 @@ export default function VideoGallery() {
                                     }}
                                     onMouseEnter={() => setThree(true)}
                                     onMouseLeave={() => setThree(false)}
-                                    className="bg-transparent text-white fadeInAnchor"
+                                    className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
                                     href="/films/three-bullets-to-bombay-beach"
                                 >
                                     Three Bullets to Bombay Beach
@@ -266,7 +266,7 @@ export default function VideoGallery() {
                                     e.target.value.classList.add("fadeOutAnchor");
 
                                 }}
-                                className="text-opacity-50 text-light bg-transparent  fadeOutAnchor "
+                                className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
                                 id="A+Pandemonic+Serenade"
                                 href="/films/a-pandemonic-serenade"
                                 onMouseEnter={() => setPandemonic(true)}
@@ -285,7 +285,7 @@ export default function VideoGallery() {
                                     }}
                                     onMouseEnter={() => setPandemonic(true)}
                                     onMouseLeave={() => setPandemonic(false)}
-                                    className="bg-transparent text-white fadeInAnchor"
+                                    className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
                                     id="A+Pandemonic+Serenade"
                                     href="/films/a-pandemonic-serenade"
                                 >
@@ -301,7 +301,7 @@ export default function VideoGallery() {
                                     e.target.value.classList.add("fadeOutAnchor");
 
                                 }}
-                                className="text-opacity-50 text-light bg-transparent  fadeOutAnchor "
+                                className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
                                 id="The+Wrench"
                                 href="/films/the-wrench"
                                 onMouseEnter={() => setWrench(true)}
@@ -320,7 +320,7 @@ export default function VideoGallery() {
                                     }}
                                     onMouseEnter={() => setWrench(true)}
                                     onMouseLeave={() => setWrench(false)}
-                                    className="bg-transparent text-white fadeInAnchor"
+                                    className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
                                     href="/films/the-wrench"
                                     id="The+Wrench"
 
@@ -338,7 +338,7 @@ export default function VideoGallery() {
                                     e.target.value.classList.add("fadeOutAnchor");
 
                                 }}
-                                className="text-opacity-50 text-light bg-transparent  fadeOutAnchor "
+                                className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
                                 id="Rackets+All+the+Way+Down"
                                 href="/films/rackets-all-the-way-down"
                                 onMouseEnter={() => setRackets(true)}
@@ -357,7 +357,7 @@ export default function VideoGallery() {
                                     }}
                                     onMouseEnter={() => setRackets(true)}
                                     onMouseLeave={() => setRackets(false)}
-                                    className="bg-transparent text-white fadeInAnchor"
+                                    className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
                                     href="/films/rackets-all-the-way-down"
                                     id="Rackets+All+the+Way+Down"
                                 >
@@ -372,7 +372,8 @@ export default function VideoGallery() {
             <section
                 className="all-films vw-100 vh-100 p-0 m-0  overflow-y-scroll overflow-x-visible"
                 style={{
-                    backgroundColor: "white",
+                    // backgroundColor: "black",
+                    backgroundImage: "https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png",
                     maxWidth: "fit-content!important",
                     overflowX: "hidden!important",
                 }}
