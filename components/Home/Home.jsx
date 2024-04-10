@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import {MDBContainer, MDBRow, MDBCol} from "mdb-react-ui-kit";
+import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
 export default function Home() {
   // let width = 50;
   // let goingUp=true;
@@ -28,11 +28,12 @@ export default function Home() {
   }
 
   return (
-    <div className="m-0 p-0 d-flex justify-content-center embed-responsive embed-responsive-16by9 align-items-center vw-100 w-100 h-100 vh-100 " >
+    <div className="m-0 p-0 d-flex justify-content-center embed-responsive embed-responsive-16by9 align-items-center vw-100 w-100 h-100 vh-100 "
 
-      {/* //     style={{ */}
-      {/* //       backgroundImage: `url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png")`   */}
-      {/* // }}> */}
+      style={{
+        backgroundImage: `url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png")`
+      }
+      } >
 
       <div className="mask " style={{ backgroundColor: 'rgba(0,0, 0, 0.6)' }}>
         {/* <div className="float-end">
@@ -41,16 +42,16 @@ export default function Home() {
       </div>
       <MDBContainer fluid id="container-tv" className="position-fixed col-xs-12 col-md-6 col-xl-6 col-xxl-6 left-50 right-auto">
         <div id="monitor" className="">
-          <div id="monitor-screen"  className="ratio ratio-16x9">
-              <iframe
-                src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4"
-                title="Rough Reel"
-                allowFullScreen
-              ></iframe>
-            </div>
-            
+          <div id="monitor-screen" className="ratio ratio-16x9">
+            <iframe
+              src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rough+Reel.mp4"
+              title="Rough Reel"
+              allowFullScreen
+            ></iframe>
+          </div>
+
         </div>
       </MDBContainer>
-    </div>
+    </ div>
   );
 }

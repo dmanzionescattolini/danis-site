@@ -2,7 +2,7 @@
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { useCallback, useEffect, useState } from "react";
-import {MDBContainer} from "mdb-react-ui-kit";
+import { MDBContainer } from "mdb-react-ui-kit";
 export default function VideoGallery() {
     const [pandemonic, setPandemonic] = useState(false);
     const [wrench, setWrench] = useState(false);
@@ -64,17 +64,17 @@ export default function VideoGallery() {
 
         if (currentImageIndex === 3) {
             setCurrentImageIndex(0);
-        } else if(currentImageIndex===1){
+        } else if (currentImageIndex === 1) {
             setCurrentImageIndex(2);
-        }else if(currentImageIndex===0){
+        } else if (currentImageIndex === 0) {
             setCurrentImageIndex(1);
-        }else if(currentImageIndex===2){
+        } else if (currentImageIndex === 2) {
             setCurrentImageIndex(3);
-        }else{
-            setCurrentImageIndex(currentImageIndex+1);
+        } else {
+            setCurrentImageIndex(currentImageIndex + 1);
         }
 
-     
+
     }
     window.setInterval(changePicture, 8000);
 
@@ -114,150 +114,167 @@ export default function VideoGallery() {
     if (window.screen.width > 700)
         return (
             <div className="vw-100 vh-100 p-0 m-0  overflow-y-scroll overflow-x-visible" >
-              
-                    <div className="mask bg-light-subtle opacity-25 vw-100 h-auto"></div>
-                    {rackets && (
-                        <video
-                            style={videoBackgroundStyle}
-                            autoPlay
-                            playsInline
-                            loop
-                            muted
-                            src={racketsVideoSrc}
-                            className=" img-fluid fadeIn min-vw-100 p-0 m-0 "
-                            alt="All Clips"
-                        />
-                    )}
-                    {wrench && (
-                        <video
-                            autoPlay
-                            playsInline
-                            loop
-                            muted
-                            src={wrenchVideoSrc}
-                            className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
-                            style={videoBackgroundStyle}
-                            alt="All Clips"
-                        />
-                    )}
-                    {pandemonic && (
-                        <video
-                            autoPlay
-                            playsInline
-                            loop
-                            muted
-                            src={pandemonicVideoSrc}
-                            className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
-                            style={videoBackgroundStyle}
-                            alt="All Clips"
-                        />
-                    )}
-                    {three && (
-                        <video
-                            style={videoBackgroundStyle}
-                            autoPlay
-                            playsInline
-                            loop
-                            muted
-                            src={threeVideoSrc}
-                            className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
-                            alt="All Clips"
-                        />
-                    )}
-                    {!pandemonic && !wrench && !rackets && !three && (
-                        <section className="position-fixed left-0 right-0 top-0 bottom-0 min-vw-100 min-vh-100 w-100 h-auto">
-                            {currentImageIndex === 0 && (
-                                <img
-                                    onAnimationEnd={(e) => {
-                                        e.preventDefault();
-                                        e.target.classList.remove("fadeIn");
-                                        e.target.classList.add("fadeOut");
-                                    }}
-                                    
-                                    src={threeStill}
-                                    alt={"Still of Three Bullets for Bombay Beach"}
-                                    className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
-                                />
-                            )}
-                            {currentImageIndex === 1 && (
-                                <img
-                                    onAnimationEnd={(e) => {
-                                        e.preventDefault();
-                                        e.target.classList.remove("fadeIn");
-                                        e.target.classList.add("fadeOut");
-                                    }}
-                                    
-                                    src={pandemonicStill}
-                                    className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
-                                />
-                            )}
-                            {currentImageIndex === 2 && (
-                                <img
-                                    onAnimationEnd={(e) => {
-                                        e.preventDefault();
-                                        e.target.classList.remove("fadeIn");
-                                        e.target.classList.add("fadeOut");
-                                    }}
-                                    
-                                    src={wrenchStill}
-                                    className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
-                                />
-                            )}
-                            {currentImageIndex === 3 && (
-                                <img
-                                    onAnimationEnd={(e) => {
-                                        e.preventDefault();
-                                        e.target.classList.remove("fadeIn");
-                                        e.target.classList.add("fadeOut");
-                                    }}
-                                    
-                                    src={racketsStill}
-                                    className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
-                                />
-                            )}
-                        </section>
-                    )}{" "}
-                    <nav
-                        id="films-menu"
-                        style={styleNavigationBar}
-                        className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`}
-                    >
-                        {(currentImageIndex === 0 && (
-                            <a
-                                className="text-opacity-50 text-light bg-transparent  fadeInAnchor "
+
+                <div className="mask bg-light-subtle opacity-25 vw-100 h-auto"></div>
+                {rackets && (
+                    <video
+                        style={videoBackgroundStyle}
+                        autoPlay
+                        playsInline
+                        loop
+                        muted
+                        src={racketsVideoSrc}
+                        className=" img-fluid fadeIn min-vw-100 p-0 m-0 "
+                        alt="All Clips"
+                    />
+                )}
+                {wrench && (
+                    <video
+                        autoPlay
+                        playsInline
+                        loop
+                        muted
+                        src={wrenchVideoSrc}
+                        className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
+                        style={videoBackgroundStyle}
+                        alt="All Clips"
+                    />
+                )}
+                {pandemonic && (
+                    <video
+                        autoPlay
+                        playsInline
+                        loop
+                        muted
+                        src={pandemonicVideoSrc}
+                        className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
+                        style={videoBackgroundStyle}
+                        alt="All Clips"
+                    />
+                )}
+                {three && (
+                    <video
+                        style={videoBackgroundStyle}
+                        autoPlay
+                        playsInline
+                        loop
+                        muted
+                        src={threeVideoSrc}
+                        className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
+                        alt="All Clips"
+                    />
+                )}
+                {!pandemonic && !wrench && !rackets && !three && (
+                    <section className="position-fixed left-0 right-0 top-0 bottom-0 min-vw-100 min-vh-100 w-100 h-auto">
+                        {currentImageIndex === 0 && (
+                            <img
                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
-                                    let hasFadeIn = e.target.value.classList.contains("fadeInAnchor");
-                                    if (hasFadeIn) {
-                                        e.target.value.classList.remove("fadeInAnchor");
-                                        e.target.value.classList.add("fadeOutAnchor");
-                                    }
+                                    e.target.classList.remove("fadeIn");
+                                    e.target.classList.add("fadeOut");
                                 }}
-                                id="Three+Bullets+to+Bombay+Beach"
-                                href="/films/three-bullets-to-bombay-beach"
+
+                                src={threeStill}
+                                alt={"Still of Three Bullets for Bombay Beach"}
+                                className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
+                            />
+                        )}
+                        {currentImageIndex === 1 && (
+                            <img
+                                onAnimationEnd={(e) => {
+                                    e.preventDefault();
+                                    e.target.classList.remove("fadeIn");
+                                    e.target.classList.add("fadeOut");
+                                }}
+
+                                src={pandemonicStill}
+                                className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
+                            />
+                        )}
+                        {currentImageIndex === 2 && (
+                            <img
+                                onAnimationEnd={(e) => {
+                                    e.preventDefault();
+                                    e.target.classList.remove("fadeIn");
+                                    e.target.classList.add("fadeOut");
+                                }}
+
+                                src={wrenchStill}
+                                className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
+                            />
+                        )}
+                        {currentImageIndex === 3 && (
+                            <img
+                                onAnimationEnd={(e) => {
+                                    e.preventDefault();
+                                    e.target.classList.remove("fadeIn");
+                                    e.target.classList.add("fadeOut");
+                                }}
+
+                                src={racketsStill}
+                                className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
+                            />
+                        )}
+                    </section>
+                )}{" "}
+                <nav
+                    id="films-menu"
+                    style={styleNavigationBar}
+                    className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`}
+                >
+                    {(currentImageIndex === 0 && (
+                        <a
+                            className="text-opacity-50 text-light bg-transparent  fadeInAnchor "
+                            onAnimationEnd={(e) => {
+                                e.preventDefault();
+                                let hasFadeIn = e.target.value.classList.contains("fadeInAnchor");
+                                if (hasFadeIn) {
+                                    e.target.value.classList.remove("fadeInAnchor");
+                                    e.target.value.classList.add("fadeOutAnchor");
+                                }
+                            }}
+                            id="Three+Bullets+to+Bombay+Beach"
+                            href="/films/three-bullets-to-bombay-beach"
+                            onMouseEnter={() => setThree(true)}
+                            onMouseLeave={() => setThree(false)}
+                        >
+                            Three Bullets to Bombay Beach
+                        </a>
+                    )) || (
+                            <a
+                                onAnimationEnd={(e) => {
+                                    e.preventDefault();
+
+                                    e.target.value.classList.remove("fadeInAnchor");
+                                    e.target.value.classList.add("fadeOutAnchor");
+
+                                }}
                                 onMouseEnter={() => setThree(true)}
                                 onMouseLeave={() => setThree(false)}
+                                className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
+                                href="/films/three-bullets-to-bombay-beach"
                             >
                                 Three Bullets to Bombay Beach
                             </a>
-                        )) || (
-                                <a
-                                    onAnimationEnd={(e) => {
-                                        e.preventDefault();
+                        )}
+                    {(currentImageIndex === 1 && (
+                        <a
+                            onAnimationEnd={(e) => {
+                                e.preventDefault();
 
-                                        e.target.value.classList.remove("fadeInAnchor");
-                                        e.target.value.classList.add("fadeOutAnchor");
+                                e.target.value.classList.remove("fadeInAnchor");
+                                e.target.value.classList.add("fadeOutAnchor");
 
-                                    }}
-                                    onMouseEnter={() => setThree(true)}
-                                    onMouseLeave={() => setThree(false)}
-                                    className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
-                                    href="/films/three-bullets-to-bombay-beach"
-                                >
-                                    Three Bullets to Bombay Beach
-                                </a>
-                            )}
-                        {(currentImageIndex === 1 && (
+                            }}
+                            className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
+                            id="A+Pandemonic+Serenade"
+                            href="/films/a-pandemonic-serenade"
+                            onMouseEnter={() => setPandemonic(true)}
+                            onMouseLeave={() => setPandemonic(false)}
+                        >
+                            A Pandemonic Serenade
+                        </a>
+                    )) || (
                             <a
                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
@@ -266,33 +283,33 @@ export default function VideoGallery() {
                                     e.target.value.classList.add("fadeOutAnchor");
 
                                 }}
-                                className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
-                                id="A+Pandemonic+Serenade"
-                                href="/films/a-pandemonic-serenade"
                                 onMouseEnter={() => setPandemonic(true)}
                                 onMouseLeave={() => setPandemonic(false)}
+                                className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
+                                id="A+Pandemonic+Serenade"
+                                href="/films/a-pandemonic-serenade"
                             >
                                 A Pandemonic Serenade
                             </a>
-                        )) || (
-                                <a
-                                    onAnimationEnd={(e) => {
-                                        e.preventDefault();
+                        )}
+                    {(currentImageIndex === 2 && (
+                        <a
+                            onAnimationEnd={(e) => {
+                                e.preventDefault();
 
-                                        e.target.value.classList.remove("fadeInAnchor");
-                                        e.target.value.classList.add("fadeOutAnchor");
+                                e.target.value.classList.remove("fadeInAnchor");
+                                e.target.value.classList.add("fadeOutAnchor");
 
-                                    }}
-                                    onMouseEnter={() => setPandemonic(true)}
-                                    onMouseLeave={() => setPandemonic(false)}
-                                    className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
-                                    id="A+Pandemonic+Serenade"
-                                    href="/films/a-pandemonic-serenade"
-                                >
-                                    A Pandemonic Serenade
-                                </a>
-                            )}
-                        {(currentImageIndex === 2 && (
+                            }}
+                            className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
+                            id="The+Wrench"
+                            href="/films/the-wrench"
+                            onMouseEnter={() => setWrench(true)}
+                            onMouseLeave={() => setWrench(false)}
+                        >
+                            The Wrench
+                        </a>
+                    )) || (
                             <a
                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
@@ -301,35 +318,35 @@ export default function VideoGallery() {
                                     e.target.value.classList.add("fadeOutAnchor");
 
                                 }}
-                                className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
-                                id="The+Wrench"
-                                href="/films/the-wrench"
                                 onMouseEnter={() => setWrench(true)}
                                 onMouseLeave={() => setWrench(false)}
+                                className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
+                                href="/films/the-wrench"
+                                id="The+Wrench"
+
                             >
                                 The Wrench
                             </a>
-                        )) || (
-                                <a
-                                    onAnimationEnd={(e) => {
-                                        e.preventDefault();
+                        )}
 
-                                        e.target.value.classList.remove("fadeInAnchor");
-                                        e.target.value.classList.add("fadeOutAnchor");
+                    {(currentImageIndex === 3 && (
+                        <a
+                            onAnimationEnd={(e) => {
+                                e.preventDefault();
 
-                                    }}
-                                    onMouseEnter={() => setWrench(true)}
-                                    onMouseLeave={() => setWrench(false)}
-                                    className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
-                                    href="/films/the-wrench"
-                                    id="The+Wrench"
+                                e.target.value.classList.remove("fadeInAnchor");
+                                e.target.value.classList.add("fadeOutAnchor");
 
-                                >
-                                    The Wrench
-                                </a>
-                            )}
-
-                        {(currentImageIndex === 3 && (
+                            }}
+                            className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
+                            id="Rackets+All+the+Way+Down"
+                            href="/films/rackets-all-the-way-down"
+                            onMouseEnter={() => setRackets(true)}
+                            onMouseLeave={() => setRackets(false)}
+                        >
+                            Rackets All the Way Down
+                        </a>
+                    )) || (
                             <a
                                 onAnimationEnd={(e) => {
                                     e.preventDefault();
@@ -338,284 +355,180 @@ export default function VideoGallery() {
                                     e.target.value.classList.add("fadeOutAnchor");
 
                                 }}
-                                className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
-                                id="Rackets+All+the+Way+Down"
-                                href="/films/rackets-all-the-way-down"
                                 onMouseEnter={() => setRackets(true)}
                                 onMouseLeave={() => setRackets(false)}
+                                className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
+                                href="/films/rackets-all-the-way-down"
+                                id="Rackets+All+the+Way+Down"
                             >
                                 Rackets All the Way Down
                             </a>
-                        )) || (
-                                <a
-                                    onAnimationEnd={(e) => {
-                                        e.preventDefault();
-
-                                        e.target.value.classList.remove("fadeInAnchor");
-                                        e.target.value.classList.add("fadeOutAnchor");
-
-                                    }}
-                                    onMouseEnter={() => setRackets(true)}
-                                    onMouseLeave={() => setRackets(false)}
-                                    className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
-                                    href="/films/rackets-all-the-way-down"
-                                    id="Rackets+All+the+Way+Down"
-                                >
-                                    Rackets All the Way Down
-                                </a>
-                            )}
-                    </nav>{" "}
-                </div>
+                        )}
+                </nav>{" "}
+            </div>
         );
     else
-        return (
-            <section
-                className="all-films vw-100 vh-100 p-0 m-0  overflow-y-scroll overflow-x-visible"
-                style={{
-                    // backgroundColor: "black",
-                    backgroundImage: "https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png",
-                    maxWidth: "fit-content!important",
-                    overflowX: "hidden!important",
-                }}
+        return (<section className="bg-image vh-100 overflow-y-scroll z-1"
+
+            style={{
+                backgroundImage: `url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png")`
+            }
+            } >
+
+            <div className="bg-image vh-100 position-fixed z-2" style={{ backgroundColor: 'rgba(0,0, 0, 0.6)' }}></div>
+
+            <div
+                className="section-header z-3"
+                style={{ overflowX: "hidden!important" }}
             >
-                <div
-                    className="grid media-tiles"
-                    style={{ overflowX: "hidden!important" }}
+                <div className="title all">
+                    <h2
+                        className="group-name text-center"
+                        style={{ color: "white!important" }}
+                    >
+                        Films
+                    </h2>
+                </div>{" "}
+            </div>
+
+            <div
+                className=" film active has-thumb mt-0"
+                style={{ overflowX: "hidden!important" }}
+            >
+                <a href="/films/the-wrench" title="The Wrench">
+
+                    <figure>
+                        <div className="" id="container-tv">
+                            <div className="" id="monitor">
+                                <div className="" id="monitor-screen w-100">
+                                    <video
+                                        allowFullScreen
+                                        className=" w-100"
+                                        controls
+                                        autoPlay
+                                        playsInline
+                                        src={wrenchVideoSrc}
+
+                                    />
+                                </div>
+                                <figcaption>
+                            <h3 className="text-center text-white z-3 small">The Wrench</h3>
+                        </figcaption>
+                            </div>{" "}
+
+                        </div>
+
+                        
+                    </figure>
+                </a>
+            </div>
+
+            <div
+                className=" film active has-thumb mt-0"
+                style={{ overflowX: "hidden!important" }}
+            >
+                <a
+                    href="/films/three-bullets-to-bombay-beach"
+                    title="Three Bullets to Bombay Beach"
                 >
-                    <div
-                        className="grid section-header"
-                        style={{ overflowX: "hidden!important" }}
-                    >
-                        <div className="title all">
-                            <h2
-                                className="group-name text-center"
-                                style={{ color: "white!important" }}
-                            >
-                                Films
-                            </h2>
-                        </div>{" "}
-                    </div>
+                    <figure>
+                        <div className="" id="container-tv">
 
-                    <div
-                        className="media-tile film active has-thumb mt-0"
-                        style={{ overflowX: "hidden!important" }}
-                    >
-                        <a href="/films/the-wrench" title="The Wrench">
+                            <div className="" id="monitor">
 
-                            <figure>
-                                <div className="w-responsive">
-                                    <div className="embed-responsive-container">
-                                        <div className="img-fluid">
-                                            <video
-                                                className="img-thumbnail"
-                                                src={wrenchVideoSrc}
-                                                style={{
-                                                    width: "339.333px",
-                                                    marginLeft: "0px",
-                                                    marginTop: "-8px",
-                                                }}
-                                                playsInline
-                                                autoPlay
-                                                loop
-                                                muted
-                                            />
-                                        </div>
-                                    </div>{" "}
-                                    <div className="overlay-vid">
-                                        {" "}
-                                        <div className="overlay-data-group credit">
-                                            <div className="datum"></div>
-                                        </div>
-                                        <div className="overlay-data-group release-date">
-                                            <h4>Release Date</h4>
-                                            <div className="datum">
-                                                <time>2018 </time>
-                                            </div>
-                                        </div>
-                                        <div className="overlay-data-group credit">
-                                            <h4>Written and Directed by</h4>
-                                            <div className="datum">Daniel Grzywacz</div>
-                                        </div>
-                                        <div className="overlay-data-group credit">
-                                            <h4>Starring</h4>
-                                            <div className="datum">Lord Actor, Lady Actress</div>
-                                        </div>{" "}
-                                    </div>
+                                <div className="" id="monitor-screen w-100">
+                                    <video
+                                        allowFullScreen
+                                        className=" w-100"
+                                        controls
+                                        autoPlay
+                                        playsInline
+                                        src={threeVideoSrc}
+
+                                    />
                                 </div>
-
                                 <figcaption>
-                                    <h3>The Wrench</h3>
+                                    <h3 className="text-center text-white z-3 text-decoration-none small">Three Bullets to Bombay Beach</h3>
                                 </figcaption>
-                            </figure>
-                        </a>
-                    </div>
+                            </div>{" "}
 
-                    <div
-                        className="media-tile film active has-thumb mt-0"
-                        style={{ overflowX: "hidden!important" }}
-                    >
-                        <a
-                            href="/films/three-bullets-to-bombay-beach"
-                            title="Three Bullets for Bombay Beach"
-                        >
-                            <figure>
-                                <div className="w-responsive">
-                                    <div className="embed-responsive-container">
-                                        <div className="img-fluid">
-                                            <video
-                                                className="img-thumbnail"
-                                                src={threeVideoSrc}
-                                                style={{
-                                                    width: "339.333px",
-                                                    marginLeft: "0px",
-                                                    marginTop: "-8px",
-                                                }}
-                                                playsInline
-                                                autoPlay
-                                                loop
-                                                muted
-                                            />
-                                        </div>
-                                    </div>{" "}
-                                    <div className="overlay-vid">
-                                        {" "}
-                                        <div className="overlay-data-group credit">
-                                            <div className="datum"></div>
-                                        </div>
-                                        <div className="overlay-data-group release-date">
-                                            <h4>Release Date</h4>
-                                            <div className="datum">
-                                                <time>2018 </time>
-                                            </div>
-                                        </div>
-                                        <div className="overlay-data-group credit">
-                                            <h4>Written and Directed by</h4>
-                                            <div className="datum">Daniel Grzywacz</div>
-                                        </div>
-                                        <div className="overlay-data-group credit">
-                                            <h4>Starring</h4>
-                                            <div className="datum">Lord Actor, Lady Actress</div>
-                                        </div>{" "}
-                                    </div>
+
+
+
+                        </div>
+                    </figure>
+                </a>
+            </div>
+            <div
+                className=" film active has-thumb mt-0 "
+                style={{ overflowX: "hidden!important" }}
+            >
+                <a
+                    href="/films/rackets-all-the-way-down"
+                    title="Rackets All the Way Down"
+                >
+                    <figure>
+                        <div className="" id="container-tv">
+                            <div className="" id="monitor">
+                                <div className="" id="monitor-screen w-100">
+                                    <video
+                                        allowFullScreen
+                                        className=" w-100"
+                                        controls
+                                        autoPlay
+                                        playsInline
+                                        src={racketsVideoSrc}
+                                       
+                                    />
                                 </div>
-
                                 <figcaption>
-                                    <h3>Three Bullets for Bombay Beach</h3>
+                                    <h3 className="text-center text-white z-3 text-decoration-none small">Three Bullets to Bombay Beach</h3>
                                 </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div
-                        className="media-tile film active has-thumb mt-0"
-                        style={{ overflowX: "hidden!important" }}
-                    >
-                        <a
-                            href="/films/rackets-all-the-way-down"
-                            title="Rackets All the Way Down"
-                        >
-                            <figure>
-                                <div className="w-responsive">
-                                    <div className="embed-responsive-container">
-                                        <div className="img-fluid">
-                                            <video
-                                                className="img-thumbnail"
-                                                src={racketsVideoSrc}
-                                                style={{
-                                                    width: "339.333px",
-                                                    marginLeft: "0px",
-                                                    marginTop: "-8px",
-                                                }}
-                                                playsInline
-                                                autoPlay
-                                                loop
-                                                muted
-                                            />
-                                        </div>
-                                    </div>{" "}
-                                    <div className="overlay-vid">
-                                        {" "}
-                                        <div className="overlay-data-group credit">
-                                            <div className="datum"></div>
-                                        </div>
-                                        <div className="overlay-data-group release-date">
-                                            <h4>Release Date</h4>
-                                            <div className="datum">
-                                                <time>2018 </time>
-                                            </div>
-                                        </div>
-                                        <div className="overlay-data-group credit">
-                                            <h4>Written and Directed by</h4>
-                                            <div className="datum">Daniel Grzywacz</div>
-                                        </div>
-                                        <div className="overlay-data-group credit">
-                                            <h4>Starring</h4>
-                                            <div className="datum">Lord Actor, Lady Actress</div>
-                                        </div>{" "}
-                                    </div>
+                            </div>{" "}
+
+
+
+
+                        </div>
+                    </figure>
+                </a>
+            </div>
+            <div
+                className=" film active has-thumb mt-0"
+                style={{ overflowX: "hidden!important" }}
+            >
+                <a
+                    href="/films/a-pandemonic-serenade"
+                    title="A Pandemonic Serenade"
+                >
+                    <figure>
+                        <div className="" id="container-tv">
+                            <div className="" id="monitor">
+                                <div className="" id="monitor-screen w-100">
+                                    <video
+                                        allowFullScreen
+                                        className=" w-100"
+                                        controls
+                                        autoPlay
+                                        playsInline
+                                        src={pandemonicVideoSrc}
+                                       
+                                    />
                                 </div>
-
                                 <figcaption>
-                                    <h3>Rackets All the Way Down</h3>
+                                    <h3 className="text-center text-white z-3 text-decoration-none small">Three Bullets to Bombay Beach</h3>
                                 </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                    <div
-                        className="media-tile film active has-thumb mt-0"
-                        style={{ overflowX: "hidden!important" }}
-                    >
-                        <a
-                            href="/films/a-pandemonic-serenade"
-                            title="A Pandemonic Serenade"
-                        >
-                            <figure>
-                                <div className="w-responsive">
-                                    <div className="embed-responsive-container">
-                                        <div className="img-fluid">
-                                            <video
-                                                className="img-thumbnail"
-                                                src={pandemonicVideoSrc}
-                                                style={{
-                                                    width: "339.333px",
-                                                    marginLeft: "0px",
-                                                    marginTop: "-8px",
-                                                }}
-                                                playsInline
-                                                autoPlay
-                                                loop
-                                                muted
-                                            />
-                                        </div>
-                                    </div>{" "}
-                                    <div className="overlay-vid">
-                                        {" "}
-                                        <div className="overlay-data-group credit">
-                                            <div className="datum"></div>
-                                        </div>
-                                        <div className="overlay-data-group release-date">
-                                            <h4>Release Date</h4>
-                                            <div className="datum">
-                                                <time>2018 </time>
-                                            </div>
-                                        </div>
-                                        <div className="overlay-data-group credit">
-                                            <h4>Written and Directed by</h4>
-                                            <div className="datum">Daniel Grzywacz</div>
-                                        </div>
-                                        <div className="overlay-data-group credit">
-                                            <h4>Starring</h4>
-                                            <div className="datum">Lord Actor, Lady Actress</div>
-                                        </div>{" "}
-                                    </div>
-                                </div>
+                            </div>{" "}
 
-                                <figcaption>
-                                    <h3>A Pandemonic Serenade</h3>
-                                </figcaption>
-                            </figure>
-                        </a>
-                    </div>
-                </div>
-            </section>
+
+
+
+                        </div>
+
+                    </figure>
+                </a>
+            </div>
+        </section>
         );
 }
+

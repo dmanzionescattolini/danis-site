@@ -196,6 +196,8 @@ section {
 
 .mask {
   background-color: rgba(255, 255, 255, 0.6);
+  position:fixed;
+  z-index:0;
 }
 
 //noinspection SpellCheckingInspection
@@ -1174,8 +1176,12 @@ img#filmimage {
     height: 100% !important;
 
   }
-  .media-tiles a, .media-tiles h2, .media-tiles div * {
+  #root > section > div.section-header > div > h2,#root > section > div:nth-child(6) > a > figure > figcaption > h3 {
     color:white!important;
+    z-index:100;
+  }
+  .media-tiles .mask {
+    z-index:-1;
   }
   .media-tiles iframe {
     border:0;
