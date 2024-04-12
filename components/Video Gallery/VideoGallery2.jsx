@@ -375,9 +375,10 @@ export default function VideoGallery() {
 
 
             <div
-                className="section-header z-3"
+                className="section-header z-3 position-absolute w-100"
                 style={{ overflowX: "hidden!important" }}
             >
+                <br />
                 <div className="title all">
                     <h2
                         className="group-name text-center"
@@ -387,6 +388,9 @@ export default function VideoGallery() {
                     </h2>
                 </div>{" "}
             </div>
+            <br />
+            <br />
+            <br />
 
             <div
                 className=" film active has-thumb mt-0"

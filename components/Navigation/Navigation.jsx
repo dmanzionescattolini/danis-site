@@ -75,7 +75,7 @@ export default function Navigation() {
         <div id="myNav" className="overlay-x lh-sm text-left m-0 " style={{ display: `${overlayDisplay}!important` }}>
 
             {window.screen.width < 700 ?
-                <div className="overlay-x-content d-flex flex-column justify-content-evenly">
+                <div className="overlay-x-content d-flex flex-column justify-content-center">
                     <a className="shadow-1 flex-fill fs-1" href="/home"><h1 className="display-1">Home</h1></a>
                     <a className="flex-fill display-1" href="/films"><h1 className="display-1">Films</h1></a>
                     <a className="flex-fill fs-1" href="/about"><h1 className="display-1">About</h1></a>

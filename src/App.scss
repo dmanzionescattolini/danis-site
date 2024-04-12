@@ -301,7 +301,6 @@ a.nav-link:hover {
 
 .overlay-x {
   height: 100%;
-  width: 100%;
   top: 0;
   left: 0;
 
@@ -356,7 +355,7 @@ a.nav-link:hover {
   position: relative;
   top: 25vh;
   height: 50vh;
-  width: 100%;
+  width: fit-content;
   text-align: center;
 }
 a.nav-link {
@@ -384,7 +383,7 @@ a.nav-link {
 
 .overlay-x a:hover,
 .overlay a:focus {
-  color: #f1f1f1;
+  color: lightgray;
 }
 
 .overlay-x .closebtn {
@@ -1218,4 +1217,8 @@ img#filmimage {
     background-size:cover;
     overflow:hidden!important;
   }
+}
+
+a, button {
+  cursor:pointer!important;
 }
