@@ -3,6 +3,7 @@ import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { useCallback, useEffect, useState } from "react";
 import { MDBContainer } from "mdb-react-ui-kit";
+import { ThreeBulletsForBombay } from "./Three Bullets for Bombay/ThreeBulletsForBombay";
 export default function VideoGallery() {
     const [pandemonic, setPandemonic] = useState(false);
     const [wrench, setWrench] = useState(false);
@@ -222,148 +223,46 @@ export default function VideoGallery() {
                     style={styleNavigationBar}
                     className={`position-fixed bottom-10  d-flex flex-column justify-content-end align-items-start lh-1 bg-transparent border-0 shadow-0 well`}
                 >
-                    {(currentImageIndex === 0 && (
-                        <a
-                            className="text-opacity-50 text-light bg-transparent  fadeInAnchor "
-                            onAnimationEnd={(e) => {
-                                e.preventDefault();
-                                let hasFadeIn = e.target.value.classList.contains("fadeInAnchor");
-                                if (hasFadeIn) {
-                                    e.target.value.classList.remove("fadeInAnchor");
-                                    e.target.value.classList.add("fadeOutAnchor");
-                                }
-                            }}
-                            id="Three+Bullets+to+Bombay+Beach"
-                            href="/films/three-bullets-to-bombay-beach"
-                            onMouseEnter={() => setThree(true)}
-                            onMouseLeave={() => setThree(false)}
-                        >
-                            Three Bullets to Bombay Beach
-                        </a>
-                    )) || (
-                            <a
-                                onAnimationEnd={(e) => {
-                                    e.preventDefault();
+                    <a
 
-                                    e.target.value.classList.remove("fadeInAnchor");
-                                    e.target.value.classList.add("fadeOutAnchor");
+                        className=" bg-transparent  fw-bold text-shadow-1 "
+                        id="threelink"
+                        href="/films/three-bullets-to-bombay-beach"
+                        onMouseEnter={() => setThree(true)}
+                        onMouseLeave={() => setThree(false)}
+                    >
+                        Three Bullets to Bombay Beach
+                    </a>
+                    <a
+                        onMouseEnter={() => setPandemonic(true)}
+                        onMouseLeave={() => setPandemonic(false)}
+                        className="bg-transparent fw-bold text-shadow-1 "
+                        id="pandemoniclink"
+                        href="/films/a-pandemonic-serenade"
+                    >
+                        A Pandemonic Serenade
+                    </a>
+                    <a
+                        className="bg-transparent fw-bold text-shadow-1 fw-bold text-shadow-1"
+                        id="racketslink"
+                        href="/films/rackets-all-the-way-down"
+                        onMouseEnter={() => setRackets(true)}
+                        onMouseLeave={() => setRackets(false)}
+                    >
+                        Rackets All the Way Down
+                    </a>
+                    <a
+                        onMouseEnter={() => setWrench(true)}
+                        onMouseLeave={() => setWrench(false)}
+                        className="bg-transparent fw-bold text-shadow-1 "
+                        href="/films/the-wrench"
+                        id="wrenchlink"
 
-                                }}
-                                onMouseEnter={() => setThree(true)}
-                                onMouseLeave={() => setThree(false)}
-                                className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
-                                href="/films/three-bullets-to-bombay-beach"
-                            >
-                                Three Bullets to Bombay Beach
-                            </a>
-                        )}
-                    {(currentImageIndex === 1 && (
-                        <a
-                            onAnimationEnd={(e) => {
-                                e.preventDefault();
+                    >
+                        The Wrench
+                    </a>
 
-                                e.target.value.classList.remove("fadeInAnchor");
-                                e.target.value.classList.add("fadeOutAnchor");
 
-                            }}
-                            className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
-                            id="A+Pandemonic+Serenade"
-                            href="/films/a-pandemonic-serenade"
-                            onMouseEnter={() => setPandemonic(true)}
-                            onMouseLeave={() => setPandemonic(false)}
-                        >
-                            A Pandemonic Serenade
-                        </a>
-                    )) || (
-                            <a
-                                onAnimationEnd={(e) => {
-                                    e.preventDefault();
-
-                                    e.target.value.classList.remove("fadeInAnchor");
-                                    e.target.value.classList.add("fadeOutAnchor");
-
-                                }}
-                                onMouseEnter={() => setPandemonic(true)}
-                                onMouseLeave={() => setPandemonic(false)}
-                                className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
-                                id="A+Pandemonic+Serenade"
-                                href="/films/a-pandemonic-serenade"
-                            >
-                                A Pandemonic Serenade
-                            </a>
-                        )}
-                    {(currentImageIndex === 2 && (
-                        <a
-                            onAnimationEnd={(e) => {
-                                e.preventDefault();
-
-                                e.target.value.classList.remove("fadeInAnchor");
-                                e.target.value.classList.add("fadeOutAnchor");
-
-                            }}
-                            className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
-                            id="The+Wrench"
-                            href="/films/the-wrench"
-                            onMouseEnter={() => setWrench(true)}
-                            onMouseLeave={() => setWrench(false)}
-                        >
-                            The Wrench
-                        </a>
-                    )) || (
-                            <a
-                                onAnimationEnd={(e) => {
-                                    e.preventDefault();
-
-                                    e.target.value.classList.remove("fadeInAnchor");
-                                    e.target.value.classList.add("fadeOutAnchor");
-
-                                }}
-                                onMouseEnter={() => setWrench(true)}
-                                onMouseLeave={() => setWrench(false)}
-                                className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1"
-                                href="/films/the-wrench"
-                                id="The+Wrench"
-
-                            >
-                                The Wrench
-                            </a>
-                        )}
-
-                    {(currentImageIndex === 3 && (
-                        <a
-                            onAnimationEnd={(e) => {
-                                e.preventDefault();
-
-                                e.target.value.classList.remove("fadeInAnchor");
-                                e.target.value.classList.add("fadeOutAnchor");
-
-                            }}
-                            className="bg-transparent fadeOutAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
-                            id="Rackets+All+the+Way+Down"
-                            href="/films/rackets-all-the-way-down"
-                            onMouseEnter={() => setRackets(true)}
-                            onMouseLeave={() => setRackets(false)}
-                        >
-                            Rackets All the Way Down
-                        </a>
-                    )) || (
-                            <a
-                                onAnimationEnd={(e) => {
-                                    e.preventDefault();
-
-                                    e.target.value.classList.remove("fadeInAnchor");
-                                    e.target.value.classList.add("fadeOutAnchor");
-
-                                }}
-                                onMouseEnter={() => setRackets(true)}
-                                onMouseLeave={() => setRackets(false)}
-                                className="bg-transparent text-white fadeInAnchor fw-bold text-shadow-1 fw-bold text-shadow-1"
-                                href="/films/rackets-all-the-way-down"
-                                id="Rackets+All+the+Way+Down"
-                            >
-                                Rackets All the Way Down
-                            </a>
-                        )}
                 </nav>{" "}
             </div>
         );
@@ -408,12 +307,12 @@ export default function VideoGallery() {
                                         controls={false}
                                         autoPlay
                                         playsInline
-                                        src={wrenchVideoSrc}
+                                        src={threeVideoSrc}
 
                                     />
                                 </div>
                                 <figcaption>
-                                    <h3 className="text-center text-white z-3 small text-decoration-none font-variant-none">The Wrench</h3>
+                                    <h3 className="text-center text-white z-3 small text-decoration-none font-variant-none">Three Bullets to Bombay Beach</h3>
                                 </figcaption>
                             </div>{" "}
 
@@ -445,12 +344,12 @@ export default function VideoGallery() {
                                         controls={false}
                                         autoPlay
                                         playsInline
-                                        src={threeVideoSrc}
+                                        src={pandemonicVideoSrc}
 
                                     />
                                 </div>
                                 <figcaption>
-                                    <h3 className="text-center text-white z-3 text-decoration-none small">Three Bullets to Bombay Beach</h3>
+                                    <h3 className="text-center text-white z-3 text-decoration-none small">A Pandemonic Serenade</h3>
                                 </figcaption>
                             </div>{" "}
 
@@ -480,12 +379,12 @@ export default function VideoGallery() {
                                         controls={false}
                                         autoPlay
                                         playsInline
-                                        src={racketsVideoSrc}
+                                        src={wrenchVideoSrc}
 
                                     />
                                 </div>
                                 <figcaption>
-                                    <h3 className="text-center text-white z-3 text-decoration-none text-decoration-none small">Three Bullets to Bombay Beach</h3>
+                                    <h3 className="text-center text-white z-3 text-decoration-none text-decoration-none small">The Wrench</h3>
                                 </figcaption>
                             </div>{" "}
 
@@ -515,12 +414,12 @@ export default function VideoGallery() {
                                         controls={false}
                                         autoPlay
                                         playsInline
-                                        src={pandemonicVideoSrc}
+                                        src={racketsVideoSrc}
 
                                     />
                                 </div>
                                 <figcaption>
-                                    <h3 className="text-center text-white z-3 text-decoration-none small">Three Bullets to Bombay Beach</h3>
+                                    <h3 className="text-center text-white z-3 text-decoration-none small">Rackets All the Way Down</h3>
                                 </figcaption>
                             </div>{" "}
 

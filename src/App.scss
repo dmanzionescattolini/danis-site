@@ -12,11 +12,22 @@ $dinosaur-brown: #5a441b;
 $dinosaur-mustard: #eda803;
 $first-dinosaur-width: $first-dinosaur-height * 228/160;
 $one-twenty-fifth-of-dinosaur-width: $first-dinosaur-width/25;
-html {
 
+@keyframes movingbackground {
+
+  0% {
+    background-position-x: 0%;
+  }
+  50% {
+    background-position-x: 100%;
+  }
+  100% {
+    background-position-x: 0%;
+  }
 }
-body {
+.moving-bg {
 
+  animation: movingbackground 40s infinite alternate-reverse;
   
 }
 
@@ -1065,18 +1076,18 @@ img#filmimage {
 
 @keyframes turnGray {
   0% {
-    color: white;
+    color: white!IMPORTANT;
   }
   100% {
-    color: gray;
+    color: gray!important;
   }
 }
 @keyframes turnWhite {
   0% {
-    color: gray;
+    color: gray!important;
   }
   100% {
-    color: white;
+    color: white!important;
   }
 }
 .fadeOutAnchor {
@@ -1198,31 +1209,57 @@ img#filmimage {
   }
 }
 
-
-
+$gray : null;
 @keyframes cyclingimages {
   0% {
     background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Still.png")!important';
     background-size:cover;
     overflow:hidden!important;
+    $gray:"three"!default;
   }
   50% {
      background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/Still.png")!important';
      background-size:cover;
     overflow:hidden!important;
+    $gray:"pandemonic"!default;
   }
   75% {
     background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Still.png")!Important';
     background-size:cover!important;
     overflow:hidden!important;
+    $gray: "rackets"!default;
   }
   100% {
     background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/Still.png")!important';
     background-size:cover;
     overflow:hidden!important;
+    $gray: "wrench"!default;
   }
 }
 
+#wrenchlink {
+@if $gray == "wrench"
+{
+  color: gray!important;
+}
+}
+#pandemoniclink {
+  @if $gray == "pandemonic" {
+    color: gray!Important;
+  }
+
+}
+#threelink {
+  @if $gray == "three" {
+    color:gray!important;
+  }
+
+}
+#racketslink {
+  @if $gray == "rackets" {
+    color:gray!important;
+  }
+}
 a, button {
   cursor:pointer!important;
 }
