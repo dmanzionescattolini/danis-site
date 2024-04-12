@@ -368,14 +368,11 @@ export default function VideoGallery() {
             </div>
         );
     else
-        return (<section className="bg-image vh-100 overflow-y-scroll z-1"
+        return (<section className="bg-image overflow-y-scroll z-2">
+            <img src={`https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png`} alt="Background Image" class="min-vh-100 min-vw-100 w-auto h-100 z-0 position-fixed" />
+            <div class="mask" style={{ backgroundColor: 'hsla(0, 0%, 0%, 0.6)' }}></div>
 
-            style={{
-                backgroundImage: `url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png")`
-            }
-            } >
 
-            <div className="bg-image vh-100 position-fixed z-2" style={{ backgroundColor: 'rgba(0,0, 0, 0.6)' }}></div>
 
             <div
                 className="section-header z-3"
@@ -404,7 +401,7 @@ export default function VideoGallery() {
                                     <video
                                         allowFullScreen
                                         className=" w-100"
-                                        controls
+                                        controls={false}
                                         autoPlay
                                         playsInline
                                         src={wrenchVideoSrc}
@@ -412,13 +409,13 @@ export default function VideoGallery() {
                                     />
                                 </div>
                                 <figcaption>
-                            <h3 className="text-center text-white z-3 small">The Wrench</h3>
-                        </figcaption>
+                                    <h3 className="text-center text-white z-3 small text-decoration-none">The Wrench</h3>
+                                </figcaption>
                             </div>{" "}
 
                         </div>
 
-                        
+
                     </figure>
                 </a>
             </div>
@@ -440,7 +437,7 @@ export default function VideoGallery() {
                                     <video
                                         allowFullScreen
                                         className=" w-100"
-                                        controls
+                                        controls={false}
                                         autoPlay
                                         playsInline
                                         src={threeVideoSrc}
@@ -474,15 +471,15 @@ export default function VideoGallery() {
                                     <video
                                         allowFullScreen
                                         className=" w-100"
-                                        controls
+                                        controls={false}
                                         autoPlay
                                         playsInline
                                         src={racketsVideoSrc}
-                                       
+
                                     />
                                 </div>
                                 <figcaption>
-                                    <h3 className="text-center text-white z-3 text-decoration-none small">Three Bullets to Bombay Beach</h3>
+                                    <h3 className="text-center text-white z-3 text-decoration-none text-decoration-none small">Three Bullets to Bombay Beach</h3>
                                 </figcaption>
                             </div>{" "}
 
@@ -508,11 +505,11 @@ export default function VideoGallery() {
                                     <video
                                         allowFullScreen
                                         className=" w-100"
-                                        controls
+                                        controls={false}
                                         autoPlay
                                         playsInline
                                         src={pandemonicVideoSrc}
-                                       
+
                                     />
                                 </div>
                                 <figcaption>
