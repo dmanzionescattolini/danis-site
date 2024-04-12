@@ -393,15 +393,15 @@ export default function VideoGallery() {
             <br />
 
             <div
-                className=" film active has-thumb mt-0"
+                className=" film active has-thumb mt-0 mx-2 mb-5"
                 style={{ overflowX: "hidden!important" }}
             >
-                <a href="/films/the-wrench" title="The Wrench">
+                <a href="/films/the-wrench" title="The Wrench" className="text-decoration-none">
 
                     <figure>
                         <div className="" id="container-tv">
                             <div className="" id="monitor">
-                                <div className="" id="monitor-screen w-100">
+                                <div className="" id="monitor-screen">
                                     <video
                                         allowFullScreen
                                         className=" w-100"
@@ -413,7 +413,7 @@ export default function VideoGallery() {
                                     />
                                 </div>
                                 <figcaption>
-                                    <h3 className="text-center text-white z-3 small text-decoration-none">The Wrench</h3>
+                                    <h3 className="text-center text-white z-3 small text-decoration-none font-variant-none">The Wrench</h3>
                                 </figcaption>
                             </div>{" "}
 
@@ -425,12 +425,13 @@ export default function VideoGallery() {
             </div>
 
             <div
-                className=" film active has-thumb mt-0"
+                className=" film active has-thumb mt-0 mx-2 mb-5"
                 style={{ overflowX: "hidden!important" }}
             >
                 <a
                     href="/films/three-bullets-to-bombay-beach"
                     title="Three Bullets to Bombay Beach"
+                    className="text-decoration-none "
                 >
                     <figure>
                         <div className="" id="container-tv">
@@ -461,12 +462,13 @@ export default function VideoGallery() {
                 </a>
             </div>
             <div
-                className=" film active has-thumb mt-0 "
+                className=" film active has-thumb mt-0 mx-2 mb-5"
                 style={{ overflowX: "hidden!important" }}
             >
                 <a
                     href="/films/rackets-all-the-way-down"
                     title="Rackets All the Way Down"
+                    className="text-decoration-none"
                 >
                     <figure>
                         <div className="" id="container-tv">
@@ -495,12 +497,13 @@ export default function VideoGallery() {
                 </a>
             </div>
             <div
-                className=" film active has-thumb mt-0"
+                className=" film active has-thumb mt-0 mx-2 mb-5"
                 style={{ overflowX: "hidden!important" }}
             >
                 <a
                     href="/films/a-pandemonic-serenade"
                     title="A Pandemonic Serenade"
+                    className="text-decoration-none"
                 >
                     <figure>
                         <div className="" id="container-tv">

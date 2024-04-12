@@ -1090,6 +1090,7 @@ img#filmimage {
 #container-tv {
   max-width: 1024px;
   margin: auto;
+  z-index:15;
 }
 
 #monitor {
@@ -1191,6 +1192,9 @@ img#filmimage {
   }
   #root > section > div > div > a > figure > figcaption > h3{
     text-align:center;
+  }
+  #container-tv {
+    z-index:10;
   }
 }
 

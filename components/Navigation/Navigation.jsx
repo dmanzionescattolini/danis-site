@@ -55,7 +55,7 @@ export default function Navigation() {
                     {window.screen.width < 700 &&
                         <img
                             src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
-                            width={100}
+                            width={150}
                             className={"shadow-0 border-0 bg-transparent  img-fluid p-3 ms-2"}
                             alt={"dinosaur toggle"}
                         />
