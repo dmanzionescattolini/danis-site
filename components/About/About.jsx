@@ -37,7 +37,7 @@ export default function About() {
         <section className="card mb-3 " >
             <div className="clearfix">
                 <div className="float-start">
-                    <img src={danielProfilePicLink} className="img-fluid rounded-start p-4 w-100" style={{minWidth:"400px!important"}} alt="Daniel Grzywacz" />
+                    <img src={danielProfilePicLink} className="img-fluid img-thumbnail rounded-start p-4 w-100" style={{minWidth:"400px!important"}} alt="Daniel Grzywacz" />
                 </div>
                 <div className="float-none">
                     <div className="card-body">
