@@ -68,10 +68,12 @@ main {
   }
 }
 
+
 #dinosaur:hover,
 #dinosaur:active {
   animation: wiggle 1s 2 alternate;
 }
+
 
 section {
   width: 100%;
@@ -329,7 +331,7 @@ a.nav-link:hover {
   );
   --header-default-clearance: 196px;
   --header-logo-width: 72.6px;
-  --mobile-menu-width: 500px;
+  --mobile-menu-width: 100%;
   --burger-width: 1.8vw;
   --burger-height: 10px;
   -webkit-font-smoothing: antialiased;
@@ -345,7 +347,7 @@ a.nav-link:hover {
   top: 0;
   bottom: 0;
   right: 0;
-  width: var(--mobile-menu-width);
+  width: 25vw;
   height: 100vh;
   // background-image: url(https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png);
 
@@ -529,7 +531,7 @@ a.nav-link {
     animation: fadeIn; /* referring directly to the animation's @keyframe declaration */
     animation-duration: 2s;
     animation-iteration-count: 1;
-    animation-timing-function: ease-in-out;
+    animation-timing-function: linear;
     animation-fill-mode: both;
     opacity: 1;
   }
@@ -1052,7 +1054,7 @@ img#filmimage {
   0% {
     opacity: 0;
   }
-  100% {
+  50% {
     opacity: 1;
   }
 }
@@ -1066,20 +1068,24 @@ img#filmimage {
 }
 .fadeIn {
   /* Fade in effect */
-  animation: fadeIn 4s ease forwards;
+  animation: fadeIn 7s;
+  animation-timing-function: ease;
 }
 .fadeOut {
   /* Fade out effect */
-  animation: fadeOut 4s ease forwards;
+  animation: fadeOut 5s ease;
 }
 
 
 @keyframes turnGray {
   0% {
-    color: white!IMPORTANT;
+    color:white;
   }
-  100% {
-    color: gray!important;
+  50% {
+    color:gray;
+  }
+  75%{
+  color:white;
   }
 }
 @keyframes turnWhite {
@@ -1095,7 +1101,7 @@ img#filmimage {
   animation-delay:- 4s;
 }
 .fadeInAnchor {
-  animation: turnGray 4s ease forwards;
+  animation: turnGray 12s ease-out forwards;
 }
 
 #container-tv {
@@ -1207,59 +1213,58 @@ img#filmimage {
   #container-tv {
     z-index:10;
   }
-}
-
-$gray : null;
-@keyframes cyclingimages {
-  0% {
-    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Still.png")!important';
-    background-size:cover;
-    overflow:hidden!important;
-    $gray:"three"!default;
-  }
-  50% {
-     background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/Still.png")!important';
-     background-size:cover;
-    overflow:hidden!important;
-    $gray:"pandemonic"!default;
-  }
-  75% {
-    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Still.png")!Important';
-    background-size:cover!important;
-    overflow:hidden!important;
-    $gray: "rackets"!default;
-  }
-  100% {
-    background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/Still.png")!important';
-    background-size:cover;
-    overflow:hidden!important;
-    $gray: "wrench"!default;
+  .overlay-x {
+    width:100%;
   }
 }
 
-#wrenchlink {
-@if $gray == "wrench"
-{
-  color: gray!important;
-}
-}
-#pandemoniclink {
-  @if $gray == "pandemonic" {
-    color: gray!Important;
-  }
+// $gray : null;
+// @keyframes cyclingimages {
+//   0% {
+//     background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/Still.png")'!important;
+//     background-size:cover;
+//     overflow:hidden!important;
+//   }
+//   50% {
+//      background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/Still.png")'!important;
+//      background-size:cover;
+//     overflow:hidden!important;
+//   }
+//   75% {
+//     background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Still.png")'!Important;
+//     background-size:cover!important;
+//     overflow:hidden!important;
+//   }
+//   100% {
+//     background-image:'url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/Still.png")'!important;
+//     background-size:cover;
+//     overflow:hidden!important;
+//   }
+// }
 
-}
-#threelink {
-  @if $gray == "three" {
-    color:gray!important;
-  }
+// #wrenchlink {
+// @if --gray == "wrench"
+// {
+//   color: gray!important;
+// }
+// }
+// #pandemoniclink {
+//   @if --gray == "pandemonic" {
+//     color: gray!Important;
+//   }
 
-}
-#racketslink {
-  @if $gray == "rackets" {
-    color:gray!important;
-  }
-}
+// }
+// #threelink {
+//   @if --gray == "three" {
+//     color:gray!important;
+//   }
+
+// }
+// #racketslink {
+//   @if --gray == "rackets" {
+//     color:gray!important;
+//   }
+// }
 a, button {
   cursor:pointer!important;
 }

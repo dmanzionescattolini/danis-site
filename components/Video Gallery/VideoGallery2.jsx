@@ -55,6 +55,7 @@ export default function VideoGallery() {
     const [, setActiveVideo] = useState(
         "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4"
     );
+    const videos = [threeVideoSrc,pandemonicVideoSrc, racketsVideoSrc, wrenchVideoSrc];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     function changePicture() {
         if (wrench || pandemonic || rackets || three) {
@@ -65,19 +66,31 @@ export default function VideoGallery() {
 
         if (currentImageIndex === 3) {
             setCurrentImageIndex(0);
-        } else if (currentImageIndex === 1) {
-            setCurrentImageIndex(2);
+            document.getElementById("wrenchlink").classList.remove("fadeInAnchor");
+
+            document.getElementById("threelink").classList.add("fadeInAnchor");
         } else if (currentImageIndex === 0) {
             setCurrentImageIndex(1);
+         document.getElementById("threelink").classList.remove("fadeInAnchor");
+
+            document.getElementById("pandemoniclink").classList.add("fadeInAnchor");
+
+        } else if (currentImageIndex === 1) {
+            setCurrentImageIndex(2);
+            document.getElementById("pandemoniclink").classList.remove("fadeInAnchor");
+
+            document.getElementById("racketslink").classList.add("fadeInAnchor");
+
         } else if (currentImageIndex === 2) {
+            document.getElementById("racketslink").classList.remove("fadeInAnchor");
+            document.getElementById("wrenchlink").classList.add("fadeInAnchor");
+
             setCurrentImageIndex(3);
-        } else {
-            setCurrentImageIndex(currentImageIndex + 1);
-        }
+        } 
 
 
     }
-    window.setInterval(changePicture, 8000);
+    window.setInterval(changePicture, 12000);
 
     useEffect(() => {
         changePicture();
@@ -200,7 +213,7 @@ export default function VideoGallery() {
                                     e.target.classList.add("fadeOut");
                                 }}
 
-                                src={wrenchStill}
+                                src={racketsStill}
                                 className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
                             />
                         )}
@@ -212,7 +225,7 @@ export default function VideoGallery() {
                                     e.target.classList.add("fadeOut");
                                 }}
 
-                                src={racketsStill}
+                                src={wrenchStill}
                                 className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
                             />
                         )}
@@ -225,7 +238,7 @@ export default function VideoGallery() {
                 >
                     <a
 
-                        className=" bg-transparent  fw-bold text-shadow-1 "
+                        className=" bg-transparent  fw-bold  text-shadow-0"
                         id="threelink"
                         href="/films/three-bullets-to-bombay-beach"
                         onMouseEnter={() => setThree(true)}
@@ -236,16 +249,16 @@ export default function VideoGallery() {
                     <a
                         onMouseEnter={() => setPandemonic(true)}
                         onMouseLeave={() => setPandemonic(false)}
-                        className="bg-transparent fw-bold text-shadow-1 "
+                        className="bg-transparent fw-bold text-shadow-0"
                         id="pandemoniclink"
                         href="/films/a-pandemonic-serenade"
                     >
                         A Pandemonic Serenade
                     </a>
                     <a
-                        className="bg-transparent fw-bold text-shadow-1 fw-bold text-shadow-1"
+                        className="bg-transparent fw-bold"
                         id="racketslink"
-                        href="/films/rackets-all-the-way-down"
+                        href="/films/rackets-all-the-way-down text-shadow-0"
                         onMouseEnter={() => setRackets(true)}
                         onMouseLeave={() => setRackets(false)}
                     >
@@ -254,7 +267,7 @@ export default function VideoGallery() {
                     <a
                         onMouseEnter={() => setWrench(true)}
                         onMouseLeave={() => setWrench(false)}
-                        className="bg-transparent fw-bold text-shadow-1 "
+                        className="bg-transparent fw-bold text-shadow-0 "
                         href="/films/the-wrench"
                         id="wrenchlink"
 

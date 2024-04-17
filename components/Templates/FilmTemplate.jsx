@@ -2,7 +2,7 @@ import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle';
 let params = { clip: String, image: String, title: String, cast: Array, date: String };
-import { MDBBtn, MDBCard, MDBCardBody, MDBCardText, MDBCardTitle, MDBCol, MDBCollapse, MDBContainer, MDBIcon, MDBListGroup, MDBListGroupItem, MDBRow, MDBTable, MDBTableBody } from "mdb-react-ui-kit";
+import { MDBBtn, MDBCard, MDBCardBody, MDBCardHeader, MDBCardImage, MDBCardText, MDBCardTitle, MDBCol, MDBCollapse, MDBContainer, MDBIcon, MDBListGroup, MDBListGroupItem, MDBRow, MDBTable, MDBTableBody } from "mdb-react-ui-kit";
 import { ListGroupItem } from "react-bootstrap";
 export default function FilmTemplate(params) {
     const { date, fullLengthVideo, title, cast, runtime, blurb, still, process, director } = params;
@@ -18,27 +18,29 @@ export default function FilmTemplate(params) {
         <div className="p-0 m-0 bg-white vh-100" >
             <MDBCard className="text-justify vh-100 vw-100 p-0 m-0 bg-white w-100 overflow-x-visible overflow-y-scroll mw-100">
                 {!basicModal &&
-                    <div className="bg-image hover-overlay ripple h-50 vw-100 p-0 m-0 position-fixed vh-50 top-0" data-ripple-color="light" style={{ backgroundImage: `url(${still})` }}>
+                <MDBCardHeader className="bg-image hover-overlay ripple h-50 vw-100 p-0 m-0 position-fixed vh-50 top-0" data-ripple-color="light" style={{backgroundImage:`url(
+                    '${still}')`}}>
+                    {/* <MDBCardImage src={still} className=" w-100 h-100 " alt={still.split("/").pop()}/> */}
+                       <div className="mask" style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}>
+
+</div>
+
                         <MDBBtn size="3x" onClick={toggleModal} color="white" floating tag='a' className="z-3 fw-lighter position-absolute w-100 h-100 d-flex flex-row justify-content-center align-items-center text-white align-items-center bg-none align-content-center">
                             <MDBIcon far color="white" className="fw-lighter" size="3x" icon="play-circle" />
                         </MDBBtn>
 
 
-                        <div className="mask" style={{ backgroundColor: 'rgba(251, 251, 251, 0.15)' }}>
-
-                        </div>
-
-
-                    </div>
+                        
+                    </MDBCardHeader>
                     ||
                     <div className="embed-responsive embed-responsive-16by9 position-fixed top-0 hover-overlay ripple vw-100 w-100 h-50 vh-50 bg-black justify-content-center align-items-center p-0" data-ripple-color="light">
                         <iframe className="embed-responsive-item h-100 w-auto min-vw-100" src={fullLengthVideo} title={title} allowFullScreen></iframe>
                     </div>
                 }
 
-                <MDBCardBody className="px-5 pt-2 h-50 bg-white vh-50 position-fixed w-100 bottom-0 overflow-y-scroll overflow-x-visible flex-wrap">
+                <MDBCardBody className="px-5 pt-2 mx-xl-5 h-50 bg-white vh-50 position-fixed w-100 bottom-0 overflow-y-scroll overflow-x-hidden flex-nowrap justify-content-center">
                     <MDBCardTitle className="text-center mb-3 mt-2">{title}</MDBCardTitle>
-                    <MDBCardText className="text-justify mb-2">
+                    <MDBCardText className="text-justify mb-2 p-lg-3 px-xl-5 mx-xl-5">
                         {blurb}
                     </MDBCardText>
 
@@ -71,7 +73,7 @@ export default function FilmTemplate(params) {
 
                         <div style={{ columnCount: 1 }} className=" col-md-12 gx-5 mb-4 text-muted">
                             
-                            {process.map((m) => { return (<div key={process.indexOf(m)} className="mb-4">{m}</div>); })}
+                            {process.map((m) => { return (<div key={process.indexOf(m)} className="mb-4 px-lg-5 px-xl-5 ">{m}</div>); })}
                             
                         </div>
                     </MDBCollapse>
