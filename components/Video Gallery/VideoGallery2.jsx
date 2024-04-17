@@ -55,7 +55,7 @@ export default function VideoGallery() {
     const [, setActiveVideo] = useState(
         "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4"
     );
-    const videos = [threeVideoSrc,pandemonicVideoSrc, racketsVideoSrc, wrenchVideoSrc];
+    const videos = [threeVideoSrc, pandemonicVideoSrc, racketsVideoSrc, wrenchVideoSrc];
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     function changePicture() {
         if (wrench || pandemonic || rackets || three) {
@@ -63,35 +63,37 @@ export default function VideoGallery() {
             return;
         }
         // document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
+        if (window.screen.width > 700) {
+            if (currentImageIndex === 3) {
+                setCurrentImageIndex(0);
+                document.getElementById("wrenchlink").classList.remove("fadeInAnchor");
 
-        if (currentImageIndex === 3) {
-            setCurrentImageIndex(0);
-            document.getElementById("wrenchlink").classList.remove("fadeInAnchor");
+                document.getElementById("threelink").classList.add("fadeInAnchor");
+            } else if (currentImageIndex === 0) {
+                setCurrentImageIndex(1);
+                document.getElementById("threelink").classList.remove("fadeInAnchor");
 
-            document.getElementById("threelink").classList.add("fadeInAnchor");
-        } else if (currentImageIndex === 0) {
-            setCurrentImageIndex(1);
-         document.getElementById("threelink").classList.remove("fadeInAnchor");
+                document.getElementById("pandemoniclink").classList.add("fadeInAnchor");
 
-            document.getElementById("pandemoniclink").classList.add("fadeInAnchor");
+            } else if (currentImageIndex === 1) {
+                setCurrentImageIndex(2);
+                document.getElementById("pandemoniclink").classList.remove("fadeInAnchor");
 
-        } else if (currentImageIndex === 1) {
-            setCurrentImageIndex(2);
-            document.getElementById("pandemoniclink").classList.remove("fadeInAnchor");
+                document.getElementById("racketslink").classList.add("fadeInAnchor");
 
-            document.getElementById("racketslink").classList.add("fadeInAnchor");
+            } else if (currentImageIndex === 2) {
+                document.getElementById("racketslink").classList.remove("fadeInAnchor");
+                document.getElementById("wrenchlink").classList.add("fadeInAnchor");
 
-        } else if (currentImageIndex === 2) {
-            document.getElementById("racketslink").classList.remove("fadeInAnchor");
-            document.getElementById("wrenchlink").classList.add("fadeInAnchor");
-
-            setCurrentImageIndex(3);
-        } 
-
+                setCurrentImageIndex(3);
+            }
+        }
 
     }
-    window.setInterval(changePicture, 12000);
-
+    {
+        window.Screen.width > 700 &&
+            window.setInterval(changePicture, 12000);
+    }
     useEffect(() => {
         changePicture();
         if (wrench || pandemonic || rackets || three) {
@@ -287,7 +289,7 @@ export default function VideoGallery() {
 
 
             <div
-                className="section-header z-3 position-absolute w-100"
+                className="section-header z-3 position-absolute w-100 "
                 style={{ overflowX: "hidden!important" }}
             >
                 <br />
@@ -324,10 +326,10 @@ export default function VideoGallery() {
 
                                     />
                                 </div>
-                                <figcaption>
-                                    <h3 className="text-center text-white z-3 small text-decoration-none font-variant-none">Three Bullets to Bombay Beach</h3>
+                                <figcaption className="d-flex p-2 align-items-center justify-content-center">
+                                    <h3 style={{letterSpacing:".1em"}} className="mt-2 mb-0 text-center text-white z-3 small text-decoration-none font-variant-none align-items-center">Three Bullets to Bombay Beach</h3>
                                 </figcaption>
-                            </div>{" "}
+                            </div>
 
                         </div>
 
@@ -350,7 +352,7 @@ export default function VideoGallery() {
 
                             <div className="" id="monitor">
 
-                                <div className="" id="monitor-screen w-100">
+                                <div className="" id="monitor-screen">
                                     <video
                                         allowFullScreen
                                         className=" w-100"
@@ -361,8 +363,8 @@ export default function VideoGallery() {
 
                                     />
                                 </div>
-                                <figcaption>
-                                    <h3 className="text-center text-white z-3 text-decoration-none small">A Pandemonic Serenade</h3>
+<figcaption className="d-flex p-2 align-items-center justify-content-center">
+                                    <h3 style={{letterSpacing:".1em"}} className="mt-2 mb-0 text-center text-white z-3 text-decoration-none small">A Pandemonic Serenade</h3>
                                 </figcaption>
                             </div>{" "}
 
@@ -385,7 +387,7 @@ export default function VideoGallery() {
                     <figure>
                         <div className="" id="container-tv">
                             <div className="" id="monitor">
-                                <div className="" id="monitor-screen w-100">
+                                <div className="" id="monitor-screen">
                                     <video
                                         allowFullScreen
                                         className=" w-100"
@@ -396,8 +398,9 @@ export default function VideoGallery() {
 
                                     />
                                 </div>
-                                <figcaption>
-                                    <h3 className="text-center text-white z-3 text-decoration-none text-decoration-none small">The Wrench</h3>
+<figcaption className="d-flex p-2 align-items-center justify-content-center">
+                                    <h3 style={{letterSpacing:".1em"}} className="mt-2 mb-0
+                                    text-center text-white z-3 text-decoration-none text-decoration-none small">The Wrench</h3>
                                 </figcaption>
                             </div>{" "}
 
@@ -420,7 +423,7 @@ export default function VideoGallery() {
                     <figure>
                         <div className="" id="container-tv">
                             <div className="" id="monitor">
-                                <div className="" id="monitor-screen w-100">
+                                <div className="" id="monitor-screen">
                                     <video
                                         allowFullScreen
                                         className=" w-100"
@@ -431,8 +434,9 @@ export default function VideoGallery() {
 
                                     />
                                 </div>
-                                <figcaption>
-                                    <h3 className="text-center text-white z-3 text-decoration-none small">Rackets All the Way Down</h3>
+<figcaption className="d-flex p-2 align-items-center justify-content-center">
+                                    <h3 style={{letterSpacing:".1em"}} className="mt-2 mb-0
+                                    text-center text-white z-3 text-decoration-none small">Rackets All the Way Down</h3>
                                 </figcaption>
                             </div>{" "}
 
@@ -444,7 +448,7 @@ export default function VideoGallery() {
                     </figure>
                 </a>
             </div>
-        </section>
+        </section >
         );
 }
 
