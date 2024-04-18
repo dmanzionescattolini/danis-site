@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
+import { Image } from "react-bootstrap";
 export default function Home() {
   // let width = 50;
   // let goingUp=true;
@@ -40,6 +41,7 @@ export default function Home() {
           <img width={200} className=" p-0 m-0 animate__animated animate__zoomIn animate__slower z-3 bg-transparent shadow-0" src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/sign.png"} />
         </div> */}
       </div>
+      <Image src={"/public/assets/banner.png"} alt="banner" className="position-fixed col-xs-12 col-md-6 col-xl-6 col-xxl-6 left-50 right-auto top-0" height="10em" width="auto"></Image>
       <MDBContainer fluid id="container-tv" className="position-fixed col-xs-12 col-md-6 col-xl-6 col-xxl-6 left-50 right-auto">
         <div id="monitor" className="">
           <div id="monitor-screen" className="embed-responsive embed-responsive-16by9">

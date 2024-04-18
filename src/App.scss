@@ -1065,70 +1065,43 @@ img#filmimage {
   }
 }
 
-.fadeIn {
-  /* Fade in effect */
-  // animation: fadeIn 4s 1 cubic-bezier(0.075, 0.50, 0.50, 1);
 
-}
 
-.fadeOut {
-  /* Fade out effect */
-  // animation: fade ease-in-out 16s;
-}
+
 
 @keyframes alternateImages {
   0% {
     background-image: $threelink;
-    animation: movingbackground 3s 1;
+    animation: fadeIn 500ms 1  step-start;
   }
 
-  20% {
-    animation: movingbackground 5s 1;
-  }
 
   33% {
     background-image: $pandemoniclink;
-    animation: fadeIn 1s 1, movingbackground;
-  }
-
-  50% {
-    animation: movingbackground 5s 1;
+    animation: fadeIn 500ms 1  step-start;
   }
 
   66% {
     background-image: $racketslink;
-    animation: fadeIn 1s 1, movingbackground;
-  }
-
-  70% {
-    animation: movingbackground 5s 1;
+    animation: fadeIn 500ms 1 step-start;
   }
 
 
   99% {
     background-image: $wrenchlink;
-    animation: fadeIn 1s 1;
+    animation: fadeIn 500ms 1  step-start;
   }
 
-
-
-  100% {
-    background-image: $threelink;
-    animation: fadeIn 1s 1, movingbackground 3s 1;
-  }
 }
 
 .image-container {
   width: 100%;
   height: 100vh;
   background-size: cover;
-  animation-name: alternateImages;
-  animation-duration: 28s;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
-  animation-composition: linear;
-  animation-play-state: running;
+  animation: alternateImages 24s infinite normal linear running;
+  animation-timing-function: cubic-bezier(0, 0.2, 0.3, 1);
+  /* Equivalent to entry 0% exit 100% */
+
 }
 
 

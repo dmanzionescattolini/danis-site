@@ -95,10 +95,7 @@ export default function VideoGallery() {
 
 
         if (pandemonic || wrench || rackets || three) {
-            document.querySelectorAll("#films-menu a").forEach(x => {
-                x.classList.remove("fadeInAnchor");
-                x.style.color = "white!important";
-            })
+            return;
         }
         if (pandemonic) {
             setActiveVideo(
@@ -132,9 +129,9 @@ export default function VideoGallery() {
 
             <div
                 className={(!pandemonic && !wrench && !rackets && !three) ? "image-container vw-100 vh-100 p-0 m-0  overflow-y-scroll overflow-x-visible" :
-                    "vw-100 vh-100 p-0 m-0  overflow-y-scroll overflow-x-visible"}>
+                    "vw-100 vh-100 w-100 h-100 p-0 m-0  overflow-y-scroll overflow-x-hidden"}>
 
-                <div className="mask bg-light-subtle opacity-25 vw-100 h-auto"></div>
+                <div className="mask bg-light-subtle opacity-25 vw-100 h-auto" ></div>
                 {rackets && (
                     <video
                         style={videoBackgroundStyle}
