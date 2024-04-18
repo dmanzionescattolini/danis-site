@@ -1,9 +1,7 @@
 // eslint-disable-()=>setVideonext-line no-unused-varsimport {MDBNavbar} from "mdb-react-ui-kit";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { useCallback, useEffect, useState } from "react";
-import { MDBContainer } from "mdb-react-ui-kit";
-import { ThreeBulletsForBombay } from "./Three Bullets for Bombay/ThreeBulletsForBombay";
+import { useEffect, useState } from "react";
 export default function VideoGallery() {
     const [pandemonic, setPandemonic] = useState(false);
     const [wrench, setWrench] = useState(false);
@@ -56,10 +54,11 @@ export default function VideoGallery() {
         "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4"
     );
     const videos = [threeVideoSrc, pandemonicVideoSrc, racketsVideoSrc, wrenchVideoSrc];
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [currentImageIndex, setCurrentImageIndex] = useState(3);
     function changePicture() {
         if (wrench || pandemonic || rackets || three) {
             // document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
+
             return;
         }
         // document.querySelectorAll("#films-menu a").forEach(x => x.style.color = "white");
@@ -90,46 +89,50 @@ export default function VideoGallery() {
         }
 
     }
-    {
-        window.Screen.width > 700 &&
-            window.setInterval(changePicture, 12000);
-    }
-    useEffect(() => {
-        changePicture();
-        if (wrench || pandemonic || rackets || three) {
-            // document.querySelectorAll("#films-menu a").forEach(x => {x.style.color = "white!important"; x.classList.remove("fadeOutAnchor"); x.classList.add("fadeInAnchor");});
-            return;
-        }
+    // setInterval(changePicture, 4000);
 
+    useEffect(() => {
+
+
+        if (pandemonic || wrench || rackets || three) {
+            document.querySelectorAll("#films-menu a").forEach(x => {
+                x.classList.remove("fadeInAnchor");
+                x.style.color = "white!important";
+            })
+        }
         if (pandemonic) {
             setActiveVideo(
                 "https://pagina-mama.s3.amazonaws.com/assets2/daniel/A+Pandemonic+Serenade/APS+Clip.mp4"
             );
-            // document.getElementById("pandemonicLink").style.color="gray!important";
+            document.getElementById("pandemoniclink").style.color = "lightgray!important";
             // document.getElementById("pademonicLink").classList.add("fadeOutAnchor");
         } else if (wrench) {
             setActiveVideo(
                 "https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/The+wrench+clip.mp4"
             );
-            // document.getElementById("wrenchLink").style.color="gray!important";
+            document.getElementById("wrenchlink").style.color = "lightgray!important";
             // document.getElementById("wrenchLink").classList.add("fadeOutAnchor");
         } else if (rackets) {
             setActiveVideo(
                 "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Rackets+All+the+Way+Down/Rackets+Clip.mp4"
             );
-            // document.getElementById("racketsLink").style.color="gray!important";
+            document.getElementById("racketslink").style.color = "lightgray!important";
             // document.getElementById("racketsLink").classList.add("fadeOutAnchor");
         } else if (three) {
             setActiveVideo(
                 "https://pagina-mama.s3.amazonaws.com/assets2/daniel/Three+Bullets+to+Bombay+Beach/3BBB+Clip.mp4"
             );
-            //     document.getElementById("threeLink").style.color="gray!important";
+            // document.getElementById("threelink").style.color="gray!important";
             //     document.getElementById("threeLink").classList.add("fadeOutAnchor");
         }
     }, [pandemonic, three, wrench, rackets]);
+
     if (window.screen.width > 700)
         return (
-            <div className="vw-100 vh-100 p-0 m-0  overflow-y-scroll overflow-x-visible" >
+
+            <div
+                className={(!pandemonic && !wrench && !rackets && !three) ? "image-container vw-100 vh-100 p-0 m-0  overflow-y-scroll overflow-x-visible" :
+                    "vw-100 vh-100 p-0 m-0  overflow-y-scroll overflow-x-visible"}>
 
                 <div className="mask bg-light-subtle opacity-25 vw-100 h-auto"></div>
                 {rackets && (
@@ -180,59 +183,7 @@ export default function VideoGallery() {
                         alt="All Clips"
                     />
                 )}
-                {!pandemonic && !wrench && !rackets && !three && (
-                    <section className="position-fixed left-0 right-0 top-0 bottom-0 min-vw-100 min-vh-100 w-100 h-auto">
-                        {currentImageIndex === 0 && (
-                            <img
-                                onAnimationEnd={(e) => {
-                                    e.preventDefault();
-                                    e.target.classList.remove("fadeIn");
-                                    e.target.classList.add("fadeOut");
-                                }}
 
-                                src={threeStill}
-                                alt={"Still of Three Bullets for Bombay Beach"}
-                                className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
-                            />
-                        )}
-                        {currentImageIndex === 1 && (
-                            <img
-                                onAnimationEnd={(e) => {
-                                    e.preventDefault();
-                                    e.target.classList.remove("fadeIn");
-                                    e.target.classList.add("fadeOut");
-                                }}
-
-                                src={pandemonicStill}
-                                className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
-                            />
-                        )}
-                        {currentImageIndex === 2 && (
-                            <img
-                                onAnimationEnd={(e) => {
-                                    e.preventDefault();
-                                    e.target.classList.remove("fadeIn");
-                                    e.target.classList.add("fadeOut");
-                                }}
-
-                                src={racketsStill}
-                                className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
-                            />
-                        )}
-                        {currentImageIndex === 3 && (
-                            <img
-                                onAnimationEnd={(e) => {
-                                    e.preventDefault();
-                                    e.target.classList.remove("fadeIn");
-                                    e.target.classList.add("fadeOut");
-                                }}
-
-                                src={wrenchStill}
-                                className="img-fluid min-vw-100 min-vh-100 h-auto fadeIn overflow-hidden"
-                            />
-                        )}
-                    </section>
-                )}{" "}
                 <nav
                     id="films-menu"
                     style={styleNavigationBar}
@@ -327,7 +278,7 @@ export default function VideoGallery() {
                                     />
                                 </div>
                                 <figcaption className="d-flex p-2 align-items-center justify-content-center">
-                                    <h3 style={{letterSpacing:".1em"}} className="mt-2 mb-0 text-center text-white z-3 small text-decoration-none font-variant-none align-items-center">Three Bullets to Bombay Beach</h3>
+                                    <h3 style={{ letterSpacing: ".1em" }} className="mt-2 mb-0 text-center text-white z-3 small text-decoration-none font-variant-none align-items-center">Three Bullets to Bombay Beach</h3>
                                 </figcaption>
                             </div>
 
@@ -363,8 +314,8 @@ export default function VideoGallery() {
 
                                     />
                                 </div>
-<figcaption className="d-flex p-2 align-items-center justify-content-center">
-                                    <h3 style={{letterSpacing:".1em"}} className="mt-2 mb-0 text-center text-white z-3 text-decoration-none small">A Pandemonic Serenade</h3>
+                                <figcaption className="d-flex p-2 align-items-center justify-content-center">
+                                    <h3 style={{ letterSpacing: ".1em" }} className="mt-2 mb-0 text-center text-white z-3 text-decoration-none small">A Pandemonic Serenade</h3>
                                 </figcaption>
                             </div>{" "}
 
@@ -398,8 +349,8 @@ export default function VideoGallery() {
 
                                     />
                                 </div>
-<figcaption className="d-flex p-2 align-items-center justify-content-center">
-                                    <h3 style={{letterSpacing:".1em"}} className="mt-2 mb-0
+                                <figcaption className="d-flex p-2 align-items-center justify-content-center">
+                                    <h3 style={{ letterSpacing: ".1em" }} className="mt-2 mb-0
                                     text-center text-white z-3 text-decoration-none text-decoration-none small">The Wrench</h3>
                                 </figcaption>
                             </div>{" "}
@@ -434,8 +385,8 @@ export default function VideoGallery() {
 
                                     />
                                 </div>
-<figcaption className="d-flex p-2 align-items-center justify-content-center">
-                                    <h3 style={{letterSpacing:".1em"}} className="mt-2 mb-0
+                                <figcaption className="d-flex p-2 align-items-center justify-content-center">
+                                    <h3 style={{ letterSpacing: ".1em" }} className="mt-2 mb-0
                                     text-center text-white z-3 text-decoration-none small">Rackets All the Way Down</h3>
                                 </figcaption>
                             </div>{" "}
