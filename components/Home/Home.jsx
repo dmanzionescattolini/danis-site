@@ -35,13 +35,15 @@ export default function Home() {
         backgroundImage: `url("https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png")`
       }
       } >
+      <div className="position-fixed clearfix top-0 right-0 left-0 bottom-0 w-100 h-100 justify-align-content-sm-center justify-content-center justify-content-lg-end justify-content-xl-end  d-flex align-items-start z-5">
+        <Image src={"/public/assets/banner.png"} alt="banner" className="img-fluid" style={{ height: "8em", width: "auto" }}></Image>
+      </div>
 
       <div className="mask " style={{ backgroundColor: 'rgba(0,0, 0, 0.6)' }}>
         {/* <div className="float-end">
           <img width={200} className=" p-0 m-0 animate__animated animate__zoomIn animate__slower z-3 bg-transparent shadow-0" src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/sign.png"} />
         </div> */}
       </div>
-      <Image src={"/public/assets/banner.png"} alt="banner" className="position-fixed col-xs-12 col-md-6 col-xl-6 col-xxl-6 left-50 right-auto top-0" height="10em" width="auto"></Image>
       <MDBContainer fluid id="container-tv" className="position-fixed col-xs-12 col-md-6 col-xl-6 col-xxl-6 left-50 right-auto">
         <div id="monitor" className="">
           <div id="monitor-screen" className="embed-responsive embed-responsive-16by9">
