@@ -1,7 +1,12 @@
 // eslint-disable-()=>setVideonext-line no-unused-varsimport {MDBNavbar} from "mdb-react-ui-kit";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import "bootstrap/dist/css/bootstrap.css";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-slideshow-image/dist/styles.css';
+
+import { Fade } from "react-slideshow-image";
+
 export default function VideoGallery() {
     const [pandemonic, setPandemonic] = useState(false);
     const [wrench, setWrench] = useState(false);
@@ -54,6 +59,7 @@ export default function VideoGallery() {
         "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4"
     );
     const videos = [threeVideoSrc, pandemonicVideoSrc, racketsVideoSrc, wrenchVideoSrc];
+    const images = [threeStill, pandemonicStill, racketsStill, wrenchStill];
     const [currentImageIndex, setCurrentImageIndex] = useState(3);
     function changePicture() {
         if (wrench || pandemonic || rackets || three) {
@@ -126,60 +132,86 @@ export default function VideoGallery() {
 
     if (window.screen.width > 700)
         return (
+            <section className={" w-100 vh-100 bg-image position-fixed"}>
+                {!pandemonic && !wrench && !rackets && !three &&
 
-            <div
-                className={(!pandemonic && !wrench && !rackets && !three) ? "image-container vw-100 vh-100 p-0 m-0  overflow-y-scroll overflow-x-visible" :
-                    "vw-100 vh-100 w-100 h-100 p-0 m-0  overflow-y-scroll overflow-x-hidden"}>
 
-                <div className="mask bg-light-subtle opacity-25 vw-100 h-auto" ></div>
-                {rackets && (
-                    <video
-                        style={videoBackgroundStyle}
-                        autoPlay
-                        playsInline
-                        loop
-                        muted
-                        src={racketsVideoSrc}
-                        className=" img-fluid fadeIn min-vw-100 p-0 m-0 "
-                        alt="All Clips"
-                    />
-                )}
-                {wrench && (
-                    <video
-                        autoPlay
-                        playsInline
-                        loop
-                        muted
-                        src={wrenchVideoSrc}
-                        className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
-                        style={videoBackgroundStyle}
-                        alt="All Clips"
-                    />
-                )}
-                {pandemonic && (
-                    <video
-                        autoPlay
-                        playsInline
-                        loop
-                        muted
-                        src={pandemonicVideoSrc}
-                        className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
-                        style={videoBackgroundStyle}
-                        alt="All Clips"
-                    />
-                )}
-                {three && (
-                    <video
-                        style={videoBackgroundStyle}
-                        autoPlay
-                        playsInline
-                        loop
-                        muted
-                        src={threeVideoSrc}
-                        className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
-                        alt="All Clips"
-                    />
-                )}
+
+
+
+                    (
+                        <Fade infinite={true} autoplay={true} transitionDuration={3000} defaultIndex={0} pauseOnHover={false} duration={5000}
+                            onChange={function noRefCheck() { }}
+                            onStartChange={function noRefCheck() { }}
+                            indicators={false}
+                            arrows={false}
+                            easing="ease"
+                        >
+
+                            {images.map((x, i) => (
+                                <img key={i} src={x} className="img-fluid fadeIn min-vw-100 p-0 m-0 " alt="All Clips" />
+                            ))}
+
+                        </Fade>
+                    )}
+
+                {/* <div className="mask bg-light-subtle opacity-25 vw-100 h-auto" ></div> */}
+                {
+                    rackets && (
+                        <video
+                            style={videoBackgroundStyle}
+                            autoPlay
+                            playsInline
+                            loop
+                            muted
+                            src={racketsVideoSrc}
+                            className=" img-fluid fadeIn min-vw-100 p-0 m-0 "
+                            alt="All Clips"
+                        />
+                    )
+                }
+                {
+                    wrench && (
+                        <video
+                            autoPlay
+                            playsInline
+                            loop
+                            muted
+                            src={wrenchVideoSrc}
+                            className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
+                            style={videoBackgroundStyle}
+                            alt="All Clips"
+                        />
+                    )
+                }
+                {
+                    pandemonic && (
+                        <video
+                            autoPlay
+                            playsInline
+                            loop
+                            muted
+                            src={pandemonicVideoSrc}
+                            className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
+                            style={videoBackgroundStyle}
+                            alt="All Clips"
+                        />
+                    )
+                }
+                {
+                    three && (
+                        <video
+                            style={videoBackgroundStyle}
+                            autoPlay
+                            playsInline
+                            loop
+                            muted
+                            src={threeVideoSrc}
+                            className=" img-fluid fadeIn vw-100 vh-100 p-0 m-0 "
+                            alt="All Clips"
+                        />
+                    )
+                }
 
                 <nav
                     id="films-menu"
@@ -227,12 +259,13 @@ export default function VideoGallery() {
 
 
                 </nav>{" "}
-            </div>
+            </section>
         );
     else
         return (<section className="bg-image overflow-y-scroll z-2">
-            <img src={`https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png`} alt="Background Image" class="min-vh-100 min-vw-100 w-auto h-100 z-0 position-fixed" />
-            <div class="mask" style={{ backgroundColor: 'hsla(0, 0%, 0%, 0.6)' }}></div>
+            <LazyLoadImage effect="blur"
+                src={`https://pagina-mama.s3.amazonaws.com/assets2/daniel/desert.png`} alt="Background Image" class="min-vh-100 min-vw-100 w-auto h-100 z-0 position-fixed" />
+            <div className="mask" style={{ backgroundColor: 'hsla(0, 0%, 0%, 0.6)' }}></div>
 
 
 

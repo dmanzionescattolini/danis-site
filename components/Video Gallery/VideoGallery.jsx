@@ -65,17 +65,23 @@ export default function VideoGallery() {
     }, [pandemonic, three, wrench, rackets]);
     return (<div className="w-100 h-100 m-0 p-0 object-fit-contain m-0 p-0">
         <div className="mask bg-light-subtle opacity-25 w-100 h-auto" ></div>
-        {rackets && (window.screen.width > 768 && <img style={videoBackgroundStyle} src={imageSrc} alt="All Clips" /> || <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />)}
-        {wrench && (window.screen.width > 768 && <img style={videoBackgroundStyle} src={imageSrc} alt="All Clips" /> || <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower"
+        {rackets && (window.screen.width > 768 && <LazyLoadImage         effect="blur"
+ style={videoBackgroundStyle} src={imageSrc} alt="All Clips" /> || <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />)}
+        {wrench && (window.screen.width > 768 && <LazyLoadImage         effect="blur"
+ style={videoBackgroundStyle} src={imageSrc} alt="All Clips" /> || <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower"
             style={videoBackgroundStyle}
             alt="All Clips" />)}
-        {pandemonic && (window.screen.width > 768 && <img style={videoBackgroundStyle} src={imageSrc} alt="All Clips" /> || <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" style={videoBackgroundStyle} alt="All Clips" />)}
+        {pandemonic && (window.screen.width > 768 && <LazyLoadImage         effect="blur"
+ style={videoBackgroundStyle} src={imageSrc} alt="All Clips" /> || <video autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" style={videoBackgroundStyle} alt="All Clips" />)}
 
-        {three && (window.screen.width > 768 && <img style={videoBackgroundStyle} src={imageSrc} alt="All Clips" /> || <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />)}
-        {activeVideo === "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4" && (window.screen.width > 768 && <img style={videoBackgroundStyle} src={imageSrc} alt="All Clips" /> || <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />)}
+        {three && (window.screen.width > 768 && <LazyLoadImage         effect="blur"
+ style={videoBackgroundStyle} src={imageSrc} alt="All Clips" /> || <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />)}
+        {activeVideo === "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4" && (window.screen.width > 768 && <LazyLoadImage         effect="blur"
+ style={videoBackgroundStyle} src={imageSrc} alt="All Clips" /> || <video style={videoBackgroundStyle} autoPlay playsInline loop muted src={activeVideo} className=" min-vw-100 min-vh-100 h-auto w-100 embed-responsive position-fixed animate__animated animate__fadeIn animate__slower" alt="All Clips" />)}
         {/* {
             activeVideo === "https://pagina-mama.s3.amazonaws.com/assets2/daniel/All+Clips.mp4" &&
-            <img style={{ ...videoBackgroundStyle, filter: "blur(1em)"}} src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/Still.png"} alt="All Clips" />
+            <LazyLoadImage         effect="blur"
+ style={{ ...videoBackgroundStyle, filter: "blur(1em)"}} src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/The+Wrench/Still.png"} alt="All Clips" />
         } */}
 
 

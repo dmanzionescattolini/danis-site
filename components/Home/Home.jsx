@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { MDBContainer, MDBRow, MDBCol } from "mdb-react-ui-kit";
-import { Image } from "react-bootstrap";
+import { MDBContainer } from "mdb-react-ui-kit";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 export default function Home() {
   // let width = 50;
   // let goingUp=true;
@@ -36,12 +36,14 @@ export default function Home() {
       }
       } >
       <div className="position-fixed clearfix top-0 right-0 left-0 bottom-0 w-100 h-100 justify-align-content-sm-center justify-content-center justify-content-lg-end justify-content-xl-end  d-flex align-items-start z-5">
-        <Image src={"/public/assets/banner.png"} alt="banner" className="img-fluid" style={{ height: "8em", width: "auto" }}></Image>
+        <LazyLoadImage         effect="blur"
+src={"/public/assets/banner.png"} alt="banner" className="img-fluid" style={{ height: "8em", width: "auto" }}></LazyLoadImage>
       </div>
 
       <div className="mask " style={{ backgroundColor: 'rgba(0,0, 0, 0.6)' }}>
         {/* <div className="float-end">
-          <img width={200} className=" p-0 m-0 animate__animated animate__zoomIn animate__slower z-3 bg-transparent shadow-0" src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/sign.png"} />
+          <LazyLoadImage         effect="blur"
+ width={200} className=" p-0 m-0 animate__animated animate__zoomIn animate__slower z-3 bg-transparent shadow-0" src={"https://pagina-mama.s3.amazonaws.com/assets2/daniel/sign.png"} />
         </div> */}
       </div>
       <MDBContainer fluid id="container-tv" className="position-fixed col-xs-12 col-md-6 col-xl-6 col-xxl-6 left-50 right-auto">

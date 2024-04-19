@@ -547,7 +547,7 @@ a.nav-link {}
   video {
     animation: fadeIn;
     /* referring directly to the animation's @keyframe declaration */
-    animation-duration: 2s;
+    animation-duration: 1s;
     animation-iteration-count: 1;
     animation-timing-function: linear;
     animation-fill-mode: both;
@@ -562,7 +562,7 @@ a.nav-link {}
 video {
   animation: fadeIn;
   /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 4s;
+  animation-duration: 1s;
 }
 
 
@@ -1071,25 +1071,35 @@ img#filmimage {
 
 @keyframes alternateImages {
   0% {
-    background-image: $threelink;
-    animation: fadeIn 500ms 1  step-start;
+    background-image:$threelink;
+    filter:opacity(1);
+  }
+
+  17% {
+    filter:opacity(0);
   }
 
 
   33% {
-    background-image: $pandemoniclink;
-    animation: fadeIn 500ms 1  step-start;
+    background-image: cross-fade($pandemoniclink,$racketslink);
+    filter:opacity(1);
+  }
+
+  50%{
+    filter:opacity(0);
   }
 
   66% {
-    background-image: $racketslink;
-    animation: fadeIn 500ms 1 step-start;
+    background-image: cross-fade($racketslink,$wrenchlink);
   }
 
+  83% {
+    filter:opacity(0);
+  }
 
   99% {
-    background-image: $wrenchlink;
-    animation: fadeIn 500ms 1  step-start;
+    background-image: cross-fade($wrenchlink,$threelink);
+    filter:opacity(1);
   }
 
 }
@@ -1098,8 +1108,8 @@ img#filmimage {
   width: 100%;
   height: 100vh;
   background-size: cover;
-  animation: alternateImages 24s infinite normal linear running;
-  animation-timing-function: cubic-bezier(0, 0.2, 0.3, 1);
+  animation: alternateImages 20s ease linear forwards infinite;
+  display: inline-block;
   /* Equivalent to entry 0% exit 100% */
 
 }

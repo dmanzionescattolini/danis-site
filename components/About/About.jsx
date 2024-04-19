@@ -1,13 +1,4 @@
-import {
-
-    MDBCard,
-    MDBCardBody,
-    MDBCardImage,
-
-    MDBTypography
-} from 'mdb-react-ui-kit';
-import { FloatingWhatsApp } from 'react-floating-whatsapp';
-
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 export default function About() {
     const danielAboutMeText =
         <blockquote className="">
@@ -38,11 +29,13 @@ export default function About() {
             <div className="clearfix">
                 {window.screen.width > 700 &&
                     <div className="float-start w-50">
-                        <img src={danielProfilePicLink} className="img-fluid rounded-start p-4 w-100" style={{ minInlineSize: "400px!important" }} alt="Daniel Grzywacz" />
+                        <LazyLoadImage         effect="blur"
+ src={danielProfilePicLink} className="img-fluid rounded-start p-4 w-100" style={{ minInlineSize: "400px!important" }} alt="Daniel Grzywacz" />
                     </div>
                     ||
                     <div className="float-start">
-                        <img src={danielProfilePicLink} className="img-fluid rounded-start p-4 mw-50" style={{ minInlineSize: "400px!important" }} alt="Daniel Grzywacz" />
+                        <LazyLoadImage         effect="blur"
+ src={danielProfilePicLink} className="img-fluid rounded-start p-4 mw-50" style={{ minInlineSize: "400px!important" }} alt="Daniel Grzywacz" />
                     </div>
                 }
                 <div className="float-none">

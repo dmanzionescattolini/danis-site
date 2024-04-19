@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { MDBNavbar } from "mdb-react-ui-kit";
-
+import { LazyLoadImage } from "react-lazy-load-image-component";
 // eslint-disable-next-line react/prop-types
 export default function Navigation() {
     const [overlayDisplay, setOverlayDisplay] = useState("block");
@@ -53,14 +53,16 @@ export default function Navigation() {
                     className={"bg-transparent border-0 shadow-0 z-2 w-75"}
                 >
                     {window.screen.width < 700 &&
-                        <img
+                        <LazyLoadImage         effect="blur"
+
                             src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
                             width={150}
                             className={"shadow-0 border-0 bg-transparent  img-fluid p-3 ms-2"}
                             alt={"dinosaur toggle"}
                         />
                         ||
-                        <img
+                        <LazyLoadImage         effect="blur"
+
                             src="https://pagina-mama.s3.amazonaws.com/assets2/daniel/DinoLarge.png"
                             width={200}
                             className={"shadow-0 border-0 bg-transparent  img-fluid p-3 ms-2"}
